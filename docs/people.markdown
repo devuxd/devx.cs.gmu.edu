@@ -1,18 +1,40 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: People
+permalink: /people/
 ---
+# People
+Join Us! We are always recruiting motivated students at all levels — undergraduate, masters, and PhD students — to support this work. Send Prof. Thomas an email if you'd like to discuss possible opportunities.
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# Faculty
+## Thomas D. LaToza
+![Thomas D. LaToza's headshot](../assets/img/team/Thomas.jpg "Thomas LaToza")
+### Assistant Professor and lab director
+# Students
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+## David Samudio
+![David Samudio's headshot](../assets/img/team/David.jpg "David Samudio")
+### PhD Student
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## Maryam Arab
+![Maryam Arab's headshot](../assets/img/team/Maryam.jpg "Maryam Arab")
+### PhD Student
+
+## Sahar Mehrpour
+![Sahar Mehrpour's headshot](../assets/img/team/Sahar.jpg "Sahar Mehrpour")
+### PhD Student
+
+## Emad Aghayi
+![Emad Aghayi's headshot](../assets/img/team/Emad.jpg "Emad Aghayi")
+### PhD Student
+
+## Abdulaziz Alaboudi
+![Abdulaziz Alaboudi's headshot](../assets/img/team/Abdulaziz.jpg "Abdulaziz Alaboudi")
+### PhD Student
+
+## Yang Kyu Yoo
+![Yang Kyu Yoo's headshot](../assets/img/team/Yang.png "Yang Kyu Yoo")
+### PhD Student
 
 
-[jekyll-organization]: https://github.com/jekyll
+# Alumni
