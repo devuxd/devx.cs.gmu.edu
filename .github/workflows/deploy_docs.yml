@@ -7,8 +7,8 @@ name: custom GH-pages deploy
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    paths-ignore:
+    - 'docs/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -46,8 +46,8 @@ jobs:
     - name: Pushing changes
       run: |
           git config --global user.email "luminaxster@gmail.com"
-          git config --global user.name "David bot"
-          git add -A
+          git config --global user.name "David's Bot"
+          git add ./docs
           git commit -am "Automated deploy"
           git push
 
