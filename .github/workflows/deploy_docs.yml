@@ -24,10 +24,25 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6
-    - name: installing Jekyll
+    - name: Installing Jekyll
       run: gem install jekyll
-    - name: gem env
+    - name: Echoing gem env
       run: gem env
-    - name: bundle install
+    - name: Bundle install
       working-directory: ./docs_src
       run: bundle install
+    - name: bundle exec jekyll clean
+      working-directory: ./docs_src
+      run: bundle exec jekyll clean
+    - name: bundle exec jekyll build
+      working-directory: ./docs_src
+      run: bundle exec jekyll build
+    - name: rm -rf ../docs
+      working-directory: ./docs_src
+      run: rm -rf ../docs
+    - name: mv _site/ ../docs
+      working-directory: ./docs_src
+      run: mv _site/ ../docs
+
+
+
