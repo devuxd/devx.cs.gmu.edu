@@ -36,5 +36,7 @@ jobs:
         
     - name: Checking Ruby version
       run: ruby -v
-    - name: ls
-      run: ls
+    - name: moving to docs_src
+      run: cd doc_src
+    - name: installing Jekyll
+      run: gem install --user-install bundler jekyll
