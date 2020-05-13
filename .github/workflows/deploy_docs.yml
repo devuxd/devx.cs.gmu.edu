@@ -43,6 +43,11 @@ jobs:
     - name: mv _site/ ../docs
       working-directory: ./docs_src
       run: mv _site/ ../docs
+    - name: Pushing changes
+      run: |
+          git add -A
+          git commit -am "Automated deploy"
+          git push
 
 
 
