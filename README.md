@@ -1,12 +1,14 @@
 # Using Jekyll to generate DevX GH-pages
 Currently live at [https://luminaxster.github.io/devx.cs.gmu.edu/](https://luminaxster.github.io/devx.cs.gmu.edu/).
 
-To overcome GH-pages limitations on the packages that can be used with [Jekyll](https://pages.github.com/versions/), this project uses its own Jekyll without limiting the packages you can use in your website. Now you can use gems such as `jekyll-scholar` or `jekyll-youtube`. The project will automatically generate the website each time changes are pushed to the the `docs_src` folder in the master `branch`. You can inspect the current build at the [Actions tab](../../actions/).
+To overcome GH-pages limitations on the packages that can be used with [Jekyll](https://pages.github.com/versions/), this project uses its own Jekyll without limiting the packages you can use in your website. Now you can use gems such as `jekyll-scholar` or `jekyll-youtube`.
 
 ## How to use this repo
 The are two folders in this repo:
-- `docs_src`: the soruce content used to generate the site.
-- `docs`: the automatically generated site, this is used by GH-pages to publish the site.
+- `docs_src`: the source content used to generate the site. Editing this folder will redeploy the website, it will take some minutes to be reflected, please be patient. The project will automatically generate the website each time changes are pushed to the the `docs_src` folder in the master `branch`. You can inspect the current build process at the [Actions tab](../../actions/).
+
+- `docs`: the automatically generated site, this is used by GH-pages to publish the site. Do not edit this folder.
+ You can inspect the current deployment at the [Environment tab](../../deployments/).
 
 # Working locally
 Try changes in your machine before pushing changes to "production".
