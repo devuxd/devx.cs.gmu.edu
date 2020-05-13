@@ -17,14 +17,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
+logo: /assets/icon/favicom-32x32.png
 title: DevX
 email: tlatoza@gmu.edu
 description: >- # this means to ignore newlines until "baseurl:"
   We study how humans interact with code and design new ways to build software. I work at the intersection
-  of software engineering and human-computer interaction.git
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://luminaxster.github.io/devx.cs.gmu.edu/" # the base hostname & protocol for your site, e.g. http://example.com
+  of software engineering and human-computer interaction.
+baseurl: "/devx.cs.gmu.edu" # the subpath of your site, e.g. /blog
+url: "https://luminaxster.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ThomasLaToza
 github_username:  devuxd
 
@@ -66,6 +66,7 @@ plugins:
   - jekyll-youtube
   - jekyll-scholar
 
+github: [metadata]
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
