@@ -1,4 +1,5 @@
-#Jekyll to generate GH-pages
+# Using Jekyll to generate DevX GH-pages
+Currently live at [https://luminaxster.github.io/devx.cs.gmu.edu/](https://luminaxster.github.io/devx.cs.gmu.edu/).
 
 ## Installation
 Installing GitHub pages locally, for  *MacOS*,
