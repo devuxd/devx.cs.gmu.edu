@@ -1,3 +1,41 @@
+#Jekyll to generate GH-pages
+
+## Installation
+Installing GitHub pages locally, for  *MacOS*,
+ at a terminal, assuming you are located in `docs_src`: 
+```ShellSession
+xcode-select --install
+ruby —version
+#Should be >2.5
+gem install --user-install bundler jekyll
+echo 'export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"' >> ~/.bash_profile
+#Relaunch console
+gem env
+sudo gem install bundler
+bundle install
+```
+More details [here](https://jekyllrb.com/docs/installation/macos/).
+
+## Run locally
+At a terminal, assuming you are located in `docs_src`
+```ShellSession
+bundle exec jekyll serve
+```
+
+## Deploy changes to the website
+Modify the files in `docs_src` to generate the webpage in `docs`,
+ at a terminal, assuming you are located in `docs_src`:
+```ShellSession
+bundle exec jekyll clean
+bundle exec jekyll build
+rm -rf ../docs
+mv _site/ ../docs
+git status
+git add -A
+git c -m "new website release"
+git push
+```
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/luminaxster/devx.cs.gmu.edu/edit/master/README.md) to maintain and preview the content for your website in Markdown files.

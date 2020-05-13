@@ -56,6 +56,8 @@ scholar:
 # Build settings
 theme: minima
 header_pages:
+  - projects.markdown
+  - publications.markdown
   - people.markdown
   - about.markdown
 # Jekyll 3 now only supports Kramdown for Markdown
