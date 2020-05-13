@@ -45,6 +45,8 @@ jobs:
       run: mv _site/ ../docs
     - name: Pushing changes
       run: |
+          git config --global user.email "luminaxster@gmail.com"
+          git config --global user.name "David bot"
           git add -A
           git commit -am "Automated deploy"
           git push
