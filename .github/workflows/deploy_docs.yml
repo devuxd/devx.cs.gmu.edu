@@ -38,5 +38,7 @@ jobs:
       run: ruby -v
     - name: moving to docs_src
       run: cd docs_src
+    - name: Adding  Ruby to PATH
+      run: export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
     - name: installing Jekyll
       run: gem install --user-install bundler jekyll
