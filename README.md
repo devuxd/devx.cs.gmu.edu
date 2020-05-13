@@ -5,8 +5,8 @@ To overcome GH-pages limitations on the packages that can be used with [Jekyll](
 
 ## How to use this repo
 The are two folders in this repo:
-`docs_src`: the soruce content used to generate the site.
-`docs`: the automatically generated site, this is used by GH-pages to publish the site.
+- `docs_src`: the soruce content used to generate the site.
+- `docs`: the automatically generated site, this is used by GH-pages to publish the site.
 
 # Working locally
 Try changes in your machine before pushing changes to "production".
