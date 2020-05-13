@@ -36,3 +36,5 @@ jobs:
         
     - name: Checking Ruby version
       run: ruby -v
+    - name: ls
+      run: ls
