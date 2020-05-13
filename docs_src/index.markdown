@@ -1,11 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+title: Welcome to DevX!
+permalink: /
 ---
 
-# Welcome to DevX!
 We study how humans interact with code and design new ways to build software. I work at the intersection
 of software engineering and human-computer interaction.
   
