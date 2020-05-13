@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: custom GH-pages deploy
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -24,27 +24,11 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        
-    - name: Checking Ruby version
-      run: ruby -v
     - name: moving to docs_src
       run: cd docs_src
-    - name: Adding  Ruby to PATH
-      run: export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH" & echo $PATH
     - name: installing Jekyll
-      run: gem install --user-install bundler jekyll
+      run: gem install bundler jekyll
     - name: gem env
       run: gem env
-    - name: gem install bundler
-      run: gem install bundler
     - name: bundle install
       run: bundle install
