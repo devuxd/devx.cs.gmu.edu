@@ -4,7 +4,6 @@ title: People
 permalink: /people/
 ---
  
-# People
 Join Us! We are always recruiting motivated students at all levels — undergraduate, masters, and PhD students — to support this work. Send Prof. Thomas an email if you'd like to discuss possible opportunities.
 
 # Faculty
