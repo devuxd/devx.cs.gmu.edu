@@ -24,11 +24,10 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6
-    - name: moving to docs_src
-      run: cd docs_src
     - name: installing Jekyll
       run: gem install jekyll
     - name: gem env
       run: gem env
     - name: bundle install
+      working-directory: ./docs_src
       run: bundle install
