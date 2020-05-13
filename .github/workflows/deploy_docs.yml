@@ -21,7 +21,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: echo Hello, world!
@@ -32,10 +34,5 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         
-    - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
-    - uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.6
-    - run: ruby -v
+    - name: Checking Ruby version
+      run: ruby -v
