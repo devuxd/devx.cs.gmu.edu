@@ -54,11 +54,11 @@ scholar:
   query: "@*"
 
 # Build settings
-theme: bulma-clean-theme
+theme: minima
 header_pages:
   - projects.markdown
   - publications.markdown
-  - people.markdown
+  - people.html
   - about.markdown
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
@@ -72,6 +72,10 @@ plugins:
   - jekyll-scholar
 
 github: [metadata]
+
+collections:
+  members:
+    output: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
