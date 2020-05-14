@@ -54,7 +54,7 @@ scholar:
   query: "@*"
 
 # Build settings
-theme: minima
+theme: bulma-clean-theme
 header_pages:
   - projects.markdown
   - publications.markdown
