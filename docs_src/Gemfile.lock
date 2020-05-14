@@ -8,6 +8,14 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     bibtex-ruby (4.4.7)
       latex-decode (~> 0.0)
+    bulma-clean-theme (0.7.2)
+      jekyll (~> 3.8)
+      jekyll-feed (~> 0.11)
+      jekyll-paginate (~> 1.1)
+      jekyll-seo-tag (~> 2.5)
+      jekyll-sitemap (~> 1.2)
+      kramdown (~> 1.17)
+      rouge (~> 3.3)
     citeproc (1.0.10)
       namae (~> 1.0)
     citeproc-ruby (1.1.12)
@@ -260,11 +268,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bulma-clean-theme
   github-pages (~> 204)
   jekyll-feed
   jekyll-scholar
   jekyll-youtube
-  minima
   tzinfo
   tzinfo-data
   wdm (~> 0.1.1)
