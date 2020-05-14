@@ -9,6 +9,8 @@ The are two folders in this repo:
 
 - `docs`: the automatically generated site, this is used by GH-pages to publish the site. Do not edit this folder.
  You can inspect the current deployment at the [Environment tab](../../deployments/).
+ 
+There is a [GitHub action](https://github.com/luminaxster/devx.cs.gmu.edu/blob/master/.github/workflows/deploy_docs.yml) in charge of automatically listening to pushes to `master/docs_src` and rebuilds the page present in `docs`. GitHub will redeploy the website after `docs` changes like a normal static page.
 
 # Working locally
 Try changes in your machine before pushing changes to "production".
