@@ -1,0 +1,58 @@
+# This is a basic workflow to help you get started with Actions
+
+name: custom GH-pages deploy
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+    - 'docs/**'
+    - '.gitignore'
+    - 'LICENSE'
+    - 'README.md' 
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - name: Installing Jekyll
+      run: gem install jekyll
+    - name: Echoing gem env
+      run: gem env
+    - name: Bundle install
+      working-directory: ./docs_src
+      run: bundle install
+    - name: bundle exec jekyll clean
+      working-directory: ./docs_src
+      run: bundle exec jekyll clean
+    - name: bundle exec jekyll build
+      working-directory: ./docs_src
+      run: bundle exec jekyll build
+    - name: rm -rf ../docs
+      working-directory: ./docs_src
+      run: rm -rf ../docs
+    - name: mv _site/ ../docs
+      working-directory: ./docs_src
+      run: mv _site/ ../docs
+    - name: Pushing changes
+      run: |
+          git config --global user.email "luminaxster@gmail.com"
+          git config --global user.name "David's Bot"
+          git add ./docs
+          git commit -am "Automated deploy"
+          git push
+
+
+

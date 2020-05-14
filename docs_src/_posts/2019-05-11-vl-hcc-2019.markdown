@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Honorable mention at VL/HCC 2019"
+date:   2019-05-11 19:19:11 -0400
+categories: jekyll update
+---
+Our paper on Mixed Human-AI Authoring of Code Patterns received a Best Paper Honorable Mention Award at VL/HCC 2019.

@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Paper to appear at ESE 2020"
+date:   2020-05-10 19:19:11 -0400
+categories: jekyll update
+---
+Our paper on Explicit Programming Strategies will appear in Empirical Software Engineering.
