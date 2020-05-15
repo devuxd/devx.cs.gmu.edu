@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+
+<body>
+
+{% include header.html %}
+
+
+<div id="home" class="container">
+
+
+
+    <div class="summary row">
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center footer-top">
+            <h1>We are DevX!</h1>
+            <h2>We study how humans interact with code and design new ways to build software. I work at the intersection
+                of software engineering and human-computer interaction.</h2>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+            <img src="{{ site.baseurl }}/assets/img/gallery/oh-george-summer19.jpg" class="img-fluid" alt="Group Photo">
+        </div>
+    </div>
+
+    <div>
+        <article class="post-content-main">
+
+            <h1>News</h1>
+
+            <div class="post-list">
+                {% for post in site.posts limit:3 %}
+                <div class="post">
+                    <div class="post-title">
+                        {{ post.date | date: "%-d %b %Y" }} -- {{ post.title }}
+                    </div>
+                    <div class="post-content">
+                        {{ post.content | truncatewords: 150 }}
+                        <br>
+                        <a class="post-more-link" href="{{ site.baseurl }}{{ post.url }}">More...</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="all-news-link"><a href="news">See All News</a></div>
+        </article>
+    </div>
+
+
+
+    <h1>
+        Research Highlights
+    </h1>
+    <p>Our current projects:</p>
+
+    <h3> Microtask Programing</h3>
+    <div class="col-md-8">
+
+        {% youtube "https://www.youtube.com/watch?v=mIn2EOqsDYw" %}
+    </div>
+
+    <p>Microtasks are short, self-contained unit of works, enabling large tasks to be completed quickly
+        through solid parallelism.
+        We designed and developed Crowd Microservices to explore the effects
+        of applying microtasking to software development.
+    </p>
+
+    <h3>Programming strategies</h3>
+    <p>
+        Developers solve problems by applying programming strategies, describing sequences of steps to debug,
+        reuse, design, test, and understand code. Experienced developers work better by using more effective
+        strategies. We've been exploring ways to capture and make explicit the strategies developers use, helping
+        uncover how developers work differently and to create new ways to help developers benefit from the
+        hard-earned wisdom of experienced developers.
+    </p>
+
+    <h3>Debugging Hypotheses</h3>
+    <p>A sample .bib reference:</p>
+    {% bibliography -q @*10.1109/CHASE.2019.00035 %}
+
+
+
+
+</div>
+
+{% include footer.html %}
+
+</body>
+</html>
