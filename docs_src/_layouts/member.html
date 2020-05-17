@@ -31,61 +31,70 @@ title: Member
         </div>
         {% endif %}
 
-        <div class="mem-info">
+        <div class="mem-section mem-info">
             <h4>{{page.first_name}} {{page.last_name}}</h4>
-            <span>{{page.title}}</span><br>
+            <span>{{ page.title }}</span><br>
             {% if page.website != null %}
-            Website: <a href="{{ page.website }}">some-icon</a><br>
+            <a href="{{ page.website }}">personal Website</a><br>
             {% endif %}
             {% if page.twitter != null %}
-            Twitter: <a href="{{ page.twitter }}">some-icon</a><br>
+            <a href="{{ page.twitter }}">Twitter</a><br>
             {% endif %}
             {% if page.github != null %}
-            GitHub: <a href="{{ page.github }}">some-icon</a><br>
+            <a href="{{ page.github }}">GitHub</a><br>
             {% endif %}
-            <a href="{{site.baseurl}}{{page.url}}">URL</a>
         </div>
 
 
 
         {% if page.publications != null %}
+            <div class="mem-section mem-publications">
             <h2>Publications</h2>
             {% for pub in page.publications %}
                 {% reference pub %}
             {% endfor %}
+            </div>
         {% endif %}
 
 
 
         {% if hasCurrentProjects %}
-            <h2>Current Projects</h2>
+            <div class="mem-section mem-projects">
+            <h2>Projects</h2>
             {% for proj in site.projects %}
                 {% for collab in proj.current_collaborators %}
                     {% if page.key == collab %}
-                        <h3>{{proj.title}}</h3>
-                        {% if proj.short_desc != null %}
-                            <p>{{proj.short_desc}}</p>
-                        {% endif %}
-                        <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                        <div class="projectHighlight">
+                            <h3 class="projectTitle">{{proj.title}}</h3>
+                            {% if proj.short_desc != null %}
+                                <p>{{proj.short_desc}}</p>
+                            {% endif %}
+                            <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                        </div>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
+            </div>
         {% endif %}
 
 
         {% if hasPrevProjects %}
         <h2>Previous Projects</h2>
+            <div class="mem-section mem-projects">
             {% for proj in site.projects %}
                 {% for collab in proj.prev_collaborators %}
                     {% if page.key == collab %}
-                        <h3>{{proj.title}}</h3>
-                        {% if proj.short_desc != null %}
-                            <p>{{proj.short_desc}}</p>
-                        {% endif %}
-                        <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                        <div class="projectHighlight">
+                            <h3 class="projectTitle">{{proj.title}}</h3>
+                            {% if proj.short_desc != null %}
+                                <p>{{proj.short_desc}}</p>
+                            {% endif %}
+                            <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                        </div>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
+            </div>
         {% endif %}
 
 

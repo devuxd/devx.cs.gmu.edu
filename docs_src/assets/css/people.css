@@ -29,3 +29,7 @@
     font-weight: 400;
     color: #aaaaaa;
 }
+
+.mem-section, .proj-section {
+    padding-top: 30px;
+}
