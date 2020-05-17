@@ -1,5 +1,8 @@
 ---
+layout: member
+key: Safwat
 role: master_student
+title: Master Student
 first_name: Safwat
 last_name: Khan
 # start_year:
@@ -8,5 +11,5 @@ last_name: Khan
 # website: 
 # twitter: 
 # github: 
-# project: 
+# publications
 ---
