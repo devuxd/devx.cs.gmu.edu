@@ -6,5 +6,4 @@ title: Debugging Hypotheses
 # short_desc: 
 collaborators: [Thomas, Abdulaziz]
 active: true
-url: /project/DebuggingHypotheses
 ---
