@@ -8,7 +8,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
 
-                {% assign navButtons = "home|projects|publications|people|gallery|about" | split: "|" %}
+                {% for msg in site.messages %}
+                    {% if msg.for == 'header' %}
+                        {% assign navButtons = msg.items %}
+                    {% endif %}
+                {% endfor %}
+
                 {% for nav in navButtons %}
                     {% assign navURL = nav %}
                     {% assign pageURL = page.url %}
