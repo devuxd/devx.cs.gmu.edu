@@ -46,6 +46,14 @@ title: Member
         </div>
 
 
+        {% if page.content != null %}
+            <div class="mem-bio">
+                <h2>Bio</h2>
+                {{ page.content }}
+            </div>
+        {% endif %}
+
+
 
         {% if page.publications != null %}
             <div class="mem-section mem-publications">
