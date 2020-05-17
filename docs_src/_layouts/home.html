@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-{% include head.html %}
-
-
-<body>
-
-{% include header.html %}
 
 {% for msg in site.messages %}
     {% if msg.for == 'home' %}
@@ -92,8 +87,3 @@
 
 
 </div>
-
-{% include footer.html %}
-
-</body>
-</html>
