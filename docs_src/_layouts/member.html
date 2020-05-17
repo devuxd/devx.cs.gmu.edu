@@ -1,0 +1,95 @@
+---
+layout: default
+title: Member
+---
+
+
+{% for proj in site.projects %}
+    {% for collab in proj.current_collaborators %}
+        {% if page.key == collab %}
+            {% assign hasCurrentProjects = true %}
+        {% endif %}
+    {% endfor %}
+    {% for collab in proj.prev_collaborators %}
+        {% if page.key == collab %}
+            {% assign hasPrecProjects = true %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+
+
+
+<div class="container">
+    <article>
+
+
+        {% if page.image != null %}
+        <div class="mem-img">
+            <img alt="{{ page.first_name }} {{ page.last_name }}" class="img-fluid"
+                 title="{{ page.first_name }} {{ page.last_name }}" src="{{ site.baseurl }}{{ page.image }}">
+        </div>
+        {% endif %}
+
+        <div class="mem-info">
+            <h4>{{page.first_name}} {{page.last_name}}</h4>
+            <span>{{page.title}}</span><br>
+            {% if page.website != null %}
+            Website: <a href="{{ page.website }}">some-icon</a><br>
+            {% endif %}
+            {% if page.twitter != null %}
+            Twitter: <a href="{{ page.twitter }}">some-icon</a><br>
+            {% endif %}
+            {% if page.github != null %}
+            GitHub: <a href="{{ page.github }}">some-icon</a><br>
+            {% endif %}
+            <a href="{{site.baseurl}}{{page.url}}">URL</a>
+        </div>
+
+
+
+        {% if page.publications != null %}
+            <h2>Publications</h2>
+            {% for pub in page.publications %}
+                {% reference pub %}
+            {% endfor %}
+        {% endif %}
+
+
+
+        {% if hasCurrentProjects %}
+            <h2>Current Projects</h2>
+            {% for proj in site.projects %}
+                {% for collab in proj.current_collaborators %}
+                    {% if page.key == collab %}
+                        <h3>{{proj.title}}</h3>
+                        {% if proj.short_desc != null %}
+                            <p>{{proj.short_desc}}</p>
+                        {% endif %}
+                        <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+
+        {% if hasPrevProjects %}
+        <h2>Previous Projects</h2>
+            {% for proj in site.projects %}
+                {% for collab in proj.prev_collaborators %}
+                    {% if page.key == collab %}
+                        <h3>{{proj.title}}</h3>
+                        {% if proj.short_desc != null %}
+                            <p>{{proj.short_desc}}</p>
+                        {% endif %}
+                        <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+
+
+
+    </article>
+</div>

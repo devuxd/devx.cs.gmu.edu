@@ -42,16 +42,17 @@ layout: default
 
                     <div class="mem-info">
                         <h4>{{person.first_name}} {{person.last_name}}</h4>
-                        <span>Assistant Professor and lab director</span><br>
+                        <span>{{ person.title }}</span><br>
                         {% if person.website != null %}
-                        Website: <a href="{{ person.website }}">some-icon</a><br>
+                        <a href="{{ person.website }}">Personal Website</a><br>
                         {% endif %}
                         {% if person.twitter != null %}
-                        Twitter: <a href="{{ person.twitter }}">some-icon</a><br>
+                        <a href="{{ person.twitter }}">Twitter</a><br>
                         {% endif %}
                         {% if person.github != null %}
-                        GitHub: <a href="{{ person.github }}">some-icon</a><br>
+                        <a href="{{ person.github }}">GitHub</a><br>
                         {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}">Lab Profile</a>
                     </div>
                 </div>
             </div>
@@ -76,16 +77,17 @@ layout: default
 
                     <div class="mem-info">
                         <h4>{{person.first_name}} {{person.last_name}}</h4>
-                        <span>PhD Student</span><br>
+                        <span>{{ person.title }}</span><br>
                         {% if person.website != null %}
-                        Website: <a href="{{ person.website }}">some-icon</a><br>
+                        <a href="{{ person.website }}">Personal Website</a><br>
                         {% endif %}
                         {% if person.twitter != null %}
-                        Twitter: <a href="{{ person.twitter }}">some-icon</a><br>
+                        <a href="{{ person.twitter }}">Twitter</a><br>
                         {% endif %}
                         {% if person.github != null %}
-                        GitHub: <a href="{{ person.github }}">some-icon</a><br>
+                        <a href="{{ person.github }}">GitHub</a><br>
                         {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}">Lab Profile</a>
                     </div>
                 </div>
             </div>
@@ -112,16 +114,17 @@ layout: default
 
                     <div class="mem-info">
                         <h4>{{person.first_name}} {{person.last_name}}</h4>
-                        <span>Master Student</span><br>
+                        <span>{{ person.title }}</span><br>
                         {% if person.website != null %}
-                        Website: <a href="{{ person.website }}">some-icon</a><br>
+                        <a href="{{ person.website }}">Personal Website</a><br>
                         {% endif %}
                         {% if person.twitter != null %}
-                        Twitter: <a href="{{ person.twitter }}">some-icon</a><br>
+                        <a href="{{ person.twitter }}">Twitter</a><br>
                         {% endif %}
                         {% if person.github != null %}
-                        GitHub: <a href="{{ person.github }}">some-icon</a><br>
+                        <a href="{{ person.github }}">GitHub</a><br>
                         {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}">Lab Profile</a>
                     </div>
                 </div>
             </div>
@@ -148,15 +151,15 @@ layout: default
 
                     <div class="mem-info">
                         <h4>{{person.first_name}} {{person.last_name}}</h4>
-                        <span>REU Student  {{person.start_year}}</span><br>
+                        <span>{{ person.title }}</span><br>
                         {% if person.website != null %}
-                        Website: <a href="{{ person.website }}">some-icon</a><br>
+                        <a href="{{ person.website }}">Personal Website</a><br>
                         {% endif %}
                         {% if person.twitter != null %}
-                        Twitter: <a href="{{ person.twitter }}">some-icon</a><br>
+                        <a href="{{ person.twitter }}">Twitter</a><br>
                         {% endif %}
                         {% if person.github != null %}
-                        GitHub: <a href="{{ person.github }}">some-icon</a><br>
+                        <a href="{{ person.github }}">GitHub</a><br>
                         {% endif %}
                     </div>
                 </div>
