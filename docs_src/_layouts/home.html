@@ -9,7 +9,7 @@
 {% include header.html %}
 
 {% for msg in site.messages %}
-    {% if msg.forPage == 'home' %}
+    {% if msg.for == 'home' %}
         {% assign welcomeMsg = msg.welcomeMessage %}
         {% assign groupPhoto = msg.groupPhoto %}
     {% endif %}
