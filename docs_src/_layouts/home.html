@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-{% for msg in site.messages %}
+{% for msg in site.pagedata %}
     {% if msg.for == 'home' %}
         {% assign welcomeMsg = msg.welcomeMessage %}
         {% assign groupPhoto = msg.groupPhoto %}

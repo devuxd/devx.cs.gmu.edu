@@ -79,7 +79,7 @@ collections:
   members:
     output: true
     permalink: /:collection/:name
-  messages:
+  pagedata:
     output: true
   projects:
     output: true

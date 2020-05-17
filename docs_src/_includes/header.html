@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
 
-                {% for msg in site.messages %}
+                {% for msg in site.pagedata %}
                     {% if msg.for == 'header' %}
                         {% assign navButtons = msg.items %}
                     {% endif %}
