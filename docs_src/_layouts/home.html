@@ -55,35 +55,38 @@
 
 
 
-    <h1>
-        Research Highlights
-    </h1>
-    <p>Our current projects:</p>
+    <div>
+        <article class="post-content-main">
+            <h1>
+                Research Highlights
+            </h1>
 
-    <h3> Microtask Programing</h3>
-    <div class="col-md-8">
+            <div>
+                {% for project in site.projects %}
+                {% if project.active %}
+                <div class="row projectHighlight">
+                    <div class="col-md-6">
+                        {% if project.video != null %}
+                        {% youtube project.video %}
+                        {% elsif project.photo != null %}
+                        <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="projectTitle">{{project.title}}</h3>
+                        {% if project.short_desc != null %}
+                        <p>{{project.short_desc}}</p>
+                        {% endif %}
 
-        {% youtube "https://www.youtube.com/watch?v=mIn2EOqsDYw" %}
+                        <a class="post-more-link" href="{{ site.baseurl }}{{ project.url }}">More...</a>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="all-news-link"><a href="projects">See All Projects</a></div>
+        </article>
     </div>
-
-    <p>Microtasks are short, self-contained unit of works, enabling large tasks to be completed quickly
-        through solid parallelism.
-        We designed and developed Crowd Microservices to explore the effects
-        of applying microtasking to software development.
-    </p>
-
-    <h3>Programming strategies</h3>
-    <p>
-        Developers solve problems by applying programming strategies, describing sequences of steps to debug,
-        reuse, design, test, and understand code. Experienced developers work better by using more effective
-        strategies. We've been exploring ways to capture and make explicit the strategies developers use, helping
-        uncover how developers work differently and to create new ways to help developers benefit from the
-        hard-earned wisdom of experienced developers.
-    </p>
-
-    <h3>Debugging Hypotheses</h3>
-    <p>A sample .bib reference:</p>
-    {% bibliography -q @*10.1109/CHASE.2019.00035 %}
 
 
 
