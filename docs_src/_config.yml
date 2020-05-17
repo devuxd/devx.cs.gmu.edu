@@ -54,12 +54,13 @@ scholar:
   query: "@*"
 
 # Build settings
-#theme: minima
-#header_pages:
-#  - projects.markdown
-#  - publications.markdown
-#  - people.html
-#  - about.markdown
+theme: minima
+header_pages:
+  - projects.markdown
+  - publications.markdown
+  - people.markdown
+  - gallery.html
+  - about.markdown
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks
