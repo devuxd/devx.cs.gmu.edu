@@ -8,6 +8,13 @@
 
 {% include header.html %}
 
+{% for msg in site.messages %}
+    {% if msg.forPage == 'home' %}
+        {% assign welcomeMsg = msg.welcomeMessage %}
+        {% assign groupPhoto = msg.groupPhoto %}
+    {% endif %}
+{% endfor %}
+
 
 <div id="home" class="container">
 
@@ -16,11 +23,10 @@
     <div class="summary row">
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center footer-top">
             <h1>We are DevX!</h1>
-            <h2>We study how humans interact with code and design new ways to build software. I work at the intersection
-                of software engineering and human-computer interaction.</h2>
+            <h2>{{ welcomeMsg}}</h2>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="{{ site.baseurl }}/assets/img/gallery/oh-george-summer19.jpg" class="img-fluid" alt="Group Photo">
+            <img src="{{ site.baseurl }}{{groupPhoto}}" class="img-fluid" alt="Group Photo">
         </div>
     </div>
 
