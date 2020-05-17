@@ -1,39 +1,30 @@
 ---
 layout: default
+title: Gallery
+permalink: /gallery/
 ---
 
+{% for msg in site.messages %}
+    {% if msg.for == 'gallery' %}
+        {% assign images = msg.images %}
+    {% endif %}
+{% endfor %}
 
 <div class="container">
 
     <h1> Gallery</h1>
 
-
-
     <div class="row no-gutters">
 
-        <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-                <a href="{{site.baseurl}}/assets/img/gallery/oh-george-summer19.jpg" class="venobox vbox-item" data-gall="gallery-item">
-                    <img src="{{site.baseurl}}/assets/img/gallery/oh-george-summer19.jpg" alt="" class="img-fluid">
-                </a>
-            </div>
-        </div>
+        {% for img in images %}
 
         <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-                <a href="{{site.baseurl}}/assets/img/gallery/bowling-summer19.jpg" class="venobox vbox-item" data-gall="gallery-item">
-                    <img src="{{site.baseurl}}/assets/img/gallery/bowling-summer19.jpg" alt="" class="img-fluid">
-                </a>
+                <img src="{{site.baseurl}}/{{img}}" alt="" class="img-fluid">
             </div>
         </div>
 
-        <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-                <a href="{{site.baseurl}}/assets/img/gallery/patriothack.jpg" class="venobox vbox-item" data-gall="gallery-item">
-                    <img src="{{site.baseurl}}/assets/img/gallery/patriothack.jpg" alt="" class="img-fluid">
-                </a>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 
