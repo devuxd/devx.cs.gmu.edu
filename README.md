@@ -12,6 +12,14 @@ The are two folders in this repo:
  
 There is a [GitHub action](https://github.com/luminaxster/devx.cs.gmu.edu/blob/master/.github/workflows/deploy_docs.yml) in charge of automatically listening to pushes to `master/docs_src` and rebuilds the page present in `docs`. GitHub will redeploy the website after `docs` changes like a normal static page.
 
+### Enable GH-pages master/docs deployment
+Configure the GH pages settings of your repo:
+```
+Setting => GitHub Pages => Source => master branch /docs folder
+```
+Now, pushes to the `docs_scr` folder will publish the site.
+
+
 # Working locally
 Try changes in your machine before pushing changes to "production".
 
