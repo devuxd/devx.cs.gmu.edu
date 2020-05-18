@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+{% for project in site.projects %}
+    {% if project.active %}
+        {% assign hasActiveProject = true %}
+    {% elsif project.active == false %}
+        {% assign hasArchivedProject = true %}
+    {% endif %}
+{% endfor %}
+
+
+<div id="projects" class="container">
+
+
+    {% if hasActiveProject %}
+    <div class="active-projects">
+        <h1>Current Projects</h1>
+        <div>
+            {% for project in site.projects %}
+            {% if project.active %}
+            <div class="row projectHighlight">
+                <div class="col-md-6">
+                    {% if project.video != null %}
+                    {% youtube project.video %}
+                    {% elsif project.photo != null %}
+                    <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h3 class="projectTitle">{{project.title}}</h3>
+                    {% if project.short_desc != null %}
+                    <p>{{project.short_desc}}</p>
+                    {% endif %}
+
+                    <a class="post-more-link" href="{{ site.baseurl }}{{ project.url }}">More...</a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if hasArchivedProject %}
+    <div class="archived-project">
+        <h1>Archived Projects</h1>
+        <div>
+            {% for project in site.projects %}
+            {% if project.active == false %}
+            <div class="row projectHighlight">
+                <div class="col-md-6">
+                    {% if project.video != null %}
+                    {% youtube project.video %}
+                    {% elsif project.photo != null %}
+                    <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h3 class="projectTitle">{{project.title}}</h3>
+                    {% if project.short_desc != null %}
+                    <p>{{project.short_desc}}</p>
+                    {% endif %}
+
+                    <a class="post-more-link" href="{{ site.baseurl }}{{ project.url }}">More...</a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>

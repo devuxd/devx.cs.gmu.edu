@@ -1,5 +1,8 @@
 ---
+layout: member
+key: Emad
 role: phd_student
+title: PhD Student
 first_name: Emad
 last_name: Aghayi
 start_year: 2017
@@ -8,6 +11,6 @@ image: /assets/img/team/Emad.jpg
 website: http://mason.gmu.edu/~eaghayi/
 twitter: https://twitter.com/EmadAghayi
 github: https://github.com/eaghayi
-project: microtask_programming
+# publications: []
 ---
 Emad is working on **Microtask Programming**.

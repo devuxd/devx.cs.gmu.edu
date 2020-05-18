@@ -1,0 +1,52 @@
+---
+layout: default
+title: Project
+---
+<div class="container">
+    <article>
+        <div class="all-news-link"><a class="all-news-link" href="{{ site.baseurl }}/projects">See All Projects</a>
+            <h3 class="projectTitle">{{page.title}}</h3>
+
+            <div class="col-md-10">
+                {% if page.video != null %}
+                {% youtube page.video %}
+                {% elsif page.photo != null %}
+                <img class="img-fluid" src="{{site.baseurl}}{{page.photo}}" alt="{{page.title}}">
+                {% endif %}
+            </div>
+
+            <div class="col-md-10 proj-section">
+                {% if page.short_desc != null %}
+                <p>{{page.short_desc}}</p>
+                {% endif %}
+                {{page.content}}
+            </div>
+
+            <div class="col-md-10 proj-section">
+                <h3>Collaborators</h3>
+                {% for collab in page.current_collaborators %}
+                    <a href="{{site.baseurl}}/members/{{collab | downcase}}">{{collab}}</a><br>
+                {% endfor %}
+
+                {% if page.prev_collaborators != null %}
+                    <p>Previous Collaborators</p>
+                    {% for collab in page.prev_collaborators %}
+                        <a href="{{site.baseurl}}/members/{{collab | downcase}}">{{collab}}</a><br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="col-md-10 proj-section">
+                {% if page.publications != null %}
+                    <h3>Publications</h3>
+                    {% for pub in page.publications %}
+                        {% reference pub %}
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </article>
+</div>

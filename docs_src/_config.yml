@@ -56,10 +56,12 @@ scholar:
 # Build settings
 theme: minima
 header_pages:
+  - index.markdown
   - projects.markdown
   - publications.markdown
-  - people.html
-  - about.markdown
+  - people.markdown
+  - gallery.markdown
+
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks
@@ -76,6 +78,12 @@ github: [metadata]
 collections:
   members:
     output: true
+    permalink: /:collection/:name
+  pagedata:
+    output: true
+  projects:
+    output: true
+    permalink: /:collection/:name
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -85,7 +93,7 @@ collections:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude: ["README.md"]
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

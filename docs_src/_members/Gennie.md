@@ -1,5 +1,8 @@
 ---
+layout: member
+key: Gennie
 role: REU
+title: REU collaborator, Summer 2019
 first_name: Gennie
 last_name: Mansi
 start_year: 2019
@@ -8,5 +11,5 @@ start_year: 2019
 # website:
 # twitter:
 # github:
-project: active_documentation
+# publications: []
 ---

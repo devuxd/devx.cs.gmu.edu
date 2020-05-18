@@ -1,0 +1,122 @@
+.home img {
+    width: 100%;
+}
+.bg-none {
+    background: none;
+}
+
+#header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+#header .banner-img {
+    height: 50px;
+}
+
+#home .summary h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #0f394c;
+    text-transform: uppercase;
+}
+
+#home .summary h2 {
+    color: #1c698c;
+    margin: 10px 0 0 0;
+    font-size: 20px;
+}
+
+.projectHighlight {
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projectTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f394c;
+    margin-bottom: 15px;
+}
+
+.img-fluid {
+    min-width: 250px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*  news  */
+.post-list .post {
+    /*background-color: #f4fbfe;*/
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-list .post .post-title {
+    background-color: #f4fbfe;
+    padding: 10px;
+}
+
+.post-list .post .post-content {
+    padding: 10px;
+}
+
+.post-list .post .post-more-link {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #444;
+    position: relative;
+}
+
+/* Gallery */
+.gallery-item {
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    padding: 5px;
+}
+
+
+.article-bottom-padding {
+    padding-bottom: 16px;
+}
+
+.footer-col-wrapper,
+.social-links {
+@include relative-font-size(0.9375);
+     color: #0f394c;
+}
+
+.social-media-list {
+    list-style: none;
+    display: table;
+    margin: 0 auto;
+}
+.social-media-list li {
+    float: left;
+    margin: 5px 10px 5px;
+}
+.social-media-list  a {
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+    border: 0;
+    color: #828282;
+}
+
+.social-media-list .svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: #828282;
+    vertical-align: text-top;
+}
