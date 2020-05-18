@@ -4,26 +4,21 @@ layout: default
 
 {% for msg in site.pagedata %}
     {% if msg.for == 'gallery' %}
+        {% assign galleryTitle = msg.galleryTitle %}
         {% assign images = msg.images %}
     {% endif %}
 {% endfor %}
 
 <div class="container">
-
-    <h1> Gallery</h1>
-
+    <h1> {{galleryTitle}}</h1>
     <div class="row no-gutters">
-
         {% for img in images %}
-
-        <div class="col-lg-5">
-            <div class="gallery-item">
-                <img src="{{site.baseurl}}{{img}}" alt="" class="img-fluid">
+            <div class="col-lg-5">
+                <div class="gallery-item">
+                    <img src="{{site.baseurl}}{{img}}" alt="" class="img-fluid">
+                </div>
             </div>
-        </div>
-
         {% endfor %}
-
     </div>
 
 </div>

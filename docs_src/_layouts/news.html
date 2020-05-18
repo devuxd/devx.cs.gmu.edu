@@ -1,12 +1,17 @@
 ---
 layout: default
 ---
+{% for msg in site.pagedata %}
+    {% if msg.for == 'home' %}
+        {% assign newsTitle = msg.newsTitle %}
+    {% endif %}
+{% endfor %}
 
 <div id="news" class="container">
 
     <article class="post-content-main">
 
-        <h1>News</h1>
+        <h1>{{newsTitle}}</h1>
 
             <div class="post-list">
                 {% for post in site.posts %}

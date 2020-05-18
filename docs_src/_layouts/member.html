@@ -3,7 +3,6 @@ layout: default
 title: Member
 ---
 
-
 {% for proj in site.projects %}
     {% for collab in proj.current_collaborators %}
         {% if page.key == collab %}
@@ -17,12 +16,8 @@ title: Member
     {% endfor %}
 {% endfor %}
 
-
-
-
 <div class="container">
     <article>
-
 
         {% if page.image != null %}
         <div class="mem-img">
@@ -104,9 +99,6 @@ title: Member
             {% endfor %}
             </div>
         {% endif %}
-
-
-
 
     </article>
 </div>

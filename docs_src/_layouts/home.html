@@ -2,34 +2,31 @@
 layout: default
 ---
 
-
 {% for msg in site.pagedata %}
     {% if msg.for == 'home' %}
-        {% assign welcomeMsg = msg.welcomeMessage %}
+        {% assign salute = msg.salute %}
+        {% assign welcomeMessage = msg.welcomeMessage %}
         {% assign groupPhoto = msg.groupPhoto %}
+        {% assign newsTitle = msg.newsTitle %}
+        {% assign newsSeeMore = msg.newsSeeMore %}
+        {% assign highlightsTitle = msg.highlightsTitle %}
+        {% assign highlightsSeeMore = msg.highlightsSeeMore %}
     {% endif %}
 {% endfor %}
 
-
 <div id="home" class="container">
-
-
-
     <div class="summary row">
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center footer-top">
-            <h1>We are DevX!</h1>
-            <h2>{{ welcomeMsg}}</h2>
+            <h1>{{salute}}</h1>
+            <h2>{{welcomeMessage}}</h2>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
             <img src="{{ site.baseurl }}{{groupPhoto}}" class="img-fluid" alt="Group Photo">
         </div>
     </div>
-
-    <div>
+    <div class="article-bottom-padding">
         <article class="post-content-main">
-
-            <h1>News</h1>
-
+            <h1>{{newsTitle}}</h1>
             <div class="post-list">
                 {% for post in site.posts limit:3 %}
                 <div class="post">
@@ -44,18 +41,12 @@ layout: default
                 </div>
                 {% endfor %}
             </div>
-            <div class="all-news-link"><a href="news">See All News</a></div>
+            <div class="all-news-link"><a href="news">{{newsSeeMore}}</a></div>
         </article>
     </div>
-
-
-
-    <div>
+    <div class="article-bottom-padding">
         <article class="post-content-main">
-            <h1>
-                Research Highlights
-            </h1>
-
+            <h1>{{highlightsTitle}}</h1>
             <div>
                 {% for project in site.projects %}
                 {% if project.active %}
@@ -79,11 +70,7 @@ layout: default
                 {% endif %}
                 {% endfor %}
             </div>
-            <div class="all-news-link"><a href="projects">See All Projects</a></div>
+            <div class="all-news-link"><a href="projects">{{highlightsSeeMore}}</a></div>
         </article>
     </div>
-
-
-
-
 </div>
