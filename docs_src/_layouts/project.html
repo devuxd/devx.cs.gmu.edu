@@ -25,13 +25,13 @@ title: Project
             <div class="col-md-10 proj-section">
                 <h3>Collaborators</h3>
                 {% for collab in page.current_collaborators %}
-                    <a href="{{site.baseurl}}/members/{{collab}}">{{collab}}</a><br>
+                    <a href="{{site.baseurl}}/members/{{collab | downcase}}">{{collab}}</a><br>
                 {% endfor %}
 
                 {% if page.prev_collaborators != null %}
                     <p>Previous Collaborators</p>
                     {% for collab in page.prev_collaborators %}
-                        <a href="{{site.baseurl}}/members/{{collab.url}}">{{collab}}</a><br>
+                        <a href="{{site.baseurl}}/members/{{collab | downcase}}">{{collab}}</a><br>
                     {% endfor %}
                 {% endif %}
             </div>
