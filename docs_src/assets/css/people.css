@@ -1,0 +1,35 @@
+#people .member {
+    background-color: #f4fbfe;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#people .member .mem-img {
+    position: relative;
+    overflow: hidden;
+}
+
+#people .member .mem-info {
+    padding: 25px 15px;
+}
+
+
+#people .member .mem-info h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #0f394c;
+}
+
+#people .member .mem-info span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaaaaa;
+}
+
+.mem-section, .proj-section, .mem-bio {
+    padding-top: 30px;
+}

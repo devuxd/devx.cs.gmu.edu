@@ -1,0 +1,48 @@
+<div id="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-none">
+        <a href="{{ site.baseurl }}/"><img class="banner-img" src="{{site.baseurl}}/assets/img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                {% for msg in site.pagedata %}
+                    {% if msg.for == 'header' %}
+                        {% assign navButtons = msg.items %}
+                    {% endif %}
+                {% endfor %}
+
+                {% for nav in navButtons %}
+                    {% assign navURL = nav %}
+                    {% assign pageURL = page.url %}
+                    {% assign pageURLSplit = page.url | split: "/" %}
+                    {% if nav == "home" %}
+                    {% assign navURL = "" %}
+                    {% endif %}
+
+                    {% if pageURLSplit[1] == navURL %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ site.baseurl }}/{{ navURL }}">
+                            <span class="nav-text">{{ nav | upcase }}</span></a>
+                    </li>
+
+                    {% elsif navURL == "" and pageURL == "/" %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ site.baseurl }}/{{ navURL }}">
+                            <span class="nav-text">{{ nav | upcase }}</span></a>
+                    </li>
+
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ site.baseurl }}/{{ navURL }}">
+                            <span class="nav-text">{{ nav | upcase }}</span></a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+
+            </ul>
+        </div>
+    </nav>
+</div>
