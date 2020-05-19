@@ -18,6 +18,42 @@ Setting => GitHub Pages => Source => master branch /docs folder
 ```
 Now, pushes to the `docs_scr` folder will publish the site.
 
+# Contributing
+Open a [pull request](../../pulls), after it is approved a reviewer will merge it with the `master` branch.
+
+# Keeping your fork in sync with the main repo
+ 1. Check if you have and upstream repo already:
+ ```ShellSession
+  git remote -v
+ ```
+ It should look like this:
+```ShellSession
+origin  https://github.com/<your_github_username>/devx.cs.gmu.edu.git (fetch)
+origin  https://github.com/<your_github_username>/devx.cs.gmu.edu.git (push)
+upstream        https://github.com/devuxd/devx.cs.gmu.edu.git (fetch)
+upstream        https://github.com/devuxd/devx.cs.gmu.edu.git (push)
+```
+ 1.a. Otherwise, run this command:
+```ShellSession
+ git remote add upstream https://github.com/devuxd/devx.cs.gmu.edu.git
+```
+ And try step 1 again.
+ 
+ 2. Get the data from the main repo:
+ ```ShellSession
+ git fetch upstream
+```
+ 3. Choose the branch (`master` in this case) in your repo you want to sync with the main master branch:
+ ```ShellSession
+ git checkout master
+ ```
+ 4. Finally, to sync with the main master branch, merge its changes with your branch:
+ ```ShellSession
+ git merge upstream/master
+```
+
+
+ More details [here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork).
 
 # Working locally
 Try changes in your machine before pushing changes to "production".
@@ -44,7 +80,7 @@ At a terminal, assuming you are located in `docs_src`
 bundle exec jekyll serve
 ```
 
-## Deploy changes to the website
+## Deploy changes to your website
 Modify the files in `docs_src` to generate the webpage in `docs`,
  at a terminal, assuming you are located in `docs_src`:
 ```ShellSession
