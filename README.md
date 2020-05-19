@@ -21,7 +21,7 @@ Now, pushes to the `docs_scr` folder will publish the site.
 # Contributing
 Open a [pull request](../../pulls), after it is approved a reviewer will merge it with the `master` branch.
 
-# Keeping your fork in sync with the main repo
+## Keep your fork in sync with the main repo before creating a pull request
  1. Check if you have and upstream repo already:
  ```ShellSession
   git remote -v
