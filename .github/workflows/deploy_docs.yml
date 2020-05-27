@@ -36,7 +36,6 @@ jobs:
       working-directory: ./docs_src
       run: |
           bundle config set --local path 'vendor/bundle'
-          bundle exec jekyll new --force --skip-bundle .
           bundle install --jobs 4 --retry 3
       
     - name: Clean. previous build.
