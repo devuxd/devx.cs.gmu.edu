@@ -24,6 +24,7 @@ jobs:
         ruby-version: 2.6
     - uses: actions/cache@v2
       with:
+        working-directory: ./docs_src
         path: vendor/bundle
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
