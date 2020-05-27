@@ -5,7 +5,7 @@ To overcome GH-pages limitations on the packages that can be used with [Jekyll](
 
 ## How to use this repo
 The are two folders in this repo:
-- [`docs_src`](docs_src) (for humans): the source content used to generate the site. Editing this folder will redeploy the website, it will take some minutes to be reflected, please be patient. The project will automatically generate the website each time changes are pushed to the the `docs_src` folder in the master `branch`. You can inspect the current build process at the [Actions tab](../../actions/). Visit the `docs_scr` [folder](docs_src) for more details on how to customize the website styles, layouts and content.
+- [`docs_src`](docs_src) (for humans): the source content used to generate the site. Editing this folder will redeploy the website, it will take some minutes to be reflected, please be patient (after a week GitHub removes Jekyll's build caches). The project will automatically generate the website each time changes are pushed to the the `docs_src` folder in the master `branch`. You can inspect the current build process at the [Actions tab](../../actions/). Visit the `docs_scr` [folder](docs_src) for more details on how to customize the website styles, layouts and content.
 
 - `docs` (for machines): the automatically generated site, this is used by GH-pages to publish the site. **Do not edit this folder**.
  
@@ -88,8 +88,10 @@ git add -A
 git c -m "new website release"
 git push
 ```
+# Editing the content
+Look for `.markdown` or `.md` files in the `docs_src` folder and follow these guidelines:
 
-## Welcome to GitHub Pages
+## Using GitHub Pages
 
 You can use the [editor on GitHub](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository) to maintain and preview the content for your website in Markdown files.
 
