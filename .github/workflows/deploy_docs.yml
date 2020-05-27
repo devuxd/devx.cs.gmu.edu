@@ -26,10 +26,10 @@ jobs:
     - name: Install Jekyll.
       run: gem install jekyll
       
-    - name: Echoing gem env
+    - name: Echo gem environment configuration.
       run: gem env
       
-    - name: Install dependencies.
+    - name: Install project dependencies.
       working-directory: ./docs_src
       run: bundle install
       
