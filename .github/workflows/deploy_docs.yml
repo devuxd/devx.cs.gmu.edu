@@ -22,16 +22,24 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6
-
+    - uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
     - name: Install Jekyll.
+      working-directory: ./docs_src
       run: gem install jekyll
       
     - name: Echo gem environment configuration.
       run: gem env
       
-    - name: Install project dependencies.
+    - name: Install project dependencies (cache enabled).
       working-directory: ./docs_src
-      run: bundle install
+      run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
       
     - name: Clean. previous build.
       working-directory: ./docs_src
