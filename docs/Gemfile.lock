@@ -261,6 +261,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (~> 204)
+  jekyll (~> 3.8)
   jekyll-feed
   jekyll-scholar
   jekyll-youtube
