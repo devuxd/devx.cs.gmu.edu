@@ -1,7 +1,7 @@
 ---
 layout: member
 key: Thomas
-role: lab_director
+role: Faculty
 title: Assistant Professor and Lab Director
 first_name: Thomas
 last_name: LaToza
