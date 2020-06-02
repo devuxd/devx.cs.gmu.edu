@@ -33,13 +33,17 @@ layout: default
     <div class="row">
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
-                {% if person.image != null %}
                 <div class="mem-img">
+                    {% if person.image != null %}
                     <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
                         title="{{ person.first_name }} {{ person.last_name }}"
                         src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
                 </div>
-                {% endif %}
 
                 <div class="mem-info">
                     <h4>{{person.first_name}} {{person.last_name}}</h4>
@@ -54,7 +58,8 @@ layout: default
                         {% if person.github != null %}
                         <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
                         {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon" title="Lab Profile"></i></a>
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
                     </div>
                 </div>
             </div>
@@ -70,13 +75,17 @@ layout: default
         {% if person.role == 'phd_student' %}
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
-                {% if person.image != null %}
                 <div class="mem-img">
+                    {% if person.image != null %}
                     <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
                         title="{{ person.first_name }} {{ person.last_name }}"
                         src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
                 </div>
-                {% endif %}
                 <div class="mem-info">
                     <h4>{{person.first_name}} {{person.last_name}}</h4>
                     <span>{{ person.title }}</span><br>
@@ -90,7 +99,8 @@ layout: default
                         {% if person.github != null %}
                         <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
                         {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon" title="Lab Profile"></i></a>
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
                     </div>
                 </div>
             </div>
@@ -108,13 +118,17 @@ layout: default
         {% if person.role == 'master_student' %}
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
-                {% if person.image != null %}
                 <div class="mem-img">
+                    {% if person.image != null %}
                     <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
                         title="{{ person.first_name }} {{ person.last_name }}"
                         src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
                 </div>
-                {% endif %}
 
                 <div class="mem-info">
                     <h4>{{person.first_name}} {{person.last_name}}</h4>
@@ -129,7 +143,8 @@ layout: default
                         {% if person.github != null %}
                         <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
                         {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon" title="Lab Profile"></i></a>
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
                     </div>
                 </div>
             </div>
@@ -141,41 +156,46 @@ layout: default
 
 
     {% if REU_exists %}
-        <h1>Alumni</h1>
-        <div class="row">
-            {% for person in members %}
-            {% if person.role == 'Alumni' %}
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member">
+    <h1>Alumni</h1>
+    <div class="row">
+        {% for person in members %}
+        {% if person.role == 'Alumni' %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="mem-img">
                     {% if person.image != null %}
-                    <div class="mem-img">
-                        <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                             title="{{ person.first_name }} {{ person.last_name }}"
-                             src="{{ site.baseurl }}{{ person.image }}">
-                    </div>
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
                     {% endif %}
+                </div>
 
-                    <div class="mem-info">
-                        <h4>{{person.first_name}} {{person.last_name}}</h4>
-                        <span>{{ person.title }}</span><br>
-                        <div>
-                            {% if person.website != null %}
-                            <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                            {% endif %}
-                            {% if person.twitter != null %}
-                            <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                            {% endif %}
-                            {% if person.github != null %}
-                            <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                            {% endif %}
-                            <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon" title="Lab Profile"></i></a>
-                        </div>
+                <div class="mem-info">
+                    <h4>{{person.first_name}} {{person.last_name}}</h4>
+                    <span>{{ person.title }}</span><br>
+                    <div>
+                        {% if person.website != null %}
+                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                        {% endif %}
+                        {% if person.twitter != null %}
+                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                        {% endif %}
+                        {% if person.github != null %}
+                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                        {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
                     </div>
                 </div>
             </div>
-            {% endif %}
-            {% endfor %}
         </div>
+        {% endif %}
+        {% endfor %}
+    </div>
     {% endif %}
 
 
