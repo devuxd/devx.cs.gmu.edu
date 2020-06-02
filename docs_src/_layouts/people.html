@@ -13,8 +13,8 @@ layout: default
 {% assign undergrad_student_exists = true %}
 {% elsif member.role == 'highschool_student' %}
 {% assign highschool_student_exists = true %}
-{% elsif member.role == 'Alumni' %}
-{% assign REU_exists = true %}
+{% elsif member.role == 'alumni' %}
+{% assign alumni_exists = true %}
 {% endif %}
 {% endfor %}
 
@@ -29,7 +29,7 @@ layout: default
 
     <h1>Faculty</h1>
     {% for person in site.members %}
-    {% if person.role == 'Faculty' %}
+    {% if person.role == 'faculty' %}
     <div class="row">
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
@@ -155,11 +155,11 @@ layout: default
     {% endif %}
 
 
-    {% if REU_exists %}
+    {% if alumni_exists %}
     <h1>Alumni</h1>
     <div class="row">
         {% for person in members %}
-        {% if person.role == 'Alumni' %}
+        {% if person.role == 'alumni' %}
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
                 <div class="mem-img">

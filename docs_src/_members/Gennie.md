@@ -1,7 +1,7 @@
 ---
 layout: member
 key: Gennie
-role: Alumni
+role: alumni
 title: REU collaborator, Summer 2019
 first_name: Gennie
 last_name: Mansi

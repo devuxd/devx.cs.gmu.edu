@@ -138,7 +138,7 @@ The is the **bio** of the student written in markdown.
   
 - The layout should be `member`. 
 - `key` should be unique. It is used in project files and used in `project.html` layout to look for collaborators.  
-- `role` must be one of the values used in `people.html` page. Right now there are the following roles: `lab_director`, `phd_student`, `master_student`, `undergrad_student`, `highschool_student`, and `REU`. Currently, the `role` property is only used in `people.html` layout.  
+- `role` must be one of the values used in `people.html` page. Right now there are the following roles: `faculty`, `phd_student`, `master_student`, `undergrad_student`, `highschool_student`, and `alumni`. Currently, the `role` property is only used in `people.html` layout.  
 - `start_year` is used to sort the students in the `people.html` layout.  
 - `publications` is an array of bibitem keys in `references.bib`.  
 - The bio is written in `md` format.  
