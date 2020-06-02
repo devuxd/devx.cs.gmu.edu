@@ -1,5 +1,5 @@
 #people .member {
-    background-color: #f4fbfe;
+    background-color: #eeebeb;
     margin-bottom: 20px;
     overflow: hidden;
     border-radius: 5px;
@@ -13,8 +13,8 @@
 
 #people .member .mem-info {
     padding: 25px 15px;
+    border: 1px solid lightgray;
 }
-
 
 #people .member .mem-info h4 {
     font-weight: 700;
@@ -26,10 +26,45 @@
 #people .member .mem-info span {
     display: block;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 700;
     color: #aaaaaa;
 }
 
 .mem-section, .proj-section, .mem-bio {
     padding-top: 30px;
+}
+
+.icon {
+    font-size: 2em;
+    padding: 10px;
+}
+
+.mem-img>img {
+    float: left;
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    .icon {
+        font-size: 3em;
+        padding: 10px;
+    }
+    .mem {
+        width: 100%;
+
+    }
+    .mem-img>img {
+        float: left;
+        width: 350px;
+        height: 400px;
+        object-fit: cover;
+    }
+    #people .member .mem-info span {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        color: #aaaaaa;
+    }
 }
