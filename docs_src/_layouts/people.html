@@ -13,7 +13,7 @@ layout: default
 {% assign undergrad_student_exists = true %}
 {% elsif member.role == 'highschool_student' %}
 {% assign highschool_student_exists = true %}
-{% elsif member.role == 'Alumnus' %}
+{% elsif member.role == 'Alumni' %}
 {% assign REU_exists = true %}
 {% endif %}
 {% endfor %}
@@ -141,10 +141,10 @@ layout: default
 
 
     {% if REU_exists %}
-        <h1>Alumnus</h1>
+        <h1>Alumni</h1>
         <div class="row">
             {% for person in members %}
-            {% if person.role == 'Alumnus' %}
+            {% if person.role == 'Alumni' %}
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member">
                     {% if person.image != null %}
