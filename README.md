@@ -84,7 +84,7 @@ bundle exec jekyll serve
 Modify the files in `docs_src` to generate the webpage in `docs`,
  at a terminal, assuming you are located in `docs_src`:
 ```ShellSession
-git add -A
+git add .
 git c -m "new website release"
 git push
 ```
