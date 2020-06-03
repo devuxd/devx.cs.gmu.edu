@@ -11,5 +11,5 @@ last_name: Khan
 # website: 
 # twitter: 
 # github: 
-# publications
+# bib_id: 
 ---
