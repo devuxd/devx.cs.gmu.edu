@@ -37,13 +37,16 @@ title: Project
             </div>
 
             <div class="col-md-10 proj-section">
-                {% if page.publications != null %}
-                    <h3>Publications</h3>
-                    {% for pub in page.publications %}
-                        {% reference pub %}
-                    {% endfor %}
+                {%- capture refs -%}
+                {% bibliography_count --query @*[project={{page.title}}] %}
+                {%- endcapture -%}
+                {% assign refs = refs | plus: 0 %}
+                {% if refs > 0 %}
+                <div class="mem-section mem-publications">
+                    <h2>Publications</h2>
+                    {% bibliography --query @*[project~={{page.title}}] %}
+                </div>
                 {% endif %}
-
             </div>
 
         </div>
