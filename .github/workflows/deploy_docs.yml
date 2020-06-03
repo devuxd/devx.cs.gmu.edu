@@ -49,7 +49,7 @@ jobs:
     - name: Clean previous deployment.
       working-directory: ./docs_src
       run: rm -rf ../docs
-      
+       
     - name: Move build to deployment.
       working-directory: ./docs_src
       run: mv _site/ ../docs
