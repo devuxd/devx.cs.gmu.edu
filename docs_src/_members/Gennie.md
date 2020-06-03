@@ -11,5 +11,5 @@ start_year: 2019
 # website:
 # twitter:
 # github:
-# publications: []
+# bib_id:
 ---

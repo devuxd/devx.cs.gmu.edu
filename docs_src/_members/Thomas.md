@@ -11,6 +11,6 @@ image: /assets/img/team/Thomas.jpg
 website: https://cs.gmu.edu/~tlatoza
 twitter: https://twitter.com/ThomasLaToza
 github: https://github.com/tlatoza
-publications: [10.1109/CHASE.2019.00035]
+bib_id: Thomas D. LaToza
 ---
 Thomas is the lab director.
