@@ -1,9 +1,7 @@
-# This is a basic workflow to help you get started with Actions
-
+# Workflow to autopublish GH pages from the docs folder based on a Jekyll generated site from the docs_src folder.
 name: custom GH-pages deploy
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Controls when the action will run. Triggers the workflow on push events but only for the master branch
 on:
   push:
     branches: [ master ]
@@ -13,13 +11,10 @@ on:
     - 'LICENSE'
     - 'README.md' 
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  custom-jekyll-build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -27,32 +22,45 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6
-    - name: Installing Jekyll
-      run: gem install jekyll
-    - name: Echoing gem env
+    - uses: actions/cache@v2
+      with:
+        path: ./docs_src/vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+      
+    - name: Echo gem environment configuration.
       run: gem env
-    - name: Bundle install
+      
+    - name: Install project dependencies (cache enabled).
       working-directory: ./docs_src
-      run: bundle install
-    - name: bundle exec jekyll clean
+      run: |
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
+      
+    - name: Clean. previous build.
       working-directory: ./docs_src
       run: bundle exec jekyll clean
-    - name: bundle exec jekyll build
+      
+    - name: Generate new build.
       working-directory: ./docs_src
       run: bundle exec jekyll build
-    - name: rm -rf ../docs
+      
+    - name: Clean previous deployment.
       working-directory: ./docs_src
       run: rm -rf ../docs
-    - name: mv _site/ ../docs
+      
+    - name: Move build to deployment.
       working-directory: ./docs_src
       run: mv _site/ ../docs
-    - name: Pushing changes
+      
+    - name: Push changes to master branch.
       run: |
           git config --global user.email "luminaxster@gmail.com"
           git config --global user.name "David's Bot"
-          git add ./docs
+          git add ./docs/
           git commit -am "Automated deploy"
           git push
-
-
-
+          
+    - name: Automated build completed.
+      run: echo "Automated build completed. GH pages will publish the changes shortly."
