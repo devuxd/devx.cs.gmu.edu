@@ -1,10 +1,10 @@
 ---
 layout: member
-key: David
-role: phd_student
-title: PhD Candidate
 first_name: David
 last_name: Samudio
+key: David
+level: phd
+title: PhD Candidate
 start_year: 2011
 email: dgonza10@gmu.edu
 image: /assets/img/team/David.jpg

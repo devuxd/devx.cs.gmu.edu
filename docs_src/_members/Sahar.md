@@ -1,10 +1,10 @@
 ---
 layout: member
-key: Sahar
-role: phd_student
-title: PhD Student
 first_name: Sahar
 last_name: Mehrpour
+key: Sahar
+level: phd
+title: PhD Student
 start_year: 2017
 email: smehrpou@gmu.edu
 image: /assets/img/team/Sahar.jpg

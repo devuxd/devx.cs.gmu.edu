@@ -2,21 +2,6 @@
 layout: default
 ---
 
-<!-- check out if there is any member with the intended role and create a boolean variable for it -->
-
-{% for member in site.members %}
-{% if member.role == 'phd_student' %}
-{% assign phd_student_exists = true %}
-{% elsif member.role == 'master_student' %}
-{% assign master_student_exists = true %}
-{% elsif member.role == 'undergrad_student' %}
-{% assign undergrad_student_exists = true %}
-{% elsif member.role == 'highschool_student' %}
-{% assign highschool_student_exists = true %}
-{% elsif member.role == 'alumni' %}
-{% assign alumni_exists = true %}
-{% endif %}
-{% endfor %}
 
 
 <!-- sort members based on their seniority -->
@@ -29,7 +14,7 @@ layout: default
 
     <h1>Faculty</h1>
     {% for person in site.members %}
-    {% if person.role == 'faculty' %}
+    {% if person.level == 'faculty' %}
     <div class="row">
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
@@ -68,11 +53,12 @@ layout: default
     {% endif %}
     {% endfor %}
 
-    {% if phd_student_exists %}
-    <h1>PhD Students</h1>
+    <h1>Students</h1>
     <div class="row">
+        <!-- Phd's students -->
+
         {% for person in members %}
-        {% if person.role == 'phd_student' %}
+        {% if person.level == 'phd' %}
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
                 <div class="mem-img">
@@ -107,15 +93,87 @@ layout: default
         </div>
         {% endif %}
         {% endfor %}
-    </div>
-    {% endif %}
-
-
-    {% if master_student_exists %}
-    <h1>Master Students</h1>
-    <div class="row">
+        <!-- Master's students -->
         {% for person in members %}
-        {% if person.role == 'master_student' %}
+        {% if person.level == 'master' %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="mem-img">
+                    {% if person.image != null %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
+                </div>
+
+                <div class="mem-info">
+                    <h4>{{person.first_name}} {{person.last_name}}</h4>
+                    <span>{{ person.title }}</span><br>
+                    <div>
+                        {% if person.website != null %}
+                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                        {% endif %}
+                        {% if person.twitter != null %}
+                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                        {% endif %}
+                        {% if person.github != null %}
+                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                        {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <!-- Bachelor's students -->
+        {% for person in members %}
+        {% if person.level == 'bachelor' %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="mem-img">
+                    {% if person.image != null %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
+                </div>
+
+                <div class="mem-info">
+                    <h4>{{person.first_name}} {{person.last_name}}</h4>
+                    <span>{{ person.title }}</span><br>
+                    <div>
+                        {% if person.website != null %}
+                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                        {% endif %}
+                        {% if person.twitter != null %}
+                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                        {% endif %}
+                        {% if person.github != null %}
+                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                        {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <!-- Interns -->
+        {% for person in members %}
+        {% if person.level == 'intern' %}
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
                 <div class="mem-img">
@@ -152,14 +210,14 @@ layout: default
         {% endif %}
         {% endfor %}
     </div>
-    {% endif %}
 
 
-    {% if alumni_exists %}
     <h1>Alumni</h1>
     <div class="row">
+        <!-- Phd's students -->
+
         {% for person in members %}
-        {% if person.role == 'alumni' %}
+        {% if person.level == 'phd_alumni' %}
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
                 <div class="mem-img">
@@ -173,10 +231,125 @@ layout: default
                         src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
                     {% endif %}
                 </div>
-
                 <div class="mem-info">
                     <h4>{{person.first_name}} {{person.last_name}}</h4>
                     <span>{{ person.title }}</span><br>
+                    <span>Now: {{ person.now }}</span><br>
+                    <div>
+                        {% if person.website != null %}
+                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                        {% endif %}
+                        {% if person.twitter != null %}
+                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                        {% endif %}
+                        {% if person.github != null %}
+                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                        {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <!-- Master's students -->
+        {% for person in members %}
+        {% if person.level == 'master_alumni' %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="mem-img">
+                    {% if person.image != null %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
+                </div>
+                <div class="mem-info">
+                    <h4>{{person.first_name}} {{person.last_name}}</h4>
+                    <span>{{ person.title }}</span><br>
+                    <span>Now: {{ person.now }}</span><br>
+                    <div>
+                        {% if person.website != null %}
+                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                        {% endif %}
+                        {% if person.twitter != null %}
+                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                        {% endif %}
+                        {% if person.github != null %}
+                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                        {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <!-- Bachelor's students -->
+        {% for person in members %}
+        {% if person.level == 'bachelor_alumni' %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="mem-img">
+                    {% if person.image != null %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
+                </div>
+                <div class="mem-info">
+                    <h4>{{person.first_name}} {{person.last_name}}</h4>
+                    <span>{{ person.title }}</span><br>
+                    <span>Now: {{ person.now }}</span><br>
+                    <div>
+                        {% if person.website != null %}
+                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                        {% endif %}
+                        {% if person.twitter != null %}
+                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                        {% endif %}
+                        {% if person.github != null %}
+                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                        {% endif %}
+                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
+                                title="Lab Profile"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <!-- Interns -->
+        {% for person in members %}
+        {% if person.level == 'intern_alumni' %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="mem-img">
+                    {% if person.image != null %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}{{ person.image }}">
+                    {% else %}
+                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
+                        title="{{ person.first_name }} {{ person.last_name }}"
+                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
+                    {% endif %}
+                </div>
+                <div class="mem-info">
+                    <h4>{{person.first_name}} {{person.last_name}}</h4>
+                    <span>{{ person.title }}</span><br>
+                    <span>Now: {{ person.now }}</span><br>
                     <div>
                         {% if person.website != null %}
                         <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
@@ -196,7 +369,3 @@ layout: default
         {% endif %}
         {% endfor %}
     </div>
-    {% endif %}
-
-
-</div>
