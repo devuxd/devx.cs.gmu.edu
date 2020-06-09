@@ -24,26 +24,51 @@ title: Project
 
             <div class="col-md-10 proj-section">
                 <h3>Collaborators</h3>
-                {% for collab in page.current_collaborators %}
-                    <a href="{{site.baseurl}}/members/{{collab | downcase}}">{{collab}}</a><br>
-                {% endfor %}
+                <div class="row">
+                    {% for collab in page.current_collaborators %}
+                        {% for member in site.members %}
+                            {% if member.key == collab %}
+                            <div class="col-md-2 d-flex align-items-stretch">
+                                <div class="proj-collab-img">
+                                    <a href="{{ site.baseurl }}{{ member.url }}"><img
+                                            src="{{ site.baseurl }}{{ member.image }}"></a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
 
                 {% if page.prev_collaborators != null %}
                     <p>Previous Collaborators</p>
-                    {% for collab in page.prev_collaborators %}
-                        <a href="{{site.baseurl}}/members/{{collab | downcase}}">{{collab}}</a><br>
-                    {% endfor %}
+                    <div class="row">
+                        {% for collab in page.prev_collaborators %}
+                            {% for member in site.members %}
+                                {% if member.key == collab %}
+                                    <div class="col-md-2 d-flex align-items-stretch">
+                                        <div class="proj-collab-img">
+                                            <a href="{{ site.baseurl }}{{ member.url }}"><img
+                                                    src="{{ site.baseurl }}{{ member.image }}"></a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
                 {% endif %}
             </div>
 
             <div class="col-md-10 proj-section">
-                {% if page.publications != null %}
-                    <h3>Publications</h3>
-                    {% for pub in page.publications %}
-                        {% reference pub %}
-                    {% endfor %}
+                {%- capture refs -%}
+                {% bibliography_count --query @*[project={{page.title}}] %}
+                {%- endcapture -%}
+                {% assign refs = refs | plus: 0 %}
+                {% if refs > 0 %}
+                <div class="mem-section mem-publications">
+                    <h2>Publications</h2>
+                    {% bibliography --query @*[project~={{page.title}}] %}
+                </div>
                 {% endif %}
-
             </div>
 
         </div>
