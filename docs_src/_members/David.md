@@ -11,6 +11,6 @@ image: /assets/img/team/David.jpg
 website: https://sites.google.com/site/davidgonzalezsamudio/
 twitter: https://twitter.com/dsamudio
 github: https://github.com/luminaxster
-# publications: 
+# bib_id: 
 ---
 David is working on **SeeCode.run**.

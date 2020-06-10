@@ -11,6 +11,6 @@ image: /assets/img/team/Sahar.jpg
 website: https://mason.gmu.edu/~smehrpou
 twitter: https://twitter.com/ShrMehrpour
 github: https://github.com/SaharMehrpour
-# publications: 
+bib_id: Sahar Mehrpour
 ---
 Sahar is working on **Active Documentation**.
