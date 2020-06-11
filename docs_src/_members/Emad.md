@@ -11,6 +11,6 @@ image: /assets/img/team/Emad.jpg
 website: http://mason.gmu.edu/~eaghayi/
 twitter: https://twitter.com/EmadAghayi
 github: https://github.com/eaghayi
-# publications: []
+bib_id: Emad Aghayi
 ---
 Emad is working on **Microtask Programming**.

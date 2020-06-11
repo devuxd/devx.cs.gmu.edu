@@ -49,14 +49,15 @@ title: Member
         {% endif %}
 
 
-
-        {% if page.publications != null %}
-            <div class="mem-section mem-publications">
+        {%- capture refs -%}
+        {% bibliography_count --query @*[author~={{page.first_name}} && author~={{page.last_name}}] %}
+        {%- endcapture -%}
+        {% assign refs = refs | plus: 0 %}
+        {% if refs > 0 %}
+        <div class="mem-section mem-publications">
             <h2>Publications</h2>
-            {% for pub in page.publications %}
-                {% reference pub %}
-            {% endfor %}
-            </div>
+            {% bibliography --query @*[author~={{page.first_name}} && author~={{page.last_name}}] %}
+        </div>
         {% endif %}
 
 

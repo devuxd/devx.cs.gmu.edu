@@ -11,6 +11,6 @@ image: /assets/img/team/Abdulaziz.jpg
 website: http://mason.gmu.edu/~aalaboud
 twitter: https://twitter.com/alobodi1
 github: https://github.com/Alaboudi1
-publications: [10.1109/CHASE.2019.00035]
+bib_id: Abdulaziz Alaboudi
 ---
 Abdulaziz is working on **Debugging Hypotheses**.

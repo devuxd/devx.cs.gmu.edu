@@ -13,5 +13,5 @@ now: PhD in Computer Science at Georgia	Tech
 #  image: /assets/img/team/Gennie.jpg
 # twitter:
 # github:
-# publications: []
+# bib_id:
 ---
