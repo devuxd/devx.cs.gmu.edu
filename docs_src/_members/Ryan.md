@@ -3,7 +3,7 @@ layout: member
 first_name: Ryan H.
 last_name: Kim
 key: Ryan
-level: intern_alumni
+level: intern_alumna
 title: Research Intern, Summer 2019
 start_year: 2019
 image: /assets/img/team/Ryan.jpg

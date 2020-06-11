@@ -3,7 +3,7 @@ layout: member
 first_name: Gennie
 last_name: Mansi
 key: Gennie
-level: intern_alumni
+level: intern_alumna
 title: Research Intern, Summer 2019
 start_year: 2019
 image: /assets/img/team/Gennie.jpg

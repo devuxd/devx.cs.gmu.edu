@@ -3,7 +3,7 @@ layout: member
 first_name: Emily
 last_name: Slaughter
 key: Emily
-level: intern_alumni
+level: intern_alumna
 title: Research Intern, Summer 2019
 start_year: 2019
 image: /assets/img/team/Emily.jpg
