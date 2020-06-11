@@ -16,16 +16,12 @@
 }
 
 #people .member .mem-info h4 {
-    font-weight: 700;
     margin-bottom: 5px;
-    font-size: 18px;
     color: #0f394c;
 }
 
 #people .member .mem-info span {
     display: block;
-    font-size: 13px;
-    font-weight: 700;
 }
 
 .mem-section, .proj-section, .mem-bio {
@@ -39,23 +35,36 @@
 
 .mem-img>img {
     float: left;
-    width: 255px;
+    width: 260px;
     height: 250px;
     object-fit: cover;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 575px) {
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
     .member {
-        width: 250px;
+        min-width: 210px;
+        min-height: 510px;
     }
     .icon {
         font-size: 2.5em;
         padding: 5px;
     }
     .row>div {
-        padding: 0px;
-        margin: auto 25%;
+        width: 235px
     }
+    .mem-img>img {
+        width: 200px;
+    }
+}
+
+ .container {
+    width: 120%;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 @media only screen and (max-width: 1024px) {
