@@ -1,10 +1,10 @@
 ---
 layout: member
-key: Abdulaziz
-role: phd_student
-title: PhD Student
 first_name: Abdulaziz
 last_name: Alaboudi
+key: Abdulaziz
+level: phd
+title: PhD Student
 start_year: 2017
 email: aalaboud@gmu.edu
 image: /assets/img/team/Abdulaziz.jpg
