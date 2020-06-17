@@ -1,11 +1,11 @@
 ---
 layout: project
 title: Debugging Hypotheses
-# video: 
-# photo: 
+# youtube_video: 
+photo: /assets/img/research/debuggingHypotheses.gif 
 short_desc: Some short description about Debugging Hypotheses. 
 current_collaborators: [Abdulaziz]
-# prev_collaborator: []
+# prev_collaborators: []
 active: true
 ---
 Long description for Debugging Hypotheses.

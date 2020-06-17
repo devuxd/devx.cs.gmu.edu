@@ -22,8 +22,8 @@ layout: default
             {% if project.active %}
             <div class="row projectHighlight">
                 <div class="col-md-6">
-                    {% if project.video != null %}
-                    {% youtube project.video %}
+                    {% if project.youtube_video != null %}
+                    {% youtube project.youtube_video %}
                     {% elsif project.photo != null %}
                     <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
                     {% endif %}
@@ -51,8 +51,8 @@ layout: default
             {% if project.active == false %}
             <div class="row projectHighlight">
                 <div class="col-md-6">
-                    {% if project.video != null %}
-                    {% youtube project.video %}
+                    {% if project.youtube_video != null %}
+                    {% youtube project.youtube_video %}
                     {% elsif project.photo != null %}
                     <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
                     {% endif %}
