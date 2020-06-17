@@ -1,6 +1,7 @@
 .home img {
     width: 100%;
 }
+
 .bg-none {
     background: none;
 }
@@ -32,49 +33,88 @@
     font-size: 20px;
 }
 
-.projectHighlight {
-    padding: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.projectTitle {
-    font-size: 28px;
+#home .title {
+    font-size: 35px;
     font-weight: 700;
+    line-height: 56px;
     color: #0f394c;
+    text-transform: uppercase;
+}
+
+#home .project-highlight {
+    margin-bottom: 50px;
+}
+
+#home .project-highlight img {
+    max-height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#home .project-highlight>div {
+    height: 100%;
+}
+
+#home .project-highlight .project-post>div {
+    height: 100%;
+    background-color: #a3d0e530;
+}
+
+#home .project-title {
     margin-bottom: 15px;
+    background-color: #a3d0e5;
+    padding: 10px;
+    font-weight: 800;
+    color: #0f394c;
 }
 
-.img-fluid {
-    min-width: 250px;
-    max-width: 100%;
-    height: auto;
-}
-
-
-/*  news  */
-.post-list .post {
-    /*background-color: #f4fbfe;*/
+#home .post {
     margin-bottom: 20px;
     overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.post-list .post .post-title {
-    background-color: #f4fbfe;
+#home .post>div {
+    height: 100%;
+    background-color: #a3e6ce30;
+}
+
+#home .post .post-title {
+    background-color: #a3e6ce;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #0f394c;
+}
+
+#home .post .post-content, #home .project-highlight .project-content{
     padding: 10px;
 }
 
-.post-list .post .post-content {
-    padding: 10px;
+#home .post .post-content img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
 }
 
-.post-list .post .post-more-link {
+#home .post-more-link {
     font-style: italic;
     font-size: 0.9em;
     color: #444;
     position: relative;
+}
+
+#home .all-news-link a, #home .all-projects-link a {
+    font-size: 20px;
+}
+
+/* news */
+
+/* projects */
+.project-collab-img img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 /* Gallery */
@@ -87,7 +127,7 @@
 
 
 .article-bottom-padding {
-    padding-bottom: 16px;
+    padding-bottom: 50px;
 }
 
 .footer-col-wrapper,
