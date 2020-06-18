@@ -31,19 +31,18 @@ layout: default
         {% if project.active %}
         <div class="mb-5">
             <div class="project-highlight row">
-                <div class="col-md-12">
-                    <div class="project-container">
-                        <h3 class="p-3">{{project.title}}</h3>
-                        <div class="row project-content p-2 m-0">
-                            <div class="col-md-6">
-                                <p class="project-description">{{project.short_desc}}</p>
-                                <a class="post-more-link" href="{{ site.baseurl }}{{ project.url }}">More...</a>
+                <div class="col-12">
+                    <div class="project-container border-bottom">
+                        <div class="row project-content m-0">
+                            <div class="col-12 col-lg-6">
+                                <h3 class="m-0 pt-3"><a class="project-title" href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a></h3>
+                                <h2 class="project-description">{{project.short_desc}}</h2>
 
-                                <div class="row mt-5 mb-5">
+                                <div class="mt-5 mb-2 ml-1">
                                     {% for collab in project.current_collaborators %}
                                     {% for member in site.members %}
                                     {% if member.key == collab %}
-                                    <div class="d-flex align-items-stretch p-md-1">
+                                    <div class="d-flex align-items-stretch p-md-1 project-collab-img-container">
                                         <div class="project-collab-img-small">
                                             <a href="{{ site.baseurl }}{{ member.url }}"><img
                                                     src="{{ site.baseurl }}{{ member.image }}"></a>
@@ -54,7 +53,7 @@ layout: default
                                     {% endfor %}
                                 </div>
                             </div>
-                            <div class="col-md-6 project-image">
+                            <div class="col-12 col-lg-6 project-image mb-2 mt-3">
                                 {% if project.youtube_video != null %}
                                 {% youtube project.youtube_video %}
                                 {% elsif project.photo != null %}
@@ -79,19 +78,18 @@ layout: default
         {% if project.active == false %}
         <div class="mb-5">
             <div class="project-highlight row">
-                <div class="col-md-12">
-                    <div class="project-container">
-                        <h3 class="p-3">{{project.title}}</h3>
-                        <div class="row project-content p-2 m-0">
-                            <div class="col-md-6">
-                                <p class="project-description">{{project.short_desc}}</p>
-                                <a class="post-more-link" href="{{ site.baseurl }}{{ project.url }}">More...</a>
+                <div class="col-12">
+                    <div class="project-container border-bottom">
+                        <div class="row project-content m-0">
+                            <div class="col-12 col-lg-6">
+                                <h3 class="m-0 pt-3"><a class="project-title" href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a></h3>
+                                <h2 class="project-description">{{project.short_desc}}</h2>
 
-                                <div class="row mt-5 mb-5">
+                                <div class="mt-5 mb-2 ml-1">
                                     {% for collab in project.current_collaborators %}
                                     {% for member in site.members %}
                                     {% if member.key == collab %}
-                                    <div class="d-flex align-items-stretch p-md-1">
+                                    <div class="d-flex align-items-stretch p-md-1 project-collab-img-container">
                                         <div class="project-collab-img-small">
                                             <a href="{{ site.baseurl }}{{ member.url }}"><img
                                                     src="{{ site.baseurl }}{{ member.image }}"></a>
@@ -102,7 +100,7 @@ layout: default
                                     {% endfor %}
                                 </div>
                             </div>
-                            <div class="col-md-6 project-image">
+                            <div class="col-12 col-lg-6 project-image mb-2 mt-3">
                                 {% if project.youtube_video != null %}
                                 {% youtube project.youtube_video %}
                                 {% elsif project.photo != null %}
