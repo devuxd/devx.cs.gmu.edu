@@ -53,11 +53,12 @@ jobs:
     - name: Move build to deployment.
       working-directory: ./docs_src
       run: mv _site/ ../docs
+      run : echo "devx.cs.gmu.edu" > ../docs/CNAME
       
     - name: Push changes to master branch.
       run: |
-          git config --global user.email "luminaxster@gmail.com"
-          git config --global user.name "David's Bot"
+          git config --global user.email "devx@gmu.edu"
+          git config --global user.name "Devx's Bot"
           git add ./docs/
           git commit -am "Automated deploy"
           git push
