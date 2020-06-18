@@ -17,6 +17,12 @@
     height: auto;
 }
 
+.project-collab-img img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
 
 /*  news  */
 .post-list .post {
