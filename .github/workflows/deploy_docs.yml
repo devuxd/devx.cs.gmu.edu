@@ -52,8 +52,10 @@ jobs:
       
     - name: Move build to deployment.
       working-directory: ./docs_src
-      run: mv _site/ ../docs
-           echo "devx.cs.gmu.edu" > ../docs/CNAME
+      run: |
+        mv _site/ ../docs 
+        cd ../docs 
+        echo "devx.cs.gmu.edu" > CNAME  
       
     - name: Push changes to master branch.
       run: |
