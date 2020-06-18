@@ -33,7 +33,6 @@ layout: default
                 <div class="col-12 col-md-11 row mb-5 m-0">
                     {% for post in site.posts limit:numberOfNews %}
                     <div class="post col-12 col-md-4">
-                        <a href="{{ site.baseurl }}{{ post.url }}">
                         <div class="post-container">
                             <div class="post-title p-2">
                                 {{ post.date | date: "%-d %b %Y" }}
@@ -46,7 +45,6 @@ layout: default
                                 </div>
                             </div>
                         </div>
-                        </a>
                     </div>
                     {% endfor %}
                 </div>
@@ -63,9 +61,9 @@ layout: default
                     <div class="project-highlight row">
                         <div class="col-12">
                             <div class="project-container border-bottom">
-                                <h3 class="m-0 pt-3 pl-3"><a class="project-title" href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a></h3>
                                 <div class="row project-content m-0">
-                                    <div class="col-12 col-md-6">
+                                    <div class="col-12 col-lg-6">
+                                        <h3 class="m-0 pt-3"><a class="project-title" href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a></h3>
                                         <h2 class="project-description">{{project.short_desc}}</h2>
 
                                         <div class="mt-5 mb-2 ml-1">
@@ -83,7 +81,7 @@ layout: default
                                             {% endfor %}
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 project-image mb-2 mt-2">
+                                    <div class="col-12 col-lg-6 project-image mb-2 mt-3">
                                         {% if project.youtube_video != null %}
                                         {% youtube project.youtube_video %}
                                         {% elsif project.photo != null %}
