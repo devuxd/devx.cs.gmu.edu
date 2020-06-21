@@ -1,4 +1,4 @@
 ---
 for: header
-items: [home, projects, publications, people, news, gallery]
+items: [home, publications, people, news, gallery]
 ---

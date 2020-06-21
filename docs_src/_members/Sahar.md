@@ -13,4 +13,5 @@ twitter: https://twitter.com/ShrMehrpour
 github: https://github.com/SaharMehrpour
 bib_id: Sahar Mehrpour
 ---
-Sahar is working on **Active Documentation**.
+Sahar is a 3rd year PhD student working under supervision of Dr. Thomas LaToza.
+Her research is mainly studying how developers work with design rules in code. 

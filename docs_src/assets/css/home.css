@@ -1,6 +1,7 @@
 .home img {
     width: 100%;
 }
+
 .bg-none {
     background: none;
 }
@@ -17,7 +18,7 @@
     height: 50px;
 }
 
-#home .summary h1 {
+.summary h1 {
     margin: 0;
     font-size: 42px;
     font-weight: 700;
@@ -26,55 +27,105 @@
     text-transform: uppercase;
 }
 
-#home .summary h2 {
+.summary h2 {
     color: #1c698c;
     margin: 10px 0 0 0;
     font-size: 20px;
 }
 
-.projectHighlight {
-    padding: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+.title {
+    font-size: 38px;
+    font-weight: 400;
+    color: #0f394c9e;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.projectTitle {
-    font-size: 28px;
+.project-image img {
+    max-height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-highlight {
+    height: 100%;
+}
+
+.project-container {
+    background-color: #eeeeee59;
+}
+
+.project-title {
+    margin: 0;
+    font-size: 27px;
     font-weight: 700;
+    line-height: 56px;
     color: #0f394c;
-    margin-bottom: 15px;
 }
 
-.img-fluid {
-    min-width: 250px;
-    max-width: 100%;
-    height: auto;
+.project-description {
+    color: #1c698c;
+    font-size: 20px;
+    font-weight: 300;
 }
 
-
-/*  news  */
-.post-list .post {
-    /*background-color: #f4fbfe;*/
-    margin-bottom: 20px;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+.project-collab-img-container {
+    float: left;
 }
 
-.post-list .post .post-title {
-    background-color: #f4fbfe;
-    padding: 10px;
+.project-collab-img-small img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
 }
 
-.post-list .post .post-content {
-    padding: 10px;
+.post-container {
+    height: 100%;
+    background-color: #a3e6ce30;
 }
 
-.post-list .post .post-more-link {
+.post-title {
+    background-color: #a3e6ce;
+    text-transform: uppercase;
+    color: #0f394c;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.post-content img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.post-content h2 {
+    color: #1c698c;
+    margin: 10px 0 0 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.post-more-link {
     font-style: italic;
     font-size: 0.9em;
     color: #444;
     position: relative;
+}
+
+.all-news-link a,
+.all-projects-link a {
+    font-size: 20px;
+    font-style: italic;
+    color: #444;
+    position: relative;
+}
+
+.stick-bottom {
+    position: absolute;
+    bottom: 5px;
 }
 
 /* Gallery */
@@ -87,7 +138,7 @@
 
 
 .article-bottom-padding {
-    padding-bottom: 16px;
+    padding-bottom: 100px;
 }
 
 .footer-col-wrapper,

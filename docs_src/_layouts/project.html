@@ -8,8 +8,8 @@ title: Project
             <h3 class="projectTitle">{{page.title}}</h3>
 
             <div class="col-md-10">
-                {% if page.video != null %}
-                {% youtube page.video %}
+                {% if page.youtube_video != null %}
+                {% youtube page.youtube_video %}
                 {% elsif page.photo != null %}
                 <img class="img-fluid" src="{{site.baseurl}}{{page.photo}}" alt="{{page.title}}">
                 {% endif %}
@@ -28,7 +28,7 @@ title: Project
                     {% for collab in page.current_collaborators %}
                         {% for member in site.members %}
                             {% if member.key == collab %}
-                            <div class="col-md-2 d-flex align-items-stretch">
+                            <div class="col-md-2 d-flex align-items-stretch project-collab-img">
                                 <div class="proj-collab-img">
                                     <a href="{{ site.baseurl }}{{ member.url }}"><img
                                             src="{{ site.baseurl }}{{ member.image }}"></a>
@@ -45,7 +45,7 @@ title: Project
                         {% for collab in page.prev_collaborators %}
                             {% for member in site.members %}
                                 {% if member.key == collab %}
-                                    <div class="col-md-2 d-flex align-items-stretch">
+                                    <div class="col-md-2 d-flex align-items-stretch project-collab-img">
                                         <div class="proj-collab-img">
                                             <a href="{{ site.baseurl }}{{ member.url }}"><img
                                                     src="{{ site.baseurl }}{{ member.image }}"></a>
