@@ -38,7 +38,7 @@ jobs:
           bundle config set --local path 'vendor/bundle'
           bundle install --jobs 4 --retry 3
       
-    - name: Clean. previous build.
+    - name: Clean previous build.
       working-directory: ./docs_src
       run: bundle exec jekyll clean
       
@@ -46,7 +46,7 @@ jobs:
       working-directory: ./docs_src
       run: bundle exec jekyll build
       
-    - name: Clean previous deployment and Keep CNAME.
+    - name: Clean previous deployment but keep CNAME.
       working-directory: ./docs_src
       run: |
        mv ../docs/CNAME ../
