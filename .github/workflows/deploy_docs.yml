@@ -49,21 +49,21 @@ jobs:
     - name: Clean previous deployment but keep CNAME.
       working-directory: ./docs_src
       run: |
-       mv ../docs/CNAME ../
+       '(test -f ../docs/CNAME && mv ../docs/CNAME ../)'
        rm -rf ../docs
        
     - name: Move build to deployment and reinstate CNAME.
       working-directory: ./docs_src
       run: |
         mv _site/ ../docs
-        mv ../CNAME  ../docs/
+        '(test -f ../CNAME && mv ../CNAME  ../docs/)'
       
     - name: Push changes to master branch.
       run: |
           git config --global user.email  "${{ github.actor }}@users.noreply.github.com"
           git config --global user.name  "${{ github.actor }}'s auto-deploy"
-          git add ./docs/
-          git commit -am "Automated deploy"
+          git add -f ./docs/
+          git commit -am "${{ github.actor }}"
           git push
           
     - name: Automated build completed.
