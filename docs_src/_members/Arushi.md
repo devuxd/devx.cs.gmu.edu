@@ -1,6 +1,6 @@
 ---
 layout: member
-first_name: arushi	
+first_name: Arushi	
 last_name: Upadhyaya
 key: Somasekhar
 level: intern
