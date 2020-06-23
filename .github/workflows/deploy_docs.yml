@@ -46,21 +46,22 @@ jobs:
       working-directory: ./docs_src
       run: bundle exec jekyll build
       
-    - name: Clean previous deployment.
-      working-directory: ./docs_src
-      run: rm -rf ../docs
-      
-    - name: Move build to deployment.
+    - name: Clean previous deployment and Keep CNAME.
       working-directory: ./docs_src
       run: |
-        mv _site/ ../docs 
-        cd ../docs 
-        echo "devx.cs.gmu.edu" > CNAME  
+       mv ../docs/CNAME ../
+       rm -rf ../docs
+       
+    - name: Move build to deployment and reinstate CNAME.
+      working-directory: ./docs_src
+      run: |
+        mv _site/ ../docs
+        mv ../CNAME  ../docs/
       
     - name: Push changes to master branch.
       run: |
-          git config --global user.email "devx@gmu.edu"
-          git config --global user.name "Devx's Bot"
+          git config --global user.email  "${{ github.actor }}@users.noreply.github.com"
+          git config --global user.name  "${{ github.actor }}'s auto-deploy"
           git add ./docs/
           git commit -am "Automated deploy"
           git push
