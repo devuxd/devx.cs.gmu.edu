@@ -1,8 +1,8 @@
 ---
 layout: member
 key: Safwat
-level: master
-title: Master Student
+level: phd
+title: PhD Student
 first_name: Safwat
 last_name: Khan
 start_year: 2019
