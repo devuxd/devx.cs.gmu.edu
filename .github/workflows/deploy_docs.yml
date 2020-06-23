@@ -38,7 +38,7 @@ jobs:
           bundle config set --local path 'vendor/bundle'
           bundle install --jobs 4 --retry 3
       
-    - name: Clean. previous build.
+    - name: Clean previous build.
       working-directory: ./docs_src
       run: bundle exec jekyll clean
       
@@ -46,20 +46,24 @@ jobs:
       working-directory: ./docs_src
       run: bundle exec jekyll build
       
-    - name: Clean previous deployment.
+    - name: Clean previous deployment but keep CNAME.
       working-directory: ./docs_src
-      run: rm -rf ../docs
-      
-    - name: Move build to deployment.
+      run: |
+       (test -f ../docs/CNAME && mv ../docs/CNAME ../)
+       rm -rf ../docs
+       
+    - name: Move build to deployment and reinstate CNAME.
       working-directory: ./docs_src
-      run: mv _site/ ../docs
+      run: |
+        mv _site/ ../docs
+        (test -f ../CNAME && mv ../CNAME  ../docs/)
       
     - name: Push changes to master branch.
       run: |
-          git config --global user.email "luminaxster@gmail.com"
-          git config --global user.name "David's Bot"
-          git add ./docs/
-          git commit -am "Automated deploy"
+          git config --global user.email  "${{ github.actor }}@users.noreply.github.com"
+          git config --global user.name  "${{ github.actor }}'s auto-deploy"
+          git add -f ./docs/
+          git commit -am "${{ github.actor }}"
           git push
           
     - name: Automated build completed.

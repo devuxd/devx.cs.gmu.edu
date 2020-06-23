@@ -3,10 +3,28 @@ layout: default
 title: Publications
 ---
 
+{% for msg in site.pagedata %}
+{% if msg.for == 'publications' %}
+{% assign end_year = msg.end_year %}
+{% assign start_year = msg.start_year %}
+{% assign year_array = msg.year_array%}
+{% endif %}
+{% endfor %}
+
 <div id="publications" class="container">
 
     <h1>Publications</h1>
 
-    {% bibliography %}
+    {% for yr in (start_year..end_year) reversed %}
+    {%- capture refs -%}
+    {% bibliography_count --query @*[year={{yr}}] %}
+    {%- endcapture -%}
+    {% assign refs = refs | plus: 0 %}
+
+    {% if refs > 0 %}
+    <h3>{{yr}}</h3>
+    {% bibliography --query @*[year={{yr}}] %}
+    {% endif %}
+    {% endfor%}
 
 </div>

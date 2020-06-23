@@ -1,15 +1,15 @@
 ---
 layout: member
 key: Safwat
-role: master_student
-title: Master Student
+level: phd
+title: PhD Student
 first_name: Safwat
 last_name: Khan
-# start_year:
+start_year: 2019
 # email: 
-# image: /assets/img/team/ 
-# website: 
+image: /assets/img/team/Safwat.jpg
+website: https://www.linkedin.com/in/safwat-ali-khan/
 # twitter: 
 # github: 
-# publications
+# bib_id: 
 ---

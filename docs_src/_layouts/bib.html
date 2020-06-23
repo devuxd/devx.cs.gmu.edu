@@ -1,0 +1,51 @@
+---
+---
+
+<div class="bib-container">
+
+<span class="bib-title">"{{ entry.title }}"</span>,
+
+<!-- Author list-->
+
+{% for author in entry.author_array %}
+{% assign author_name = (author.first | append: " ") | append: author.last%}
+
+{% for member in site.members %}
+{% if author_name == member.bib_id %}
+{% assign found_member = member %}
+{% endif %}
+{% endfor %}
+
+{% if found_member != null %}
+<span class="bib-author"><a href="{{site.baseurl}}{{found_member.url}}">{{ author.first }} {{ author.last}}</a></span>,
+{% else %}
+<span class="bib-author">{{ author.first }} {{ author.last}}</span>,
+{% endif %}
+
+{% assign found_member = null %}
+
+{% endfor %}
+
+<!-- Conference Title and Year -->
+
+<span class="bib-booktitle">{{ entry.booktitle }}</span>,
+<span class="bib-year">{{ entry.year }}</span>
+
+<!-- Paper links -->
+
+<br>
+
+{% assign doi-url = "https://doi.org/" %}
+
+{% if entry.doi != null %}
+<span class="bib-doi"><a href="{{doi-url | append: entry.doi}}">doi</a>, </span>
+{% endif %}
+
+{% if entry.url != null%}
+<span class="bib-preprint"><a href={{entry.url}}>preprint</a>, </span>
+{% endif %}
+
+<!-- {{ entry.bibtex }}-->
+<span class="bib-bibtex"><a href="">bibtex</a></span>
+
+</div>
