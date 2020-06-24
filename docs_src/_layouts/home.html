@@ -28,7 +28,7 @@ layout: default
     </div>
     <div class="article-bottom-padding">
         <article>
-            <h1 class="title border-top border-bottom">{{newsTitle}}</h1>
+            <h1 class="title">{{newsTitle}}</h1>
             <div class="row ml-0">
                 <div class="col-12 col-md-11 row mb-5 m-0">
                     {% for post in site.posts limit:numberOfNews %}
@@ -39,10 +39,6 @@ layout: default
                             </div>
                             <div class="post-content p-3">
                                 <h2>{{ post.content | truncatewords: messageThreshold }}</h2>
-                                <br>
-                                <div class="stick-bottom">
-                                    <a class="post-more-link" href="{{ site.baseurl }}{{ post.url }}">More...</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,7 +50,7 @@ layout: default
     </div>
     <div class="article-bottom-padding">
         <article>
-            <h1 class="title border-top border-bottom">{{highlightsTitle}}</h1>
+            <h1 class="title">{{highlightsTitle}}</h1>
             {% for project in site.projects %}
             {% if project.active %}
                 <div class="mb-5">
@@ -74,6 +70,13 @@ layout: default
                                                         <div class="project-collab-img-small">
                                                             <a href="{{ site.baseurl }}{{ member.url }}"><img
                                                                     src="{{ site.baseurl }}{{ member.image }}"></a>
+                                                            <div class="overlay-name-div">
+                                                                <a href="{{ site.baseurl }}{{ member.url }}">
+                                                                    <div class="overlay-name-text">{{member.first_name}}
+                                                                        {{member.last_name}}
+                                                                    </div>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     {% endif %}
