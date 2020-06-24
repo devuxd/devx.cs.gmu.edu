@@ -15,4 +15,3 @@ bib_id: Sahar Mehrpour
 ---
 Sahar is a 3rd year PhD student working under supervision of Dr. Thomas LaToza.
 Her research is mainly studying how developers work with design rules in code. 
- 
