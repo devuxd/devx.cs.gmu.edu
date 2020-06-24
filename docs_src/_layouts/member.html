@@ -16,64 +16,46 @@ title: Member
     {% endfor %}
 {% endfor %}
 
-<div class="container">
+<div class="container member">
     <article>
 
-        {% if page.image != null %}
-        <div class="mem-img">
-            <img alt="{{ page.first_name }} {{ page.last_name }}" class="img-fluid"
-                 title="{{ page.first_name }} {{ page.last_name }}" src="{{ site.baseurl }}{{ page.image }}">
-        </div>
-        {% endif %}
+        <div class="row">
+            <div class="col-sm-3 col-12">
+                <img alt="{{ page.first_name }} {{ page.last_name }}"
+                     title="{{ page.first_name }} {{ page.last_name }}" src="{{ site.baseurl }}{{ page.image }}">
+            </div>
 
-        <div class="mem-section mem-info">
-            <h4>{{page.first_name}} {{page.last_name}}</h4>
-            <span>{{ page.title }}</span><br>
-            {% if page.website != null %}
-            <a href="{{ page.website }}">personal Website</a><br>
-            {% endif %}
-            {% if page.twitter != null %}
-            <a href="{{ page.twitter }}">Twitter</a><br>
-            {% endif %}
-            {% if page.github != null %}
-            <a href="{{ page.github }}">GitHub</a><br>
-            {% endif %}
+            <div class="col-sm-8 col-12">
+                <h4>{{page.first_name}} {{page.last_name}}</h4>
+                <span>{{ page.title }}</span><br>
+                {% if page.website != null %}
+                <a href="{{ page.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                {% endif %}
+                {% if page.twitter != null %}
+                <a href="{{ page.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                {% endif %}
+                {% if page.github != null %}
+                <a href="{{ page.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                {% endif %}
+            </div>
         </div>
 
 
         {% if page.content != null %}
             <div class="mem-bio">
-                <h2>Bio</h2>
                 {{ page.content }}
             </div>
         {% endif %}
 
 
-        {%- capture refs -%}
-        {% bibliography_count --query @*[author~={{page.first_name}} && author~={{page.last_name}}] %}
-        {%- endcapture -%}
-        {% assign refs = refs | plus: 0 %}
-        {% if refs > 0 %}
-        <div class="mem-section mem-publications">
-            <h2>Publications</h2>
-            {% bibliography --query @*[author~={{page.first_name}} && author~={{page.last_name}}] %}
-        </div>
-        {% endif %}
-
-
-
         {% if hasCurrentProjects %}
-            <div class="mem-section mem-projects">
+            <div class="mem-section">
             <h2>Projects</h2>
             {% for proj in site.projects %}
                 {% for collab in proj.current_collaborators %}
                     {% if page.key == collab %}
-                        <div class="projectHighlight">
-                            <h3 class="projectTitle">{{proj.title}}</h3>
-                            {% if proj.short_desc != null %}
-                                <p>{{proj.short_desc}}</p>
-                            {% endif %}
-                            <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                        <div class="">
+                            <a class="" href="{{ site.baseurl }}{{ proj.url }}">{{proj.title}}</a>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -84,21 +66,30 @@ title: Member
 
         {% if hasPrevProjects %}
         <h2>Previous Projects</h2>
-            <div class="mem-section mem-projects">
+            <div class="mem-section">
             {% for proj in site.projects %}
                 {% for collab in proj.prev_collaborators %}
                     {% if page.key == collab %}
-                        <div class="projectHighlight">
-                            <h3 class="projectTitle">{{proj.title}}</h3>
-                            {% if proj.short_desc != null %}
-                                <p>{{proj.short_desc}}</p>
-                            {% endif %}
-                            <a class="post-more-link" href="{{ site.baseurl }}{{ proj.url }}">More...</a>
+                        <div class="">
+                            <a class="" href="{{ site.baseurl }}{{ proj.url }}">{{proj.title}}</a>
                         </div>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
             </div>
+        {% endif %}
+
+
+
+        {%- capture refs -%}
+        {% bibliography_count --query @*[author~={{page.first_name}} && author~={{page.last_name}}] %}
+        {%- endcapture -%}
+        {% assign refs = refs | plus: 0 %}
+        {% if refs > 0 %}
+        <div class="mem-section">
+            <h2>Publications</h2>
+            {% bibliography --query @*[author~={{page.first_name}} && author~={{page.last_name}}] %}
+        </div>
         {% endif %}
 
     </article>

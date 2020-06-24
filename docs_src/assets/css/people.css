@@ -24,10 +24,6 @@
     display: block;
 }
 
-.mem-section, .proj-section, .mem-bio {
-    padding-top: 30px;
-}
-
 .icon {
     font-size: 2em;
     padding: 10px;
