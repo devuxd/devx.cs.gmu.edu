@@ -1,6 +1,5 @@
 # Workflow to autopublish GH pages from the docs folder based on a Jekyll generated site from the docs_src folder.
 name: custom GH-pages deploy
-
 # Controls when the action will run. Triggers the workflow on push events but only for the master branch
 on:
   push:
