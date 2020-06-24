@@ -7,27 +7,27 @@ layout: default
     {% endif %}
 {% endfor %}
 
+{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+
 <div id="news" class="container">
-
     <article class="post-content-main">
-
         <h1>{{newsTitle}}</h1>
-
-            <div class="post-list">
-                {% for post in site.posts %}
-                <div class="post">
-                    <div class="post-title">
-                        {{ post.date | date: "%-d %b %Y" }} -- {{ post.title }}
-                    </div>
-                    <div class="post-content">
-                        {{ post.content | truncatewords: 150 }}
-                        <br>
-                        <a class="post-more-link" href="{{ site.baseurl }}{{ post.url }}">More...</a>
-                    </div>
+        {% for year in postsByYear %}
+<!--        <h1 class="title">{{ year.name }}</h1>-->
+        <div class="post-list">
+            {% for post in year.items %}
+            <div class="news-item col-12">
+                <div class="news-header post-title">
+                    <div class="d-flex float-right p-1">{{ post.date | date: "%-d %b %Y" }}</div>
+                    <div class="p-1">{{ post.title }}</div>
                 </div>
-                {% endfor %}
+                <div class="post-content"><h2>
+                    {{ post.content | truncatewords: 150 }}
+                </h2>
+                </div>
             </div>
-
+            {% endfor %}
+        </div>
+        {% endfor %}
     </article>
-
 </div>

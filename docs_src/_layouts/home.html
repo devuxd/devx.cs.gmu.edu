@@ -11,66 +11,94 @@ layout: default
         {% assign newsSeeMore = msg.newsSeeMore %}
         {% assign highlightsTitle = msg.highlightsTitle %}
         {% assign highlightsSeeMore = msg.highlightsSeeMore %}
+        {% assign numberOfNews = msg.numberOfNews %}
+        {% assign messageThreshold = msg.messageThreshold%}
     {% endif %}
 {% endfor %}
 
 <div id="home" class="container">
-    <div class="summary row">
-        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center footer-top">
+    <div class="summary row ml-0 article-bottom-padding">
+        <div class="col-12 col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center footer-top">
             <h1>{{salute}}</h1>
             <h2>{{welcomeMessage}}</h2>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+        <div class="col-12 col-lg-6 order-1 order-lg-2 hero-img">
             <img src="{{ site.baseurl }}{{groupPhoto}}" class="img-fluid" alt="Group Photo">
         </div>
     </div>
     <div class="article-bottom-padding">
-        <article class="post-content-main">
-            <h1>{{newsTitle}}</h1>
-            <div class="post-list">
-                {% for post in site.posts limit:3 %}
-                <div class="post">
-                    <div class="post-title">
-                        {{ post.date | date: "%-d %b %Y" }} -- {{ post.title }}
+        <article>
+            <h1 class="title">{{newsTitle}}</h1>
+            <div class="row ml-0">
+                <div class="col-12 col-md-11 row mb-5 m-0">
+                    {% for post in site.posts limit:numberOfNews %}
+                    <div class="post col-12 col-md-4">
+                        <div class="post-container">
+                            <div class="post-title p-2">
+                                {{ post.date | date: "%-d %b %Y" }}
+                            </div>
+                            <div class="post-content p-3">
+                                <h2>{{ post.content | truncatewords: messageThreshold }}</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="post-content">
-                        {{ post.content | truncatewords: 150 }}
-                        <br>
-                        <a class="post-more-link" href="{{ site.baseurl }}{{ post.url }}">More...</a>
-                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+                <div class="col-12 col-md-1 all-news-link"><a href="news">{{newsSeeMore}}</a></div>
             </div>
-            <div class="all-news-link"><a href="news">{{newsSeeMore}}</a></div>
         </article>
     </div>
     <div class="article-bottom-padding">
-        <article class="post-content-main">
-            <h1>{{highlightsTitle}}</h1>
-            <div>
-                {% for project in site.projects %}
-                {% if project.active %}
-                <div class="row projectHighlight">
-                    <div class="col-md-6">
-                        {% if project.video != null %}
-                        {% youtube project.video %}
-                        {% elsif project.photo != null %}
-                        <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
-                        {% endif %}
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="projectTitle">{{project.title}}</h3>
-                        {% if project.short_desc != null %}
-                        <p>{{project.short_desc}}</p>
-                        {% endif %}
+        <article>
+            <h1 class="title">{{highlightsTitle}}</h1>
+            {% for project in site.projects %}
+            {% if project.active %}
+                <div class="mb-5">
+                    <div class="project-highlight row">
+                        <div class="col-12">
+                            <div class="project-container border-bottom">
+                                <div class="row project-content m-0">
+                                    <div class="col-12 col-lg-6">
+                                        <h3 class="m-0 pt-3"><a class="project-title" href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a></h3>
+                                        <h2 class="project-description">{{project.short_desc}}</h2>
 
-                        <a class="post-more-link" href="{{ site.baseurl }}{{ project.url }}">More...</a>
+                                        <div class="mt-5 mb-2 ml-1">
+                                            {% for collab in project.current_collaborators %}
+                                                {% for member in site.members %}
+                                                    {% if member.key == collab %}
+                                                    <div class="d-flex align-items-stretch p-md-1 project-collab-img-container">
+                                                        <div class="project-collab-img-small">
+                                                            <a href="{{ site.baseurl }}{{ member.url }}"><img
+                                                                    src="{{ site.baseurl }}{{ member.image }}"></a>
+                                                            <div class="overlay-name-div">
+                                                                <a href="{{ site.baseurl }}{{ member.url }}">
+                                                                    <div class="overlay-name-text">{{member.first_name}}
+                                                                        {{member.last_name}}
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 project-image mb-2 mt-3">
+                                        {% if project.youtube_video != null %}
+                                        {% youtube project.youtube_video %}
+                                        {% elsif project.photo != null %}
+                                        <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-            <div class="all-news-link"><a href="projects">{{highlightsSeeMore}}</a></div>
+            {% endif %}
+            {% endfor %}
+
         </article>
     </div>
 </div>
