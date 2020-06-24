@@ -22,7 +22,7 @@ title: Publications
     {% assign refs = refs | plus: 0 %}
 
     {% if refs > 0 %}
-    <h3>{{yr}}</h3>
+    <h1 class="title">{{yr}}</h1>
     {% bibliography --query @*[year={{yr}}] %}
     {% endif %}
     {% endfor%}

@@ -1,11 +1,11 @@
 ---
 layout: project
 title: Microtask Programming
-video: https://www.youtube.com/watch?v=mIn2EOqsDYw
+youtube_video: https://www.youtube.com/watch?v=mIn2EOqsDYw
 # photo: 
 short_desc: What if you could contribute code to a new software project in a few minutes? How would enabling many transient contributors change software development?
 current_collaborators: [Emad]
-# prev_collaborator: []
+# prev_collaborators: []
 active: true
 ---
 In microtask programming, developers complete short self-contained microtasks through the use of 
