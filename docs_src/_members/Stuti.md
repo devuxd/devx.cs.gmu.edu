@@ -6,6 +6,6 @@ key: Stuti
 level: intern
 title: Research Intern, Summer 2020
 start_year: 2020
-image: /assets/img/team/placeHolder.png
+image: /assets/img/team/StutiGupta.JPG
 <!-- now: BS in Computer Science at ??? -->
 ---
