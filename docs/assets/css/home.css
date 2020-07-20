@@ -45,6 +45,9 @@
 #header .banner-img {
     height: 50px;
 }
+.summary {
+    flex-flow: column;
+}
 
 .summary h1 {
     margin: 0;
