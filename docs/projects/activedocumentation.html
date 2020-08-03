@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Active Documentation</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="We study how humans interact with code and design new ways to build software. We work at the intersection of software engineering and human-computer interaction.">
+    <link rel="canonical" href="https://devx.cs.gmu.edu/projects/activedocumentation">
+
+    <!-- Custom CSS -->
+    <script src="https://kit.fontawesome.com/0bb5700efb.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/assets/icon/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/people.css">
+    <link rel="stylesheet" href="/assets/css/bibliography.css">
+    <link rel="shortcut icon" href="/assets/icon/favicon.ico">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-none">
+        <a href="/" style="text-decoration: none;">
+            <div style="display: flex; align-items: center;">
+                <img class="banner-img" src="/assets/img/favicon.png">
+                <h5 style="color:black; margin:0;"><strong>Dev</strong>eloper E<strong>x</strong>perience Design Laboratory</h5>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                
+
+                
+                    
+                    
+                    
+                    
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <span class="nav-text">HOME</span></a>
+                    </li>
+                    
+                
+                    
+                    
+                    
+                    
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/publications">
+                            <span class="nav-text">PUBLICATIONS</span></a>
+                    </li>
+                    
+                
+                    
+                    
+                    
+                    
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/people">
+                            <span class="nav-text">PEOPLE</span></a>
+                    </li>
+                    
+                
+                    
+                    
+                    
+                    
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">
+                            <span class="nav-text">NEWS</span></a>
+                    </li>
+                    
+                
+                    
+                    
+                    
+                    
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/gallery">
+                            <span class="nav-text">GALLERY</span></a>
+                    </li>
+                    
+                
+
+            </ul>
+        </div>
+    </nav>
+</div>
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <div class="container">
+    <article>
+        <div>
+            <div class="all-projects-link"><a href="/projects">See All Projects</a></div>
+            <h3 class="title">Active Documentation</h3>
+
+            <div class="row">
+                <div class="col-lg-4 col-12 pb-1">
+                    <div class="post-content post-container p-3">
+                        <h2>In Active Documentation, we explore approaches to help developers easily document, check, and update design rules in code.</h2>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-12 pb-1">
+                    
+                    <img class="img-fluid" src="/assets/img/research/ActiveDocumentation.png" alt="Active Documentation">
+                    
+                </div>
+            </div>
+
+            <div class="project-page-section">
+                <div class="text-justify project-content">
+                <h2 id="activedocumentation">ActiveDocumentation</h2>
+
+<p>Good documentation has long been argued to be key to helping developers write code more quickly and 
+consistently with design decisions, but is left largely disconnected from code. 
+We propose a method for active documentation, where design decisions are made explicit as 
+design rules and checked against code. Developers can discover how to follow a design rule 
+by navigating to examples in their codebase. After editing code, developers receive immediate 
+feedback about which design rules are satisfied and which are violated, notifying developers who miss 
+design decisions about the existence of these design decisions.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_AT8sNj02Ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h2 id="rulepad">RulePad</h2>
+
+<p>Good documentation offers the promise of enabling developers to easily understand design decisions. 
+Unfortunately, in practice, design documents are often rarely updated, becoming inaccurate, incomplete, and untrustworthy. A better solution is to enable developers to write down design rules which may be checked against code for consistency. But existing rule checkers require learning specialized query languages or program analysis frameworks, offering a barrier to writing project-specific rules. 
+We introduce two new authoring techniques for design rules: snippet-based authoring and semi-natural-language authoring.
+In snippet-based authoring, 
+developers specify characteristics of elements to match by writing partial code snippets. 
+In semi-natural language authoring, 
+a textual representation offers a representation for understanding design rules and resolving ambiguities, 
+which is bidirectionally synchronized.<br />
+We implemented these approaches in RulePad.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u_IjorRovxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+                </div>
+            </div>
+
+            <div class="project-page-section">
+                <h3>Collaborators</h3>
+                <div class="row">
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                            <div class="p-2 d-flex align-items-stretch project-collab-img">
+                                <a href="/members/sahar"><img
+                                        src="/assets/img/team/Sahar.jpg"></a>
+                                <div class="overlay-name-div">
+                                    <a href="/members/sahar">
+                                        <div class="overlay-name-text">Sahar Mehrpour</div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                            <div class="p-2 d-flex align-items-stretch project-collab-img">
+                                <a href="/members/gennie"><img
+                                        src="/assets/img/team/Gennie.jpg"></a>
+                                <div class="overlay-name-div">
+                                    <a href="/members/gennie">
+                                        <div class="overlay-name-text">Gennie Mansi</div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                            <div class="p-2 d-flex align-items-stretch project-collab-img">
+                                <a href="/members/ayesha"><img
+                                        src="/assets/img/team/placeHolder.png"></a>
+                                <div class="overlay-name-div">
+                                    <a href="/members/ayesha">
+                                        <div class="overlay-name-text">Ayesha Kemal</div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                </div>
+
+                
+                    <div class="row">
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    <div class="p-2 d-flex align-items-stretch project-collab-img">
+                                        <a href="/members/emily"><img
+                                                src="/assets/img/team/Emily.jpg"></a>
+                                        <div class="overlay-name-div">
+                                            <a href="/members/emily">
+                                                <div class="overlay-name-text">Emily
+                                                    Slaughter
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        
+                    </div>
+                
+            </div>
+
+            <div class="project-page-section">
+                
+                <div class="project-page-section mem-publications">
+                    <h2>Publications</h2>
+                    <ol class="bibliography"><li><div class="bib-container">
+
+<span class="bib-title">"Active Documentation: Helping Developers Follow Design Decisions"</span>,
+
+<!-- Author list-->
+
+
+
+
+
+
+
+<span class="bib-author"><a href="/members/sahar">Sahar Mehrpour</a></span>,
+
+
+
+
+
+
+
+
+
+
+<span class="bib-author"><a href="/members/thomas">Thomas D. LaToza</a></span>,
+
+
+
+
+
+
+
+
+
+
+<span class="bib-author">Rahul K. Kindi</span>,
+
+
+
+
+
+
+<!-- Conference Title and Year -->
+
+<span class="bib-booktitle">IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)</span>,
+<span class="bib-year">2019</span>
+
+<!-- Paper links -->
+
+<br>
+
+
+
+
+<span class="bib-doi"><a href="https://doi.org/10.1109/VLHCC.2019.8818816">doi</a>, </span>
+
+
+
+<span class="bib-preprint"><a href=https://doi.org/10.1109/VLHCC.2019.8818816>preprint</a>, </span>
+
+
+<!-- @inproceedings{10.1109/VLHCC.2019.8818816,
+  author = {Mehrpour, Sahar and LaToza, Thomas D. and Kindi, Rahul K.},
+  booktitle = {IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)},
+  title = {Active Documentation: Helping Developers Follow Design Decisions},
+  year = {2019},
+  date = {October 14-18, 2019},
+  location = {Memphis, Tennessee, USA},
+  pages = {87-96},
+  doi = {10.1109/VLHCC.2019.8818816},
+  url = {https://doi.org/10.1109/VLHCC.2019.8818816},
+  project = {Active Documentation}
+}
+-->
+<span class="bib-bibtex"><a href="">bibtex</a></span>
+
+</div></li></ol>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </article>
+</div>
+        </div>
+    </main><footer class="site-footer h-card">
+    <data class="u-url" href="/"></data>
+    <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/devuxd"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">devuxd</span></a></li></ul>
+</div>
+</footer></body>
+
+</html>

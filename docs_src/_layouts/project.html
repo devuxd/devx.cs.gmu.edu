@@ -4,34 +4,44 @@ title: Project
 ---
 <div class="container">
     <article>
-        <div class="all-news-link"><a class="all-news-link" href="{{ site.baseurl }}/projects">See All Projects</a>
-            <h3 class="projectTitle">{{page.title}}</h3>
+        <div>
+            <div class="all-projects-link"><a href="{{ site.baseurl }}/projects">See All Projects</a></div>
+            <h3 class="title">{{page.title}}</h3>
 
-            <div class="col-md-10">
-                {% if page.video != null %}
-                {% youtube page.video %}
-                {% elsif page.photo != null %}
-                <img class="img-fluid" src="{{site.baseurl}}{{page.photo}}" alt="{{page.title}}">
-                {% endif %}
+            <div class="row">
+                <div class="col-lg-4 col-12 pb-1">
+                    <div class="post-content post-container p-3">
+                        <h2>{{page.short_desc}}</h2>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-12 pb-1">
+                    {% if page.youtube_video != null %}
+                    {% youtube page.youtube_video %}
+                    {% elsif page.photo != null %}
+                    <img class="img-fluid" src="{{site.baseurl}}{{page.photo}}" alt="{{page.title}}">
+                    {% endif %}
+                </div>
             </div>
 
-            <div class="col-md-10 proj-section">
-                {% if page.short_desc != null %}
-                <p>{{page.short_desc}}</p>
-                {% endif %}
+            <div class="project-page-section">
+                <div class="text-justify project-content">
                 {{page.content}}
+                </div>
             </div>
 
-            <div class="col-md-10 proj-section">
+            <div class="project-page-section">
                 <h3>Collaborators</h3>
                 <div class="row">
                     {% for collab in page.current_collaborators %}
                         {% for member in site.members %}
                             {% if member.key == collab %}
-                            <div class="col-md-2 d-flex align-items-stretch">
-                                <div class="proj-collab-img">
-                                    <a href="{{ site.baseurl }}{{ member.url }}"><img
-                                            src="{{ site.baseurl }}{{ member.image }}"></a>
+                            <div class="p-2 d-flex align-items-stretch project-collab-img">
+                                <a href="{{ site.baseurl }}{{ member.url }}"><img
+                                        src="{{ site.baseurl }}{{ member.image }}"></a>
+                                <div class="overlay-name-div">
+                                    <a href="{{ site.baseurl }}{{ member.url }}">
+                                        <div class="overlay-name-text">{{member.first_name}} {{member.last_name}}</div>
+                                    </a>
                                 </div>
                             </div>
                             {% endif %}
@@ -40,15 +50,19 @@ title: Project
                 </div>
 
                 {% if page.prev_collaborators != null %}
-                    <p>Previous Collaborators</p>
                     <div class="row">
                         {% for collab in page.prev_collaborators %}
                             {% for member in site.members %}
                                 {% if member.key == collab %}
-                                    <div class="col-md-2 d-flex align-items-stretch">
-                                        <div class="proj-collab-img">
-                                            <a href="{{ site.baseurl }}{{ member.url }}"><img
-                                                    src="{{ site.baseurl }}{{ member.image }}"></a>
+                                    <div class="p-2 d-flex align-items-stretch project-collab-img">
+                                        <a href="{{ site.baseurl }}{{ member.url }}"><img
+                                                src="{{ site.baseurl }}{{ member.image }}"></a>
+                                        <div class="overlay-name-div">
+                                            <a href="{{ site.baseurl }}{{ member.url }}">
+                                                <div class="overlay-name-text">{{member.first_name}}
+                                                    {{member.last_name}}
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 {% endif %}
@@ -58,13 +72,13 @@ title: Project
                 {% endif %}
             </div>
 
-            <div class="col-md-10 proj-section">
+            <div class="project-page-section">
                 {%- capture refs -%}
                 {% bibliography_count --query @*[project={{page.title}}] %}
                 {%- endcapture -%}
                 {% assign refs = refs | plus: 0 %}
                 {% if refs > 0 %}
-                <div class="mem-section mem-publications">
+                <div class="project-page-section mem-publications">
                     <h2>Publications</h2>
                     {% bibliography --query @*[project~={{page.title}}] %}
                 </div>

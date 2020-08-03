@@ -70,6 +70,7 @@ echo 'export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"' >> ~/.bash_profile
 #Relaunch console
 gem env
 sudo gem install bundler
+cd docs_src
 bundle install
 ```
 More details [here](https://jekyllrb.com/docs/installation/macos/).

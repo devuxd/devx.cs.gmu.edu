@@ -10,18 +10,19 @@ title: Post
 
         <h1>News</h1>
 
-
-        <div class="post-list">
-            <div class="post">
-                <div class="post-title">
-                    {{ page.date | date: "%-d %b %Y" }} -- {{ page.title }}
+        <div>
+            <div class="post-title p-2">
+                <div class="float-right">
+                    {{ page.date | date: "%-d %b %Y" }}
                 </div>
-                <div class="post-content">
+                <div>{{ page.title }}</div>
+            </div>
+            <div class="post-content">
+                <h2>
                     {{ content}}
-                </div>
+                </h2>
             </div>
         </div>
-
 
         <div class="all-news-link"><a class="all-news-link" href="{{ site.baseurl }}/news">See All News</a></div>
     </article>
