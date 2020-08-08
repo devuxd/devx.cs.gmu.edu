@@ -3,7 +3,7 @@ layout: project
 title: Find Unique Usages
 
 # photo:
-photo: /assets/img/research/FUU2.png
+photo: /assets/img/research/FUU2.jpg
  
 short_desc: how developers use Find Usages to understand and compare method uses and how better IDE support might help?
 current_collaborators: [Emad]
