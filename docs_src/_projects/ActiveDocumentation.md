@@ -4,8 +4,8 @@ title: Active Documentation
 # youtube_video: 
 photo: /assets/img/research/ActiveDocumentation.png  
 short_desc: In Active Documentation, we explore approaches to help developers easily document, check, and update design rules in code.
-current_collaborators: [Sahar, Gennie, Ayesha, Aarav]
-prev_collaborators: [Emily, Rahul]
+current_collaborators: [Sahar]
+prev_collaborators: [Gennie, Ayesha, Aarav, Emily, Rahul]
 active: true
 ---
 
@@ -34,6 +34,7 @@ In semi-natural language authoring,
 a textual representation offers a representation for understanding design rules and resolving ambiguities, 
 which is bidirectionally synchronized.  
 We implemented these approaches in RulePad. 
+See the demo of this tool [here]({{ site.baseurl }}{% link _tools/RulePad.md %}).
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u_IjorRovxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

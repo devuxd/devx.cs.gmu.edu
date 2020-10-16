@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% for msg in site.pagedata %}
+    {% if msg.for == 'tools' %}
+        {% assign pageTitle = msg.pageTitle %}
+    {% endif %}
+{% endfor %}
+
+<div class="gallery container">
+    <h3 class="title">{{page.title}}</h3>
+    <div class="row no-gutters">
+        {{page.content}}
+    </div>
+
+</div>
