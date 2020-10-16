@@ -1,15 +1,16 @@
 :root {
-    --main-txt-color-1: #0f394c;
-    --main-txt-color-2: #1c698c;
-    --main-txt-color-3: #0f394c9e;
+    --main-txt-color-1: #000000;
+    --main-txt-color-2: #403D39;
+    --main-txt-color-3: #FFFFFF;
+    --main-txt-color-4: #FE2600;
 
     --aux-txt-color-1: #444;
     --footer-txt-color-1: #828282;
 
     --main-bg-color-0: #fff;
     --main-bg-color-1: #eeeeee59;
-    --main-bg-color-2: #a3e6ce30;
-    --main-bg-color-3: #a3e6ce;
+    --main-bg-color-2: #FF9281;
+    --main-bg-color-3: #000000;
     --main-bg-color-4: #eeeeeed4;
 
     --border-color: #dee2e6;
@@ -44,6 +45,9 @@
 #header .banner-img {
     height: 50px;
 }
+.summary {
+    flex-flow: column;
+}
 
 .summary h1 {
     margin: 0;
@@ -62,7 +66,7 @@
 .title {
     font-size: var(--font-size-l);
     font-weight: var(--font-weight-l);
-    color: var(--main-txt-color-3);
+    color: var(--main-txt-color-1);
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 50px;
@@ -147,12 +151,12 @@
 
 .post-container {
     height: 100%;
-    background-color: var(--main-bg-color-2);
+    background-color: var(--main-bg-color-1);
 }
 
 .post-title {
     background-color: var(--main-bg-color-3);
-    color: var(--main-txt-color-1);
+    color: var(--main-txt-color-3);
     margin: 0;
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-l);
@@ -194,7 +198,7 @@
 .footer-col-wrapper,
 .social-links {
 @include relative-font-size(0.9375);
-     color: var(--main-txt-color-1);
+    color: var(--main-txt-color-1);
 }
 
 .social-media-list {
