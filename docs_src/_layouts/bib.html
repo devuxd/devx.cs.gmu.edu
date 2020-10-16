@@ -38,14 +38,13 @@
 {% assign doi-url = "https://doi.org/" %}
 
 {% if entry.doi != null %}
-<span class="bib-doi"><a href="{{doi-url | append: entry.doi}}">doi</a>, </span>
+<span class="bib-doi"><a href="{{doi-url | append: entry.doi}}">doi</a></span>
 {% endif %}
 
 {% if entry.url != null%}
-<span class="bib-preprint"><a href={{entry.url}}>preprint</a>, </span>
+<span class="bib-preprint"><a href={{entry.url}}>preprint</a> </span>
 {% endif %}
 
 <!-- {{ entry.bibtex }}-->
-<span class="bib-bibtex"><a href="">bibtex</a></span>
 
 </div>
