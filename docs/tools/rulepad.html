@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Papers at VL/HCC 2019</title>
+    <title>RulePad</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="We study how humans interact with code and design new ways to build software. We work at the intersection of software engineering and human-computer interaction.">
-    <link rel="canonical" href="https://devx.cs.gmu.edu/jekyll/update/2019/10/06/vl-hcc-2019-papers.html">
+    <link rel="canonical" href="https://devx.cs.gmu.edu/tools/rulepad">
 
     <!-- Custom CSS -->
     <script src="https://kit.fontawesome.com/0bb5700efb.js" crossorigin="anonymous"></script>
@@ -115,31 +115,125 @@
 </div>
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <div class="container">
+            
 
+<div class="gallery container">
+    <h3 class="title">RulePad</h3>
+    <div class="row no-gutters">
+        <div class="project-page-section">
+            <div class="text-justify project-content">
+                <p>RulePad is a part of <a href="/devx.cs.gmu.edu/projects/activedocumentation">Active Documentation</a> project.</p>
 
-    <article class="post-content-main">
+<p>Good documentation offers the promise of enabling developers to easily understand design decisions. 
+Unfortunately, in practice, design documents are often rarely updated, becoming inaccurate, incomplete, and untrustworthy. A better solution is to enable developers to write down design rules which may be checked against code for consistency. But existing rule checkers require learning specialized query languages or program analysis frameworks, offering a barrier to writing project-specific rules. 
+We introduce two new authoring techniques for design rules: snippet-based authoring and semi-natural-language authoring.
+In snippet-based authoring, 
+developers specify characteristics of elements to match by writing partial code snippets. 
+In semi-natural language authoring, 
+a textual representation offers a representation for understanding design rules and resolving ambiguities, 
+which is bidirectionally synchronized.<br />
+We implemented these approaches in RulePad.</p>
 
-        <h1>News</h1>
+<p>Our paper is published and presented in ESEC/FSE 2020.</p>
 
-        <div>
-            <div class="post-title p-2">
-                <div class="float-right">
-                    6 Oct 2019
-                </div>
-                <div>Papers at VL/HCC 2019</div>
-            </div>
-            <div class="post-content">
-                <h2>
-                    <p>Our papers on Active Documentation, Mixed Human-AI Authoring of Code Patterns,
- and An Exploratory Study of Live-Streamed Programming appeared at VL/HCC 2019.</p>
+<h4 id="2-minute-teaser">2-Minute Teaser</h4>
 
-                </h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQHbItcr2Aw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h4 id="full-presentation">Full Presentation</h4>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4rUYS8enKA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="tool-demo">Tool Demo</h3>
+
+<p>RulePad is implemented as a plugin for IntelliJ IDE. 
+The following demo is a partial implementation of RulePad. Some of RulePad features require IDE APIs, and thus is not available in the online Demo. 
+You can checkout the complete behavior of RulePad <a href="https://www.youtube.com/watch?v=u_IjorRovxc">here</a>.</p>
+
+<iframe height="810" width="1000" src="https://saharmehrpour.github.io/RulePad-Demo/"></iframe>
+
             </div>
         </div>
 
-        <div class="all-news-link"><a class="all-news-link" href="/devx.cs.gmu.edu/news">See All News</a></div>
-    </article>
+        
+        <div class="project-page-section">
+            <div class="project-page-section mem-publications">
+                <h2>Publications</h2>
+                
+                    <ol class="bibliography"><li><div class="bib-container">
+
+<span class="bib-title">"RulePad: Interactive Authoring of Checkable Design Rules"</span>,
+
+<!-- Author list-->
+
+
+
+
+
+
+
+<span class="bib-author"><a href="/devx.cs.gmu.edu/members/sahar">Sahar Mehrpour</a></span>,
+
+
+
+
+
+
+
+
+
+
+<span class="bib-author"><a href="/devx.cs.gmu.edu/members/thomas">Thomas D. LaToza</a></span>,
+
+
+
+
+
+
+
+
+
+
+<span class="bib-author">Hamed Sarvari</span>,
+
+
+
+
+
+
+<!-- Conference Title and Year -->
+
+<span class="bib-booktitle">ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)</span>,
+<span class="bib-year">2020</span>
+
+<!-- Paper links -->
+
+<br>
+
+
+
+
+
+
+<span class="bib-preprint"><a href=https://arxiv.org/abs/2007.05046>preprint</a> </span>
+
+
+<!-- @inproceedings{RulePad2020FSE,
+  author = {Mehrpour, Sahar and LaToza, Thomas D. and Sarvari, Hamed},
+  booktitle = {ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)},
+  title = {RulePad: Interactive Authoring of Checkable Design Rules},
+  year = {2020},
+  url = {https://arxiv.org/abs/2007.05046},
+  project = {Active Documentation}
+}
+-->
+
+</div></li></ol>
+                
+            </div>
+        </div>
+        
+    </div>
 
 </div>
         </div>

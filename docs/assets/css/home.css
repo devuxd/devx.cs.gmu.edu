@@ -198,7 +198,7 @@
 .footer-col-wrapper,
 .social-links {
 @include relative-font-size(0.9375);
-     color: var(--main-txt-color-1);
+    color: var(--main-txt-color-1);
 }
 
 .social-media-list {
