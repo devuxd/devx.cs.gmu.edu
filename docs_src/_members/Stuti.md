@@ -3,7 +3,7 @@ layout: member
 first_name: Stuti	
 last_name: Gupta
 key: Stuti
-level: intern
+level: intern_alumna
 title: Research Intern, Summer 2020
 start_year: 2020
 image: /assets/img/team/StutiGuptaGMU.JPG
