@@ -3,7 +3,7 @@
     --main-txt-color-2: #403D39;
     --main-txt-color-3: #FFFFFF;
     --main-txt-color-4: #FE2600;
-    
+
     --aux-txt-color-1: #444;
     --footer-txt-color-1: #828282;
 
@@ -198,7 +198,7 @@
 .footer-col-wrapper,
 .social-links {
 @include relative-font-size(0.9375);
-     color: var(--main-txt-color-1);
+    color: var(--main-txt-color-1);
 }
 
 .social-media-list {
