@@ -25,16 +25,11 @@ design decisions about the existence of these design decisions.
 ## RulePad
 
 
-Good documentation offers the promise of enabling developers to easily understand design decisions. 
-Unfortunately, in practice, design documents are often rarely updated, becoming inaccurate, incomplete, and untrustworthy. A better solution is to enable developers to write down design rules which may be checked against code for consistency. But existing rule checkers require learning specialized query languages or program analysis frameworks, offering a barrier to writing project-specific rules. 
-We introduce two new authoring techniques for design rules: snippet-based authoring and semi-natural-language authoring.
-In snippet-based authoring, 
-developers specify characteristics of elements to match by writing partial code snippets. 
-In semi-natural language authoring, 
-a textual representation offers a representation for understanding design rules and resolving ambiguities, 
-which is bidirectionally synchronized.  
-We implemented these approaches in RulePad. 
-See the demo of this tool [here]({{ site.baseurl }}{% link _tools/RulePad.md %}).
+Developers have long been encouraged to use documentation to learn about software design 
+and make sure the code changes are consistent with the documentation.
+However, this does not happen. The reason is that documentation and code are disconnected.
+Using Active Documentation, design rules in documentation are formulated as checkable constraints.
+But existing tools do not offer enough support. 
+In RulePad, we propose new techniques for authoring checkable design rules.
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u_IjorRovxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+You can learn more [here]({{ site.baseurl }}{% link _tools/RulePad.md %}).
