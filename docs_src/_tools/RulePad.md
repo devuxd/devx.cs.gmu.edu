@@ -1,7 +1,7 @@
 ---
 layout: tools
 title: RulePad
-papers: [RulePad2020FSE]
+papers: [Mehrpour2020RulePad]
 ---
 
 RulePad is a part of [Active Documentation]({{ site.baseurl }}{% link _projects/ActiveDocumentation.md %}) project.

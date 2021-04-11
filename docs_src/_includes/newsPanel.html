@@ -1,0 +1,14 @@
+{% assign post=include.post %}
+{% assign messageThreshold=include.messageThreshold %}
+
+<div class="col-12 col-md-4 mb-3">
+    <div class="bg-white full-height box-shadow">
+        <div class="p-1 bg-news-header text-color-white text-center text-small-title">
+            {{ post.date | date: "%-d %b %Y" }}
+        </div>
+        <div class="post-content p-3 par">
+            <div class="text-color-2">{{post.title}}</div>
+            <h2>{{ post.content | truncatewords: messageThreshold }}</h2>
+        </div>
+    </div>
+</div>

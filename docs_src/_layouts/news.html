@@ -4,6 +4,7 @@ layout: default
 {% for msg in site.pagedata %}
     {% if msg.for == 'home' %}
         {% assign newsTitle = msg.newsTitle %}
+        {% assign messageThreshold = msg.messageThreshold %}
     {% endif %}
 {% endfor %}
 
@@ -11,22 +12,13 @@ layout: default
 
 <div id="news" class="container">
     <article class="post-content-main">
-        <h1>{{newsTitle}}</h1>
         {% for year in postsByYear %}
-<!--        <h1 class="title">{{ year.name }}</h1>-->
-        <div class="post-list">
-            {% for post in year.items %}
-            <div class="news-item col-12">
-                <div class="news-header post-title">
-                    <div class="d-flex float-right p-1">{{ post.date | date: "%-d %b %Y" }}</div>
-                    <div class="p-1">{{ post.title }}</div>
-                </div>
-                <div class="post-content"><h2>
-                    {{ post.content | truncatewords: 150 }}
-                </h2>
-                </div>
+        <div class="row ml-0">
+            <div class="col-12 col-md-11 row mb-5 m-0">
+                {% for post in year.items %}
+                {% include newsPanel.html post=post messageThreshold=messageThreshold %}
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
         {% endfor %}
     </article>

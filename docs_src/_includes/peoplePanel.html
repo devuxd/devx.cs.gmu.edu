@@ -1,0 +1,27 @@
+{% assign person = include.person %}
+
+<div class="col-lg-4 col-sm-12">
+    <div class="row p-2">
+        <div class="col-sm-5">
+            <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid full-width"
+                 title="{{ person.first_name }} {{ person.last_name }}"
+                 src="{{ site.baseurl }}{{ person.image }}">
+        </div>
+
+        <div class="col-sm-7">
+            <h5 class="par"><a href="{{site.baseurl}}{{person.url}}">{{person.first_name}} {{person.last_name}}</a></h5>
+            <span>{{ person.title }}</span>
+            <div>
+                {% if person.website != null %}
+                <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
+                {% endif %}
+                {% if person.twitter != null %}
+                <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
+                {% endif %}
+                {% if person.github != null %}
+                <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

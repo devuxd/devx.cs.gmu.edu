@@ -1,24 +1,45 @@
 ---
 layout: default
+title: Gallery
 ---
 
 {% for msg in site.pagedata %}
     {% if msg.for == 'gallery' %}
         {% assign pageTitle = msg.pageTitle %}
+        {% assign summaryMessage = msg.summaryMessage %}
+        {% assign numberOfColors = msg.numberOfColors %}
+        {% assign colors = msg.colors %}
         {% assign images = msg.images %}
+        {% assign captions = msg.captions %}
     {% endif %}
 {% endfor %}
 
-<div class="gallery container">
-    <h3 class="page-title"> {{pageTitle}}</h3>
-    <div class="row no-gutters">
+<div>
+    <div class="gallery container">
+        <div class="summary mt-5">
+            <h2>{{ summaryMessage }}</h2>
+        </div>
+    </div>
+    <div class="mt-5">
         {% for img in images %}
-        <div class="col-lg-6">
-            <div class="gallery-item">
-                <img src="{{site.baseurl}}{{img}}" alt="" class="img-fluid">
+        {% assign mod = forloop.index | modulo: numberOfColors %}
+        {% assign bgColor = colors[mod] %}
+        <div class="{{bgColor}}">
+            <div class="container pt-3 pb-3">
+                <div class="row full-width pt-3">
+                    <div class="col-lg-4">
+                        <div>
+                            <img src="{{site.baseurl}}{{img}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="summary">
+                            <h2>{{ captions[forloop.index0] }}</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
-
 </div>
