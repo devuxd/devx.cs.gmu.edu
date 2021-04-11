@@ -84,6 +84,18 @@
     color: var(--color-2);
 }
 
+.gallery-bg-color-2 {
+    background-color: var(--bg-color-1);
+}
+
+.gallery-bg-color-3 {
+    background-color: var(--bg-color-2);
+}
+
+.gallery-bg-color-1 {
+    background-color: var(--bg-color-3);
+}
+
 .box-shadow {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
@@ -286,11 +298,8 @@ p {
     color: black;
 }
 
-/* Gallery */
-
-.gallery-item {
-    overflow: hidden;
-    padding: 5px;
+.gallery img {
+    max-width: 400px;
 }
 
 .footer-col-wrapper,
