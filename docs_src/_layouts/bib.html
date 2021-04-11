@@ -1,9 +1,9 @@
 ---
 ---
 
-<div class="bib-container par">
+<div class="bib-container">
 
-<span class="bib-title">"{{ entry.title }}"</span>,
+<span class="bib-title par">"{{ entry.title }}"</span>,
 
 <!-- Author list-->
 
@@ -17,9 +17,9 @@
 {% endfor %}
 
 {% if found_member != null %}
-<span class="bib-author"><a href="{{site.baseurl}}{{found_member.url}}">{{ author.first }} {{ author.last}}</a></span>,
+<span class="bib-author par"><a href="{{site.baseurl}}{{found_member.url}}">{{ author.first }} {{ author.last}}</a></span>,
 {% else %}
-<span class="bib-author">{{ author.first }} {{ author.last}}</span>,
+<span class="bib-author par">{{ author.first }} {{ author.last}}</span>,
 {% endif %}
 
 {% assign found_member = null %}
@@ -29,11 +29,11 @@
 <!-- Conference Title and Year -->
 
 {% if entry.booktitle != null %}
-<span class="bib-booktitle">{{ entry.booktitle }}</span>,
+<span class="bib-booktitle par">{{ entry.booktitle }}</span>,
 {% else %}
-<span class="bib-journal">{{ entry.journal }}</span>,
+<span class="bib-journal par">{{ entry.journal }}</span>,
 {% endif %}
-<span class="bib-year">{{ entry.year }}</span>
+<span class="bib-year par">{{ entry.year }}</span>
 
 <!-- Paper links -->
 

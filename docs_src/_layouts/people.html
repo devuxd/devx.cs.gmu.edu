@@ -2,6 +2,13 @@
 layout: default
 ---
 
+{% for msg in site.pagedata %}
+    {% if msg.for == 'people' %}
+        {% assign facultyTitle = msg.facultyTitle %}
+        {% assign studentsTitle = msg.studentsTitle %}
+        {% assign AlumniTitle = msg.AlumniTitle %}
+    {% endif %}
+{% endfor %}
 
 
 <!-- sort members based on their seniority -->
@@ -11,7 +18,7 @@ layout: default
 
 <div id="people" class="container">
 
-    <h1 class="title">Faculty</h1>
+    <h1 class="title">{{ facultyTitle }}</h1>
     {% for person in site.members %}
     {% if person.level == 'faculty' %}
     <div class="row">
@@ -23,7 +30,7 @@ layout: default
 
 
 
-    <h1 class="title">Students</h1>
+    <h1 class="title">{{ studentsTitle }}</h1>
     <div class="row">
         <!-- Phd students -->
         {% for person in persons %}
@@ -58,7 +65,7 @@ layout: default
     <!-- sort alumni based on their leave year -->
     {% assign alumni = site.members | sort: 'end_year' | reverse %}
 
-    <h1 class="title">Alumni</h1>
+    <h1 class="title">{{ AlumniTitle }}</h1>
     <div class="row">
         <!-- PhDs -->
 

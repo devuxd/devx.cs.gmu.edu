@@ -2,6 +2,12 @@
 layout: default
 title: Member
 ---
+{% for msg in site.pagedata %}
+    {% if msg.for == 'member' %}
+        {% assign projectTitle = msg.projectTitle %}
+        {% assign publicationsTitle = msg.publicationsTitle %}
+    {% endif %}
+{% endfor %}
 
 {% for proj in site.projects %}
     {% for collab in proj.current_collaborators %}
@@ -51,7 +57,7 @@ title: Member
 
         {% if hasCurrentProjects %}
         <div class="p-2 mb-2">
-            <h3 class="title">Projects</h3>
+            <h3 class="title">{{ projectTitle }}</h3>
             {% for proj in site.projects %}
             {% for collab in proj.current_collaborators %}
             {% if page.key == collab %}
@@ -87,7 +93,7 @@ title: Member
         {% assign refs = refs | plus: 0 %}
         {% if refs > 0 %}
         <div>
-            <h3 class="title">Publications</h3>
+            <h3 class="title"> {{ publicationsTitle }}</h3>
             {% bibliography --query @*[author~={{page.first_name}} && author~={{page.last_name}}] %}
         </div>
         {% endif %}

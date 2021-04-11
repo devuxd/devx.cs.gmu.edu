@@ -30,7 +30,7 @@ layout: default
                 <div class="row ml-0">
                     <div class="col-12 col-md-11 row mb-3 m-0">
                         {% for post in site.posts limit:numberOfNews %}
-                            {% include newsPanel.html post=post truncatewords=truncatewords %}
+                            {% include newsPanel.html post=post messageThreshold=messageThreshold %}
                         {% endfor %}
                     </div>
                     <div class="col-12 col-md-1 all-news-link"><a href="news">{{newsSeeMore}}</a></div>

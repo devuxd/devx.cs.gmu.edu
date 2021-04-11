@@ -2,12 +2,22 @@
 layout: default
 title: Project
 ---
+
+{% for msg in site.pagedata %}
+    {% if msg.for == 'projects' %}
+        {% assign projectsSeeAll = msg.projectsSeeAll %}
+        {% assign CollaboratorsTitle = msg.CollaboratorsTitle %}
+        {% assign PublicationsTitle = msg.PublicationsTitle %}
+    {% endif %}
+{% endfor %}
+
+
 <div>
     <h3 class="p-4 bg-projects-header text-color-white text-title text-center mb-4">{{page.title}}</h3>
     <div class="container">
         <article>
             <div>
-                <div class="all-projects-link par mb-2"><a href="{{ site.baseurl }}/projects">See All Projects</a></div>
+                <div class="all-projects-link par mb-2"><a href="{{ site.baseurl }}/projects">{{ projectsSeeAll }}</a></div>
                 <div class="row">
                     <div class="col-lg-4 col-12 pb-1">
                         <div class="project-description full-height bg-other p-3">
@@ -23,14 +33,13 @@ title: Project
                     </div>
                 </div>
 
-                <div class="project-page-section">
+                <div class="project-page-section mt-5">
                     <div class="text-justify project-content par">
                         {{page.content}}
                     </div>
                 </div>
 
-                <h3 class="title">
-                    Collaborators</h3>
+                <h3 class="title">{{ CollaboratorsTitle }}</h3>
 
                 <div class="p-2">
                     <div class="row">
@@ -69,8 +78,7 @@ title: Project
                     </div>
                 </div>
 
-                <h3 class="title">
-                    Publications</h3>
+                <h3 class="title">{{ PublicationsTitle}}</h3>
 
                 <div>
                     {%- capture refs -%}
