@@ -6,8 +6,8 @@ categories: jekyll update
 ---
 Our papers on 
 
-- **Using hypotheses as a debugging aid** 
-- **Find unique usages: helping developers understand common usages** 
-- **Large-Scale Microtask Programming**
+- [**Using hypotheses as a debugging aid**](https://doi.org/0.1109/VL/HCC50065.2020.9127273)
+- [**Find unique usages: helping developers understand common usages**](https://doi.org/10.1109/VL/HCC50065.2020.9127285) 
+- [**Large-Scale Microtask Programming**](https://doi.org/10.1109/VL/HCC50065.2020.9127282)
 
 will appear at VL/HCC 2020.

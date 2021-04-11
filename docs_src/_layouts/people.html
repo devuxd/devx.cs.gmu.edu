@@ -6,366 +6,100 @@ layout: default
 
 <!-- sort members based on their seniority -->
 
-{% assign members = site.members | sort: 'start_year' %}
-
+{% assign persons = site.members | sort: 'start_year' %}
 
 
 <div id="people" class="container">
 
-    <h1>Faculty</h1>
+    <h1 class="title">Faculty</h1>
     {% for person in site.members %}
     {% if person.level == 'faculty' %}
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
     </div>
     {% endif %}
     {% endfor %}
 
-    <h1>Students</h1>
-    <div class="row">
-        <!-- Phd's students -->
 
-        {% for person in members %}
+
+
+    <h1 class="title">Students</h1>
+    <div class="row">
+        <!-- Phd students -->
+        {% for person in persons %}
         {% if person.level == 'phd' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 co  align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
-        <!-- Master's students -->
-        {% for person in members %}
+
+        <!-- Master students -->
+        {% for person in persons %}
         {% if person.level == 'master' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
 
-        <!-- Bachelor's students -->
-        {% for person in members %}
+        <!-- Undergrad students -->
+        {% for person in persons %}
         {% if person.level == 'bachelor' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
 
         <!-- Interns -->
-        {% for person in members %}
+        {% for person in persons %}
         {% if person.level == 'intern' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
     </div>
 
 
-    <h1>Alumni</h1>
+    <!-- sort alumni based on their leave year -->
+    {% assign alumni = site.members | sort: 'end_year' | reverse %}
+
+    <h1 class="title">Alumni</h1>
     <div class="row">
-        <!-- Phd's students -->
+        <!-- PhDs -->
 
-        {% for person in members %}
+        {% for person in alumni %}
         {% if person.level == 'phd_alumna' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <span>Now: {{ person.now }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
-        <!-- Master's students -->
-        {% for person in members %}
+        <!-- Master's -->
+        {% for person in alumni %}
         {% if person.level == 'master_alumna' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <span>Now: {{ person.now }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
 
-        <!-- Bachelor's students -->
-        {% for person in members %}
+        <!-- Bachelor's -->
+        {% for person in alumni %}
         {% if person.level == 'bachelor_alumna' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <span>Now: {{ person.now }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
+
+
         <!-- Interns -->
-        {% for person in members %}
-        {% if person.level == 'intern_alumna' %}
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-            <div class="member">
-                <div class="mem-img">
-                    {% if person.image != null %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}{{ person.image }}">
-                    {% else %}
-                    <img alt="{{ person.first_name }} {{ person.last_name }}" class="img-fluid"
-                        title="{{ person.first_name }} {{ person.last_name }}"
-                        src="{{ site.baseurl }}/assets/img/team/placeHolder.png">
-                    {% endif %}
-                </div>
-                <div class="mem-info">
-                    <h4>{{person.first_name}} {{person.last_name}}</h4>
-                    <span>{{ person.title }}</span><br>
-                    <span>Now: {{ person.now }}</span><br>
-                    <div>
-                        {% if person.website != null %}
-                        <a href="{{ person.website }}"><i class="fas fa-house-user icon" title="Home Page"></i></a>
-                        {% endif %}
-                        {% if person.twitter != null %}
-                        <a href="{{ person.twitter }}"><i class="fab fa-twitter-square icon" title="Twitter"></i></a>
-                        {% endif %}
-                        {% if person.github != null %}
-                        <a href="{{ person.github }}"><i class="fab fa-github-square icon" title="Github"></i></a>
-                        {% endif %}
-                        <a href="{{site.baseurl}}{{person.url}}"><i class="fas fa-address-card icon"
-                                title="Lab Profile"></i></a>
-                    </div>
-                </div>
+        <div class="par">
+            {% for person in alumni %}
+            {% if person.level == 'intern_alumna' %}
+            <div class="intern-alumna-container p-1 pb-2">
+                {% if person.website != null %}
+                <a class="text-small-title" href="{{ person.website }}"><span>{{person.first_name}} {{person.last_name}}</span></a>,
+                {% else %}
+                <span class="text-small-title">{{person.first_name}} {{person.last_name}}</span>,
+                {% endif %}
+                <span>{{ person.title }}</span>
+                {% if person.now != null %}
+                , <span class="text-small text-italic">Now {{ person.now }}</span>
+                {% endif %}
             </div>
+            {% endif %}
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
+
     </div>
+</div>

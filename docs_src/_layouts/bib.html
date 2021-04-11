@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="bib-container">
+<div class="bib-container par">
 
 <span class="bib-title">"{{ entry.title }}"</span>,
 
@@ -28,7 +28,11 @@
 
 <!-- Conference Title and Year -->
 
+{% if entry.booktitle != null %}
 <span class="bib-booktitle">{{ entry.booktitle }}</span>,
+{% else %}
+<span class="bib-journal">{{ entry.journal }}</span>,
+{% endif %}
 <span class="bib-year">{{ entry.year }}</span>
 
 <!-- Paper links -->
@@ -38,11 +42,11 @@
 {% assign doi-url = "https://doi.org/" %}
 
 {% if entry.doi != null %}
-<span class="bib-doi"><a href="{{doi-url | append: entry.doi}}">doi</a></span>
+<a class="bib-buttons bib-doi" href="{{doi-url | append: entry.doi}}"><strong>DOI</strong></a>
 {% endif %}
 
 {% if entry.url != null%}
-<span class="bib-preprint"><a href={{entry.url}}>preprint</a> </span>
+<a class="bib-buttons bib-preprint" href={{entry.url}}><strong>Pre-Print</strong></a>
 {% endif %}
 
 <!-- {{ entry.bibtex }}-->

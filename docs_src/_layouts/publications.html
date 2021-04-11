@@ -13,8 +13,6 @@ title: Publications
 
 <div id="publications" class="container">
 
-    <h1>Publications</h1>
-
     {% for yr in (start_year..end_year) reversed %}
     {%- capture refs -%}
     {% bibliography_count --query @*[year={{yr}}] %}

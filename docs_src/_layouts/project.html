@@ -2,90 +2,90 @@
 layout: default
 title: Project
 ---
-<div class="container">
-    <article>
-        <div>
-            <div class="all-projects-link"><a href="{{ site.baseurl }}/projects">See All Projects</a></div>
-            <h3 class="title">{{page.title}}</h3>
-
-            <div class="row">
-                <div class="col-lg-4 col-12 pb-1">
-                    <div class="post-content post-container p-3">
-                        <h2>{{page.short_desc}}</h2>
+<div>
+    <h3 class="p-4 bg-projects-header text-color-white text-title text-center mb-4">{{page.title}}</h3>
+    <div class="container">
+        <article>
+            <div>
+                <div class="all-projects-link par mb-2"><a href="{{ site.baseurl }}/projects">See All Projects</a></div>
+                <div class="row">
+                    <div class="col-lg-4 col-12 pb-1">
+                        <div class="project-description full-height bg-other p-3">
+                            <p>{{page.short_desc}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-12 pb-1">
+                        {% if page.youtube_video != null %}
+                        {% youtube page.youtube_video %}
+                        {% elsif page.photo != null %}
+                        <img class="img-fluid" src="{{site.baseurl}}{{page.photo}}" alt="{{page.title}}">
+                        {% endif %}
                     </div>
                 </div>
-                <div class="col-lg-8 col-12 pb-1">
-                    {% if page.youtube_video != null %}
-                    {% youtube page.youtube_video %}
-                    {% elsif page.photo != null %}
-                    <img class="img-fluid" src="{{site.baseurl}}{{page.photo}}" alt="{{page.title}}">
+
+                <div class="project-page-section">
+                    <div class="text-justify project-content par">
+                        {{page.content}}
+                    </div>
+                </div>
+
+                <h3 class="title">
+                    Collaborators</h3>
+
+                <div class="p-2">
+                    <div class="row">
+                        {% for collab in page.current_collaborators %}
+                        {% for member in site.members %}
+                        {% if member.key == collab %}
+                        <div class="p-2 d-flex align-items-stretch collaborator-img">
+                            <a href="{{ site.baseurl }}{{ member.url }}"><img
+                                    alt="{{member.first_name}} {{member.last_name}}"
+                                    src="{{ site.baseurl }}{{ member.image }}"></a>
+                            <div class="overlay-name-div">
+                                <a href="{{ site.baseurl }}{{ member.url }}">
+                                    <div class="overlay-name-text">{{member.first_name}} {{member.last_name}}</div>
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+
+                        {% if page.prev_collaborators != null %}
+                        {% for collab in page.prev_collaborators %}
+                        {% for member in site.members %}
+                        {% if member.key == collab %}
+                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                            <img src="{{ site.baseurl }}{{ member.image }}"
+                                 alt="{{member.first_name}} {{member.last_name}}">
+                            <div class="overlay-name-div">
+                                <div class="overlay-name-text">{{member.first_name}} {{member.last_name}}</div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <h3 class="title">
+                    Publications</h3>
+
+                <div>
+                    {%- capture refs -%}
+                    {% bibliography_count --query @*[project={{page.title}}] %}
+                    {%- endcapture -%}
+                    {% assign refs = refs | plus: 0 %}
+                    {% if refs > 0 %}
+                    <div class="project-page-section mem-publications">
+                        {% bibliography --query @*[project~={{page.title}}] %}
+                    </div>
                     {% endif %}
                 </div>
+
             </div>
 
-            <div class="project-page-section">
-                <div class="text-justify project-content">
-                {{page.content}}
-                </div>
-            </div>
-
-            <div class="project-page-section">
-                <h3>Collaborators</h3>
-                <div class="row">
-                    {% for collab in page.current_collaborators %}
-                        {% for member in site.members %}
-                            {% if member.key == collab %}
-                            <div class="p-2 d-flex align-items-stretch project-collab-img">
-                                <a href="{{ site.baseurl }}{{ member.url }}"><img
-                                        src="{{ site.baseurl }}{{ member.image }}"></a>
-                                <div class="overlay-name-div">
-                                    <a href="{{ site.baseurl }}{{ member.url }}">
-                                        <div class="overlay-name-text">{{member.first_name}} {{member.last_name}}</div>
-                                    </a>
-                                </div>
-                            </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                </div>
-
-                {% if page.prev_collaborators != null %}
-                    <div class="row">
-                        {% for collab in page.prev_collaborators %}
-                            {% for member in site.members %}
-                                {% if member.key == collab %}
-                                    <div class="p-2 d-flex align-items-stretch project-collab-img">
-                                        <a href="{{ site.baseurl }}{{ member.url }}"><img
-                                                src="{{ site.baseurl }}{{ member.image }}"></a>
-                                        <div class="overlay-name-div">
-                                            <a href="{{ site.baseurl }}{{ member.url }}">
-                                                <div class="overlay-name-text">{{member.first_name}}
-                                                    {{member.last_name}}
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-
-            <div class="project-page-section">
-                {%- capture refs -%}
-                {% bibliography_count --query @*[project={{page.title}}] %}
-                {%- endcapture -%}
-                {% assign refs = refs | plus: 0 %}
-                {% if refs > 0 %}
-                <div class="project-page-section mem-publications">
-                    <h2>Publications</h2>
-                    {% bibliography --query @*[project~={{page.title}}] %}
-                </div>
-                {% endif %}
-            </div>
-
-        </div>
-
-    </article>
+        </article>
+    </div>
 </div>
