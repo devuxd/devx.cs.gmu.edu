@@ -23,7 +23,7 @@ email: tlatoza@gmu.edu
 description: >- # this means to ignore newlines until "baseurl:"
   We study how humans interact with code and design new ways to build software. We work at the intersection
   of software engineering and human-computer interaction.
-baseurl: "/devx.cs.gmu.edu" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://devx.cs.gmu.edu" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  devuxd
 
