@@ -168,7 +168,7 @@ p {
     text-decoration: none;
     border-bottom: none;
 /*     color: currentColor; */
-/*     filter: brightness(0.5); */
+    filter: brightness(0.5);
 /*     border-bottom: dotted 1px black; */
 }
 
