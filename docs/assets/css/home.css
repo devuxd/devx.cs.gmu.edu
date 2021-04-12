@@ -102,9 +102,9 @@
 
 /* ------- text --------  */
 
-* {
+/* * {
     font-family: "Playfair Display", Georgia, serif;
-}
+} */
 
 .text-small {
     font-size: var(--font-size-xs);
