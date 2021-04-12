@@ -1,5 +1,6 @@
 ---
 layout: project
+key: ProgStrategies
 title: Programming Strategies
 # youtube_video: 
 photo: /assets/img/research/strategytracker.png

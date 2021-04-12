@@ -1,6 +1,6 @@
 {% assign project=include.project %}
 
-<div class="col-12 col-md-6 pb-5">
+<div class="col-12 col-md-12 pb-5">
     <div class="project-highlight bg-white full-height box-shadow">
         <div class="project-content m-0">
             <div class="p-1 bg-projects-header text-color-white text-large-title text-center">
@@ -8,11 +8,13 @@
                     <a href="{{ site.baseurl }}{{ project.url }}" class="text-color-white">{{project.title}}</a>
                 </h3>
             </div>
-            <div class="p-3">
-                <div class="pb-3">
-                    <p class="project-description">{{project.short_desc}}</p>
+            <div class="p-3 row">
+                <div class="col-12 pb-3 col-lg-5">
+                    <p class="project-description par">{{project.short_desc}}
+                        <br>
+                    <a href="{{ site.baseurl }}{{ project.url }}" >Learn More.</a></p>
                 </div>
-                <div>
+                <div class="col-12 col-lg-7">
                     {% if project.youtube_video != null %}
                     {% youtube project.youtube_video %}
                     {% elsif project.photo != null %}

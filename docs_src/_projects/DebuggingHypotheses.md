@@ -1,5 +1,6 @@
 ---
 layout: project
+key: DebugHypo
 title: Debugging Hypotheses
 # youtube_video: 
 photo: /assets/img/research/debuggingHypotheses.gif 

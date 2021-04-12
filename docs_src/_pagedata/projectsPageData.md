@@ -4,6 +4,6 @@ ActiveProjectsTitle: Current Projects
 ArchivedProjectsTitle: Previous Projects
 showArchivedProjects: true
 projectsSeeAll: See All Projects
-CollaboratorsTitle: Collaborators
+CollaboratorsTitle: Project Members
 PublicationsTitle: Publications
 ---

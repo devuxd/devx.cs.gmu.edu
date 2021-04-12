@@ -1,5 +1,6 @@
 ---
 layout: project
+key: ActiveDoc
 title: Active Documentation
 # youtube_video: 
 photo: /assets/img/research/ActiveDocumentation.png  
@@ -19,7 +20,9 @@ by navigating to examples in their codebase. After editing code, developers rece
 feedback about which design rules are satisfied and which are violated, notifying developers who miss 
 design decisions about the existence of these design decisions.
 
+<div class="youTube-wrapper mt-3 mb-5">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_AT8sNj02Ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 
 ## RulePad

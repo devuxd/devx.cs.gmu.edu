@@ -6,14 +6,15 @@ title: Tools
 {% for msg in site.pagedata %}
     {% if msg.for == 'tools' %}
         {% assign pageTitle = msg.pageTitle %}
+        {% assign PublicationsTitle = msg.PublicationsTitle %}
     {% endif %}
 {% endfor %}
 
 <div class="gallery container">
     <h3 class="title">{{page.title}}</h3>
-    <div class="row no-gutters">
+    <div>
         <div class="project-page-section">
-            <div class="text-justify project-content">
+            <div class="text-justify project-content par">
                 {{page.content}}
             </div>
         </div>
@@ -21,7 +22,7 @@ title: Tools
         {% if page.papers != null %}
         <div class="project-page-section">
             <div class="project-page-section mem-publications">
-                <h2>Publications</h2>
+                <h3 class="title">{{ PublicationsTitle}}</h3>
                 {% for paper in page.papers %}
                     {% bibliography --query @*[key={{paper}}] %}
                 {% endfor %}

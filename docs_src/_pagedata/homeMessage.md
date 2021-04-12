@@ -5,8 +5,9 @@ welcomeMessage: We study how humans interact with code and design new ways to bu
 groupPhoto: /assets/img/gallery/oh-george-summer19.jpg
 newsTitle: News
 newsSeeMore: See All News
-highlightsTitle: Research Highlights
-highlightsSeeMore: See All Research Projects
 numberOfNews: 3
 messageThreshold: 150
+highlightsTitle: Research Highlights
+highlightsFolders: [projects,tools]
+highlightsKeys: [ActiveDoc,DebugHypo,FindUnique,MicrotaskProg,ProgStrategies,RulePad]
 ---
