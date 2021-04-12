@@ -30,7 +30,7 @@
     transition: all 0.2s;
 }
 
-.bib-buttons:hover {
+a.bib-buttons:hover {
    border: 0.16em solid rgba(255, 255, 255, 0);
 }
 
