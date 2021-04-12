@@ -10,14 +10,14 @@
     --bg-color-4: #c9cfcb;
 
     --color-1: #68665b;
-    --color-2: #734649;
-    --color-3: #466967;
+    --color-2: #a7083f;
+    --color-3: #025c4c;
     --color-4: #62637f;
 
     --border-color: #dee2e6;
 
-    --color-bib-doi: #107b7b;
-    --color-bib-preprint: #73333f;
+    --color-bib-doi: #025c4c;
+    --color-bib-preprint: #a7083f;
 
     --font-size-xl: 42px;
     --font-size-l: 38px;
@@ -102,9 +102,9 @@
 
 /* ------- text --------  */
 
-* {
+/* * {
     font-family: "Playfair Display", Georgia, serif;
-}
+} */
 
 .text-small {
     font-size: var(--font-size-xs);
@@ -146,19 +146,30 @@ p {
 .page-content a:hover {
     color:currentColor;
     text-decoration: none;
-    border-bottom: dotted 1px black;
+    border-bottom: solid 1px currentColor;
 }
 
 .par a {
-    color: currentColor;
+    color: -webkit-link;
+    color: -moz-link;
+    color: -webkit-link;
+    color: -ms-link;
+/*     color: currentColor; */
     text-decoration: none;
-    border-bottom: dotted 1px #FE2600;
+/*     border-bottom: dotted 1px #FE2600; */
+     border-bottom: none;
 }
 
 .par a:hover {
-    color: currentColor;
+    color: -webkit-link;
+    color: -moz-link;
+    color: -webkit-link;
+    color: -ms-link;
+    text-decoration: none;
+    border-bottom: none;
+/*     color: currentColor; */
     filter: brightness(0.5);
-    border-bottom: dotted 1px black;
+/*     border-bottom: dotted 1px black; */
 }
 
 /* ------- collaborator images --------  */
@@ -214,7 +225,7 @@ p {
     transition: all 0.5s;
     z-index: 997;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    background-color: #fafafa;
+    background-color: #fffeff;
 }
 
 #header .banner-img {

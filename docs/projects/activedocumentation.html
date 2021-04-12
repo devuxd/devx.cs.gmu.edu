@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/home.css">
-    <link rel="stylesheet" href="/assets/css/people.css">
     <link rel="stylesheet" href="/assets/css/bibliography.css">
     <link rel="shortcut icon" href="/assets/icon/favicon.ico">
 
@@ -45,452 +44,485 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
 
+                
 
+                
+                    
+                    
+                    
+                    
 
-
-
-
-
-
-
-
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="/">
                             <span class="nav-text">HOME</span></a>
                     </li>
+                    
+                
+                    
+                    
+                    
+                    
 
-
-
-
-
-
-
-
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="/publications">
                             <span class="nav-text">PUBLICATIONS</span></a>
                     </li>
+                    
+                
+                    
+                    
+                    
+                    
 
-
-
-
-
-
-
-
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="/people">
                             <span class="nav-text">PEOPLE</span></a>
                     </li>
+                    
+                
+                    
+                    
+                    
+                    
 
-
-
-
-
-
-
-
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="/news">
                             <span class="nav-text">NEWS</span></a>
                     </li>
+                    
+                
+                    
+                    
+                    
+                    
 
-
-
-
-
-
-
-
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="/gallery">
                             <span class="nav-text">GALLERY</span></a>
                     </li>
-
-
+                    
+                
 
             </ul>
         </div>
     </nav>
 </div>
-    <main class="page-content" aria-label="Content">
+    <main class="page-content mt-3" aria-label="Content">
         <div class="wrapper">
-            <div class="container">
-    <article>
-        <div>
-            <div class="all-projects-link"><a href="/projects">See All Projects</a></div>
-            <h3 class="title">Active Documentation</h3>
+            
 
-            <div class="row">
-                <div class="col-lg-4 col-12 pb-1">
-                    <div class="post-content post-container p-3">
-                        <h2>In Active Documentation, we explore approaches to help developers easily document, check, and update design rules in code.</h2>
+
+<div>
+    <h3 class="p-4 bg-projects-header text-color-white text-title text-center mb-4">Active Documentation</h3>
+    <div class="container">
+        <article>
+            <div>
+                <div class="all-projects-link par mb-2"><a href="/projects">See All Projects</a></div>
+                <div class="row">
+                    <div class="col-lg-4 col-12 pb-1">
+                        <div class="project-description full-height bg-other p-3">
+                            <p>Good documentation has long been argued to be the key to helping developers work more quickly and consistently with design decisions. But our studies have found that documentation is left largely disconnected from code, making it hard to write and update and causing it to become out of date and untrusted. This leaves developers to instead reverse engineer design decisions from code, causing rationale questions about design decisions to be some of the most challenging to answer. We've conducted studies to explore the nature of this problem and have invented new techniques to make documentation active and bidirectionally synchronized with code.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-12 pb-1">
+                        
+                        <img class="img-fluid" src="/assets/img/research/ActiveDocumentation.png" alt="Active Documentation">
+                        
                     </div>
                 </div>
-                <div class="col-lg-8 col-12 pb-1">
 
-                    <img class="img-fluid" src="/assets/img/research/ActiveDocumentation.png" alt="Active Documentation">
+                <div class="project-page-section mt-5">
+                    <div class="text-justify project-content par">
+                        <h2 id="activedocumentation">ActiveDocumentation</h2>
 
-                </div>
-            </div>
-
-            <div class="project-page-section">
-                <div class="text-justify project-content">
-                <h2 id="activedocumentation">ActiveDocumentation</h2>
-
-<p>Good documentation has long been argued to be key to helping developers write code more quickly and
-consistently with design decisions, but is left largely disconnected from code.
-We propose a method for active documentation, where design decisions are made explicit as
-design rules and checked against code. Developers can discover how to follow a design rule
-by navigating to examples in their codebase. After editing code, developers receive immediate
-feedback about which design rules are satisfied and which are violated, notifying developers who miss
+<p>Good documentation has long been argued to be key to helping developers write code more quickly and 
+consistently with design decisions, but is left largely disconnected from code. 
+We propose a method for active documentation, where design decisions are made explicit as 
+design rules and checked against code. Developers can discover how to follow a design rule 
+by navigating to examples in their codebase. After editing code, developers receive immediate 
+feedback about which design rules are satisfied and which are violated, notifying developers who miss 
 design decisions about the existence of these design decisions.</p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_AT8sNj02Ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <h2 id="rulepad">RulePad</h2>
 
-<p>Good documentation offers the promise of enabling developers to easily understand design decisions.
-Unfortunately, in practice, design documents are often rarely updated, becoming inaccurate, incomplete, and untrustworthy. A better solution is to enable developers to write down design rules which may be checked against code for consistency. But existing rule checkers require learning specialized query languages or program analysis frameworks, offering a barrier to writing project-specific rules.
-We introduce two new authoring techniques for design rules: snippet-based authoring and semi-natural-language authoring.
-In snippet-based authoring,
-developers specify characteristics of elements to match by writing partial code snippets.
-In semi-natural language authoring,
-a textual representation offers a representation for understanding design rules and resolving ambiguities,
-which is bidirectionally synchronized.<br />
-We implemented these approaches in RulePad.</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u_IjorRovxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-                </div>
-            </div>
-
-            <div class="project-page-section">
-                <h3>Collaborators</h3>
-                <div class="row">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="p-2 d-flex align-items-stretch project-collab-img">
-                                <a href="/members/sahar"><img
-                                        src="/assets/img/team/Sahar.jpg"></a>
-                                <div class="overlay-name-div">
-                                    <a href="/members/sahar">
-                                        <div class="overlay-name-text">Sahar Mehrpour</div>
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="p-2 d-flex align-items-stretch project-collab-img">
-                                <a href="/members/gennie"><img
-                                        src="/assets/img/team/Gennie.jpg"></a>
-                                <div class="overlay-name-div">
-                                    <a href="/members/gennie">
-                                        <div class="overlay-name-text">Gennie Mansi</div>
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="p-2 d-flex align-items-stretch project-collab-img">
-                                <a href="/members/ayesha"><img
-                                        src="/assets/img/team/placeHolder.png"></a>
-                                <div class="overlay-name-div">
-                                    <a href="/members/ayesha">
-                                        <div class="overlay-name-text">Ayesha Kemal</div>
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-
-
-                    <div class="row">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <div class="p-2 d-flex align-items-stretch project-collab-img">
-                                        <a href="/members/emily"><img
-                                                src="/assets/img/team/Emily.jpg"></a>
-                                        <div class="overlay-name-div">
-                                            <a href="/members/emily">
-                                                <div class="overlay-name-text">Emily
-                                                    Slaughter
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>Developers have long been encouraged to use documentation to learn about software design 
+and make sure the code changes are consistent with the documentation.
+However, this does not happen. The reason is that documentation and code are disconnected.
+Using Active Documentation, design rules in documentation are formulated as checkable constraints.
+But existing tools do not offer enough support. 
+In RulePad, we propose new techniques for authoring checkable design rules.</p>
+
+<p>You can learn more <a href="/tools/rulepad">here</a>.</p>
 
                     </div>
+                </div>
 
-            </div>
+                <h3 class="title">Collaborators</h3>
 
-            <div class="project-page-section">
+                <div class="p-2">
+                    <div class="row">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="p-2 d-flex align-items-stretch collaborator-img">
+                            <a href="/members/sahar"><img
+                                    alt="Sahar Mehrpour"
+                                    src="/assets/img/team/Sahar.jpg"></a>
+                            <div class="overlay-name-div">
+                                <a href="/members/sahar">
+                                    <div class="overlay-name-text">Sahar Mehrpour</div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
 
-                <div class="project-page-section mem-publications">
-                    <h2>Publications</h2>
-                    <ol class="bibliography"><li><div class="bib-container">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                            <img src="/assets/img/team/Gennie.jpg"
+                                 alt="Gennie Mansi">
+                            <div class="overlay-name-div">
+                                <div class="overlay-name-text">Gennie Mansi</div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                            <img src="/assets/img/team/placeHolder.png"
+                                 alt="Ayesha Kemal">
+                            <div class="overlay-name-div">
+                                <div class="overlay-name-text">Ayesha Kemal</div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                            <img src="/assets/img/team/placeHolder.png"
+                                 alt="Aarav Bajaj">
+                            <div class="overlay-name-div">
+                                <div class="overlay-name-text">Aarav Bajaj</div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                            <img src="/assets/img/team/Emily.jpg"
+                                 alt="Emily Slaughter">
+                            <div class="overlay-name-div">
+                                <div class="overlay-name-text">Emily Slaughter</div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                            <img src="/assets/img/team/placeHolder.png"
+                                 alt="Rahul Kindi">
+                            <div class="overlay-name-div">
+                                <div class="overlay-name-text">Rahul Kindi</div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
 
-<span class="bib-title">"Active Documentation: Helping Developers Follow Design Decisions"</span>,
+                <h3 class="title">Publications</h3>
+
+                <div>
+                    
+                    <div class="project-page-section mem-publications">
+                        <ol class="bibliography"><li><div class="bib-container">
+
+<span class="bib-title par">"RulePad: Interactive Authoring of Checkable Design Rules"</span>,
 
 <!-- Author list-->
 
@@ -500,7 +532,7 @@ We implemented these approaches in RulePad.</p>
 
 
 
-<span class="bib-author"><a href="/members/sahar">Sahar Mehrpour</a></span>,
+<span class="bib-author par"><a href="/members/sahar">Sahar Mehrpour</a></span>,
 
 
 
@@ -511,7 +543,7 @@ We implemented these approaches in RulePad.</p>
 
 
 
-<span class="bib-author"><a href="/members/thomas">Thomas D. LaToza</a></span>,
+<span class="bib-author par"><a href="/members/thomas">Thomas D. LaToza</a></span>,
 
 
 
@@ -522,7 +554,7 @@ We implemented these approaches in RulePad.</p>
 
 
 
-<span class="bib-author">Rahul K. Kindi</span>,
+<span class="bib-author par">Hamed Sarvari</span>,
 
 
 
@@ -531,8 +563,10 @@ We implemented these approaches in RulePad.</p>
 
 <!-- Conference Title and Year -->
 
-<span class="bib-booktitle">IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)</span>,
-<span class="bib-year">2019</span>
+
+<span class="bib-booktitle par">ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)</span>,
+
+<span class="bib-year par">2020</span>
 
 <!-- Paper links -->
 
@@ -541,14 +575,87 @@ We implemented these approaches in RulePad.</p>
 
 
 
-<span class="bib-doi"><a href="https://doi.org/10.1109/VLHCC.2019.8818816">doi</a>, </span>
+<a class="bib-buttons bib-doi" href="https://doi.org/10.1145/3368089.3409751"><strong>DOI</strong></a>
 
 
 
-<span class="bib-preprint"><a href=https://doi.org/10.1109/VLHCC.2019.8818816>preprint</a>, </span>
+<a class="bib-buttons bib-preprint" href=https://arxiv.org/abs/2007.05046><strong>Pre-Print</strong></a>
 
 
-<!-- @inproceedings{10.1109/VLHCC.2019.8818816,
+<!-- @inproceedings{Mehrpour2020RulePad,
+  author = {Mehrpour, Sahar and LaToza, Thomas D. and Sarvari, Hamed},
+  booktitle = {ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)},
+  title = {RulePad: Interactive Authoring of Checkable Design Rules},
+  year = {2020},
+  pages = {386–397},
+  doi = {10.1145/3368089.3409751},
+  url = {https://arxiv.org/abs/2007.05046},
+  project = {Active Documentation}
+}
+-->
+
+</div></li>
+<li><div class="bib-container">
+
+<span class="bib-title par">"Active Documentation: Helping Developers Follow Design Decisions"</span>,
+
+<!-- Author list-->
+
+
+
+
+
+
+
+<span class="bib-author par"><a href="/members/sahar">Sahar Mehrpour</a></span>,
+
+
+
+
+
+
+
+
+
+
+<span class="bib-author par"><a href="/members/thomas">Thomas D. LaToza</a></span>,
+
+
+
+
+
+
+
+
+
+
+<span class="bib-author par">Rahul K. Kindi</span>,
+
+
+
+
+
+
+<!-- Conference Title and Year -->
+
+
+<span class="bib-booktitle par">IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)</span>,
+
+<span class="bib-year par">2019</span>
+
+<!-- Paper links -->
+
+<br>
+
+
+
+
+<a class="bib-buttons bib-doi" href="https://doi.org/10.1109/VLHCC.2019.8818816"><strong>DOI</strong></a>
+
+
+
+
+<!-- @inproceedings{Mehrpour2019ActiveDocumentation,
   author = {Mehrpour, Sahar and LaToza, Thomas D. and Kindi, Rahul K.},
   booktitle = {IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)},
   title = {Active Documentation: Helping Developers Follow Design Decisions},
@@ -557,20 +664,19 @@ We implemented these approaches in RulePad.</p>
   location = {Memphis, Tennessee, USA},
   pages = {87-96},
   doi = {10.1109/VLHCC.2019.8818816},
-  url = {https://doi.org/10.1109/VLHCC.2019.8818816},
   project = {Active Documentation}
 }
 -->
-<span class="bib-bibtex"><a href="">bibtex</a></span>
 
 </div></li></ol>
+                    </div>
+                    
                 </div>
 
             </div>
 
-        </div>
-
-    </article>
+        </article>
+    </div>
 </div>
         </div>
     </main><footer class="site-footer h-card">
