@@ -225,7 +225,7 @@ p {
     transition: all 0.5s;
     z-index: 997;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    background-color: #fafafa;
+    background-color: #fffeff;
 }
 
 #header .banner-img {
