@@ -1,5 +1,5 @@
 ---
-layout: tools
+layout: tool
 key: RulePad
 title: RulePad
 youtube_video: https://www.youtube.com/watch?v=dQHbItcr2Aw
