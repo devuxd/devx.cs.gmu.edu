@@ -10,15 +10,15 @@
             </div>
             <div class="p-3 row">
                 <div class="col-12 pb-3 col-lg-5">
-                    <p class="project-description par">{{project.short_desc}}
+                    <p class="project-description par">{{project.highlight}}
                         <br>
                     <a href="{{ site.baseurl }}{{ project.url }}" >Learn More.</a></p>
                 </div>
                 <div class="col-12 col-lg-7">
-                    {% if project.youtube_video != null %}
-                    {% youtube project.youtube_video %}
-                    {% elsif project.photo != null %}
-                    <img class="img-fluid" src="{{site.baseurl}}{{project.photo}}" alt="{{project.title}}">
+                    {% if project.highlightMediaType == "YouTube" %}
+                    {% youtube project.highlightMediaURL %}
+                    {% elsif project.highlightMediaType == "image" %}
+                    <img class="img-fluid" src="{{site.baseurl}}{{project.highlightMediaURL}}" alt="{{project.title}}">
                     {% endif %}
                 </div>
             </div>

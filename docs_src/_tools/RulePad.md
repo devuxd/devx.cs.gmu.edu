@@ -2,9 +2,9 @@
 layout: tool
 key: RulePad
 title: RulePad
-youtube_video: https://www.youtube.com/watch?v=dQHbItcr2Aw
-# photo:
-short_desc: Good documentation offers the promise of enabling developers to easily understand design decisions. Unfortunately, in practice, design documents are often rarely updated, becoming inaccurate, incomplete, and untrustworthy. A better solution is to enable developers to write down design rules which may be checked against code for consistency. But existing rule checkers require learning specialized query languages or program analysis frameworks, offering a barrier to writing project-specific rules. We introduce two new authoring techniques for design rules; snippet-based authoring and semi-natural-language authoring. We implemented these approaches in RulePad. 
+highlightMediaType: YouTube
+highlightMediaURL: https://www.youtube.com/watch?v=dQHbItcr2Aw
+highlight: Good documentation offers the promise of enabling developers to easily understand design decisions. Unfortunately, in practice, design documents are often rarely updated, becoming inaccurate, incomplete, and untrustworthy. A better solution is to enable developers to write down design rules which may be checked against code for consistency. But existing rule checkers require learning specialized query languages or program analysis frameworks, offering a barrier to writing project-specific rules. We introduce two new authoring techniques for design rules; snippet-based authoring and semi-natural-language authoring. We implemented these approaches in RulePad. 
 papers: [Mehrpour2020RulePad]
 ---
 

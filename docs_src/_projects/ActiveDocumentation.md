@@ -2,11 +2,11 @@
 layout: project
 key: ActiveDoc
 title: Active Documentation
-# youtube_video: 
-photo: /assets/img/research/ActiveDocumentation.png  
-short_desc: Good documentation has long been argued to be the key to helping developers work more quickly and consistently with design decisions. But our studies have found that documentation is left largely disconnected from code, making it hard to write and update and causing it to become out of date and untrusted. This leaves developers to instead reverse engineer design decisions from code, causing rationale questions about design decisions to be some of the most challenging to answer. We've conducted studies to explore the nature of this problem and have invented new techniques to make documentation active and bidirectionally synchronized with code.
-current_collaborators: [Sahar]
-prev_collaborators: [Gennie, Ayesha, Aarav, Emily, Rahul]
+highlightMediaType: image
+highlightMediaURL: /assets/img/research/ActiveDocumentation.png
+highlight: Good documentation has long been argued to be the key to helping developers work more quickly and consistently with design decisions. But our studies have found that documentation is left largely disconnected from code, making it hard to write and update and causing it to become out of date and untrusted. This leaves developers to instead reverse engineer design decisions from code, causing rationale questions about design decisions to be some of the most challenging to answer. We've conducted studies to explore the nature of this problem and have invented new techniques to make documentation active and bidirectionally synchronized with code.
+currentMembers: [Sahar]
+previousMembers: [Gennie, Ayesha, Aarav, Emily, Rahul]
 active: true
 ---
 

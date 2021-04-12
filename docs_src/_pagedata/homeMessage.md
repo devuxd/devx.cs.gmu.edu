@@ -9,5 +9,5 @@ numberOfNews: 3
 messageThreshold: 150
 highlightsTitle: Research Highlights
 highlightsFolders: [projects,tools]
-highlightsKeys: [ActiveDoc,DebugHypo,FindUnique,MicrotaskProg,ProgStrategies,RulePad]
+highlightsKeys: [ActiveDoc,DebugHypo,FindUnique,MicrotaskPrograming,ProgStrategies,RulePad]
 ---
