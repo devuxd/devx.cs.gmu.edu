@@ -157,29 +157,6 @@ p {
     border-bottom: solid 1px currentColor;
 }
 
-.par a {
-    color: -webkit-link;
-    color: -moz-link;
-    color: -webkit-link;
-    color: -ms-link;
-/*     color: currentColor; */
-    text-decoration: none;
-/*     border-bottom: dotted 1px #FE2600; */
-     border-bottom: none;
-}
-
-.par a:hover {
-    color: -webkit-link;
-    color: -moz-link;
-    color: -webkit-link;
-    color: -ms-link;
-    text-decoration: none;
-    border-bottom: none;
-/*     color: currentColor; */
-    filter: brightness(0.5);
-/*     border-bottom: dotted 1px black; */
-}
-
 /* ------- collaborator images --------  */
 
 .collaborator-img img {

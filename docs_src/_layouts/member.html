@@ -61,7 +61,7 @@ title: Member
             {% for proj in site.projects %}
             {% for collab in proj.current_collaborators %}
             {% if page.key == collab %}
-            <div class="par mb-1 mt-1">
+            <div class="mb-1 mt-1">
                 <a class="text-large-title" href="{{ site.baseurl }}{{ proj.url }}">{{proj.title}}</a>
             </div>
             {% endif %}
@@ -76,7 +76,7 @@ title: Member
             {% for proj in site.projects %}
             {% for collab in proj.prev_collaborators %}
             {% if page.key == collab %}
-            <div class="par mb-1 mt-1">
+            <div class="mb-1 mt-1">
                 <a class="text-large-title" href="{{ site.baseurl }}{{ proj.url }}">{{proj.title}}</a>
             </div>
             {% endif %}
