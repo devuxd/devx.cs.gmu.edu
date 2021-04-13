@@ -6,7 +6,7 @@ title: Gallery
 {% for msg in site.pagedata %}
     {% if msg.for == 'gallery' %}
         {% assign pageTitle = msg.pageTitle %}
-        {% assign summaryMessage = msg.summaryMessage %}
+        {% assign summaryMessage = msg.content %}
         {% assign numberOfColors = msg.numberOfColors %}
         {% assign colors = msg.colors %}
         {% assign images = msg.images %}
