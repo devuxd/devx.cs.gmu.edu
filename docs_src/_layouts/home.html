@@ -14,6 +14,8 @@ layout: default
         {% assign highlightsTitle = msg.highlightsTitle %}
         {% assign highlightsFolders = msg.highlightsFolders %}
         {% assign highlightsKeys = msg.highlightsKeys %}
+        {% assign highlightTruncateLimit = msg.highlightTruncateLimit %}
+        {% assign learnMore = msg.learnMore %}
     {% endif %}
 {% endfor %}
 
@@ -47,7 +49,7 @@ layout: default
                     {% for collection in highlightsFolders %}
                     {% for item in site[collection] %}
                     {% if highlightsKeys contains item.key %}
-                    {% include projectPanel.html project=item %}
+                    {% include projectPanel.html project=item highlightTruncateLimit=highlightTruncateLimit learnMore=learnMore%}
                     {% endif%}
                     {% endfor %}
                     {% endfor %}

@@ -10,4 +10,6 @@ messageThreshold: 150
 highlightsTitle: Research Highlights
 highlightsFolders: [projects,tools]
 highlightsKeys: [ActiveDoc,DebugHypo,FindUnique,MicrotaskPrograming,ProgStrategies,RulePad]
+highlightTruncateLimit: 60
+learnMore: Learn More
 ---

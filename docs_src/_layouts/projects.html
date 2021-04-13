@@ -17,6 +17,8 @@ layout: default
         {% if msg.showArchivedProjects == false %}
             {% assign hasArchivedProject = false %}
         {% endif %}
+        {% assign highlightTruncateLimit = msg.highlightTruncateLimit %}
+        {% assign learnMore = msg.learnMore %}
     {% endif %}
 {% endfor %}
 
@@ -27,7 +29,7 @@ layout: default
         <div class="row">
         {% for project in site.projects %}
         {% if project.active %}
-        {% include projectPanel.html project=project %}
+        {% include projectPanel.html project=project highlightTruncateLimit=highlightTruncateLimit learnMore=learnMore %}
         {% endif %}
         {% endfor %}
         </div>
@@ -41,7 +43,7 @@ layout: default
         <div class="row">
         {% for project in site.projects %}
         {% if project.active == false %}
-        {% include projectPanel.html project=project %}
+        {% include projectPanel.html project=project highlightTruncateLimit=highlightTruncateLimit learnMore=learnMore %}
         {% endif %}
         {% endfor %}
         </div>

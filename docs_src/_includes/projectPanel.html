@@ -1,4 +1,6 @@
-{% assign project=include.project %}
+{% assign project = include.project %}
+{% assign highlightTruncateLimit = include.highlightTruncateLimit %}
+{% assign LearnMore = include.learnMore %}
 
 <div class="col-12 col-md-12 pb-5">
     <div class="project-highlight bg-white full-height box-shadow">
@@ -10,9 +12,8 @@
             </div>
             <div class="p-3 row">
                 <div class="col-12 pb-3 col-lg-5">
-                    <p class="project-description par">{{project.highlight}}
-                        <br>
-                    <a href="{{ site.baseurl }}{{ project.url }}" >Learn More.</a></p>
+                    <p class="project-description par">{{project.highlight | truncatewords: highlightTruncateLimit}}</p>
+                    <p class="par"><a href="{{ site.baseurl }}{{ project.url }}" >{{ LearnMore }}</a></p>
                 </div>
                 <div class="col-12 col-lg-7">
                     {% if project.highlightMediaType == "YouTube" %}
