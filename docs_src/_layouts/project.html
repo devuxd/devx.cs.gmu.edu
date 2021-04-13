@@ -47,7 +47,7 @@ title: Project
                         {% for collab in page.currentMembers %}
                         {% for member in site.members %}
                         {% if member.key == collab %}
-                        <div class="p-2 d-flex align-items-stretch collaborator-img">
+                        <div class="p-2 d-flex collaborator-img">
                             <a href="{{ site.baseurl }}{{ member.url }}"><img
                                     alt="{{member.first_name}} {{member.last_name}}"
                                     src="{{ site.baseurl }}{{ member.image }}"></a>
@@ -65,7 +65,7 @@ title: Project
                         {% for collab in page.previousMembers %}
                         {% for member in site.members %}
                         {% if member.key == collab %}
-                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                        <div class="p-2 d-flex collaborator-img prev">
                             <img src="{{ site.baseurl }}{{ member.image }}"
                                  alt="{{member.first_name}} {{member.last_name}}">
                             <div class="overlay-name-div">
