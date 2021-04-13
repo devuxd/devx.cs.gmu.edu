@@ -57,22 +57,23 @@ layout: default
   
 The layouts that are called by main pages are:  
   
- - `gallery` is called by `gallery.markdown`. It reads data from `_pagedata > galleryImages.md` 
- - `home` is called by `index.markdown`. It reads the welcome message and picture from `_pagedata > homeMessage.md`. It also reads data from `_posts` (as news) and `_projects` (for research highlights). 
+ - `gallery` is called by `gallery.markdown`. It reads data from `_pagedata > galleryPageData.md` 
+ - `home` is called by `index.markdown`. It reads the welcome message and picture from `_pagedata > homePageData.md`. It also reads data from `_posts` (as news) and `_projects` (for research highlights). 
  - `news` is called by `news.markdown`. It reads data from `_posts`. 
- - `people` is called by `people.markdown`. It reads data from `_members`. The liquid code inside the page is grouping the members and checking the existence of properties for clean rendering. 
- - `projects` is called by `projects.markdown`. It reads data from `_projects`. 
- - `publications` is called by `publications.markdown` and reads the `bib` files of the `_bibliography`  
+ - `people` is called by `people.markdown`. It reads data from `_pagedata > peoplePageData.md` and `_members`. The liquid code inside the page is grouping the members and checking the existence of properties for clean rendering. 
+ - `projects` is called by `projects.markdown`. It reads data from `_pagedata > projectsPageData.md` and `_projects`. 
+ - `publications` is called by `publications.markdown` and reads the `bib` files of the `_bibliography` and `_pagedata > publicationPageData.md` 
 
 
 The following layouts are called by **data files**.   
    
- - `member` is a profile page for each member of the lab. It is called by each member in `_members`.   
- - `post` is page dedicated to each piece of news and called by each post in `_posts`.  
+ - `member` is a profile page for each member of the lab. It is called by each member in `_members` and reads data from `_pagedata > memberPageData.md`.   
+ - `post` is page dedicated to each piece of news and called by each post in `_posts`. Currently, there is no accessible link in the website.  
  - `project` is a project page called by each project in `_projects`.  
+ - `tool` is a page for available tools and reads data from `_tools`.
  
 
-## Notes ! 
+### Notes ! 
 
 The url of the pages are defined in `_config.yml` as `/:collection/:name` where `:name` is the filename (Read more [here](https://jekyllrb.com/docs/permalinks/#collections)). That is, for `_members > Abc.md`, the url of Abc profile is `/members/abc`. (Note the lowercase `abc`). 
 
@@ -85,22 +86,17 @@ If the page is retrieved by processing the `site` variable, then its url is `{{ 
 {% endfor %}
 ```
 
-However, to manually creating the url, note that url must be lowercase. For example:
-
-```
-
-{% for collab in page.current_collaborators %}  
-    <a href="{{site.baseurl}}/members/{{collab | downcase}}">{{collab}}</a><br>  
-{% endfor %}
-```
-
 ## _includes   
 
-This directory contains the `html` pieces of code that are reused and called using `{% include ....html %}`.    
+This directory contains the `html` pieces of code that are reused and called using `{% include ....html %}`. Some include files require additional inputs.  
+  
  - `custom-head` (created by David and not being used in the current version of code)  
 - `footer` is intended to implement a footer and to be included in the `default` layout. (not used at the moment`  
 - `head` contains the head of the `HTML` page. It also includes the scripts for *bootstap* library.  
-- `header` is the navigation bar and is included in the `default` layout. It reads the navigatin items from `_pagedata > navbarItems.md`  
+- `header` is the navigation bar and is included in the `default` layout. It reads the navigatin items from `_pagedata > navbarItems.md`
+- `newsPanel` is the panel for news items in `home` and `news` pages. It should be called as `{% include newsPanel.html post=X messageThreshold=Y %}`
+- `peoplePanel` is the panel reused in `people` page. It should be called as `{% include peoplePanel.html person=X %}`
+- `projectPanel` is the panel reused in `home` and `projects` pages. It should be called as `{% include projectPanel.html project=X highlightTruncateLimit=Y learnMore=Z %}`
 
 
 # Data Directories  
@@ -109,7 +105,10 @@ The only files that are going to be modified regularly are data files.
 
 ## _bibliography 
 
-This directory includes `references.bib` which is a `bib` file. The `key` of bibitems are explicily reused in `_members` and `_projects` files. In the current design, all bibitems are called in the `publications.html` layout.  
+This directory includes `references.bib` which is a `bib` file. 
+The `project` property of bibitems is used to filter publications in `project` pages.
+The first and last names of `author`s are matched against the first and last names of members to filter publications for `member` pages.
+In the current design, all bibitems are called in the `publications.html` layout.  
 
 ## _members   
 
@@ -119,35 +118,49 @@ This directory contains the `md` files for each member. Each member file should 
   
 --- 
 layout: member    
-key: student_key    
-role: phd_student    
-title: PhD Student    
-first_name: First Name    
-last_name: Last Name    
-start_year: 2017    
-email: <email>@gmu.edu    
-image: /assets/img/team/<studentName>.jpg    
-website: http://mason.gmu.edu/~<masonlive username>    
-twitter: https://twitter.com/<twitterID>    
-github: https://github.com/<GithubID>    
-publications: [bibItemKey1,bibItemKey2] 
+key: 
+first_name:   
+last_name: 
+level: 
+status:     
+title:       
+start_year: 
+end_year:     
+email:    
+image: /assets/img/team/  
+website:   
+twitter:     
+github:   
+bib_id: 
 --- 
 The is the **bio** of the student written in markdown.
   
 ```  
+
+Required fields are marked by (Req).
   
-- The layout should be `member`. 
-- `key` should be unique. It is used in project files and used in `project.html` layout to look for collaborators.  
-- `role` must be one of the values used in `people.html` page. Right now there are the following roles: `faculty`, `phd_student`, `master_student`, `undergrad_student`, `highschool_student`, and `alumni`. Currently, the `role` property is only used in `people.html` layout.  
-- `start_year` is used to sort the students in the `people.html` layout.  
-- `publications` is an array of bibitem keys in `references.bib`.  
-- The bio is written in `md` format.  
+- (Req) The layout should be `member`. 
+- (Req) `first_name` and `last_name` are displayed in the website.
+- (Req) `key` should be unique. It is used in project files and used in `project.html` layout to identify project members.  
+- (Req) `level` must be one of the values used in `people.html` page. Right now there are the following roles: `Faculty`, `PhD`, `Master`, `REU`, and `ASSIP`.
+- (Req for non-Faculty members) `status` is either `student` or `alumni`. It is used to sort members in `people` page.
+- (Req) `title` is used to display the title of the member. It is used in `people` and `member` pages.
+- (* for non-Faculty members) `start_year` is the year the student joined the lab. It is used to sort the members in `people` page.
+- `end_year` is the year the member left the lab. If it is equal to `start_year`, it **should not** be added.
+- `email` is not displayed in the website currently.
+- (Req) `image` property are for locating the images of members. All images **should** be at `/assets/img/team/`.
+All characters are case-sensitive, e.g., `jpg` is different from `JPG`.
+All images **should** be squared (e.g., 450*450). Images should have small size for better rendering.
+If there is no image, then the placeholder image should be added: `/assets/img/team/placeHolder.png`.  
+- `website`, `twitter`, and `github` specify complete links to these external sites.
+- `bib_id` is the name under which the papers are published. This property is not used currently.
+- The bio is written in `md` format. It is displayed in `member` pages. 
   
-Properties can be removed/commented out by adding `#`. `email`, `image`, links, `publications`, and `bio` can be commented out.  
+
 
 ## _pagedata   
 
-The directory contains the data files used in differnt pages. As these filed are not directly rendered, they don't need the `layout` property. To be consistent, they should specified in which page they are being used through `for` property.  
+The directory contains the data files used in differnt pages. These filed are not directly rendered, and they don't need the `layout` property. To be consistent, they should specified in which page they are being used through `for` property.  
 
 ## _posts   
 
@@ -171,28 +184,31 @@ In the current design, only the `yyyy-mm-ss` info of the date is being used.
 
 ## _projects    
 
-This directory stores the data of projects, current and old ones. The format of the data files is as folloes:  
+This directory stores the data of projects, current and old ones. The format of the data files is as follows:  
   
 ```
-  
+
 --- 
-layout: project    
-title: Project title    
-video: youtube link  
-photo: local path to the link  
-short_desc: Some short description.     
-current_collaborators: [memberKey1,memberKey2] prev_collaborator: [memberKey3,memberKey4] active: true    
-publications: [bibItemKey1,bibItemKey2] --- Long description for the project in markdown.  
+layout: project
+key:     
+title:
+highlightMediaType:
+highlightMediaURL:
+highlight:   
+currentMembers: [memberKey1,memberKey2] 
+previousMembers: [memberKey3,memberKey4] 
+active: true    
+--- 
 ```   
 
 - `layout` must be `project`  
-- `video` should be a youtube link (optional), used in `home.html`, `projects.html`, `project.html`, and `member.html`.  
-- `photo` should be in the local. More photos can be added in the long description.  
-- `short_desc` is used in `home.html` in research highlights, `projects.html` in summary of the project, in `project.html`, and in `member.html`.  
-- `current_collaborators` is an array of member `key`s.  
-- `prev_collaborators` is an array of member `key`s previously contributed.  
-- `active` is a boolean that specifies if the project is currently active or not.  
-- `publications` is an array of bibitem keys.   
+- `key` is a unique value used in selecting highlights in `home` page.
+- `highlightMediaType` is either `image` or `YouTube`. This is used in highlights in `home`, all `projects`, and individual `project` pages.
+- `highlighMediaURL` depending on the `highlightMediaType` is either the YouTube URL (for `YouTube`) of the location of an image in `/assets/img/research/` directory.
+- `highlight` is a summary of the project. It is displayed on `home`, all `projects`, and individual `project` pages.
+- `currentMembers` is an array of members' `key`s who are currently active in the project.  
+- `previousMembers` is an array of members' `key`s who previously contributed.  
+- `active` is a boolean that specifies if the project is currently active or not. It is used to sort projects in all `projects` page.
 
 # assets
   
