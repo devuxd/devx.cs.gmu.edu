@@ -228,12 +228,10 @@ p {
     margin: 0;
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-xl);
-    color: var(--main-txt-color-1);
     text-transform: uppercase;
 }
 
 .summary h2 {
-    color: var(--main-txt-color-2);
     margin: 10px 0 0 0;
     font-size: var(--font-size-s);
 }
@@ -262,7 +260,7 @@ p {
 .all-projects-link a {
     font-size: var(--font-size-s);
     font-style: italic;
-    color: var(--aux-txt-color-1);
+    color: var(--color-1);
     position: relative;
 }
 
@@ -282,7 +280,6 @@ p {
 }
 
 .post-content h2 {
-    color: var(--main-txt-color-2);
     margin: 10px 0 0 0;
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-md);
@@ -301,7 +298,6 @@ p {
 }
 
 .project-description {
-    color: var(--main-txt-color-2);
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-md);
 }
@@ -319,7 +315,6 @@ p {
 .footer-col-wrapper,
 .social-links {
 @include relative-font-size(0.9375);
-    color: var(--main-txt-color-1);
 }
 
 .social-media-list {
@@ -338,14 +333,14 @@ p {
     display: block;
     padding: 4px;
     border: 0;
-    color: var(--footer-txt-color-1);
+    color: var(--color-1);
 }
 
 .social-media-list .svg-icon {
     width: 16px;
     height: 16px;
     display: inline-block;
-    fill: var(--footer-txt-color-1);
+    fill: var(--color-1);
     vertical-align: text-top;
 }
 
