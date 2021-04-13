@@ -18,18 +18,19 @@ title: Project
         <article>
             <div>
                 <div class="all-projects-link par mb-2"><a href="{{ site.baseurl }}/projects">{{ projectsSeeAll }}</a></div>
-                <div class="row">
-                    <div class="col-lg-4 col-12 pb-1">
-                        <div class="project-description full-height bg-other p-3">
-                            <p>{{page.highlight}}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-12 pb-1">
+
+                <div>
+                    <div class="project-description full-height bg-other p-3">
                         {% if page.highlightMediaType == "YouTube" %}
-                        {% youtube page.highlightMediaURL %}
+                        <div class="ml-3 col-lg-8 float-right center-contents"> {% youtube page.highlightMediaURL %}</div>
                         {% elsif page.highlightMediaType == "image" %}
-                        <img class="img-fluid" src="{{site.baseurl}}{{page.highlightMediaURL}}" alt="{{page.title}}">
+                        <div class="ml-3 col-lg-9 float-right">
+                            <img class="img-fluid center-contents" style="display:block" src="{{site.baseurl}}{{page.highlightMediaURL}}"
+                                 alt="{{page.title}}">
+                        </div>
                         {% endif %}
+                        <p class="text-justify">{{ page.highlight }} </p>
+
                     </div>
                 </div>
 
