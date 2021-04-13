@@ -1,11 +1,12 @@
 ---
 layout: project
+key: MicrotaskPrograming
 title: Microtask Programming
-youtube_video: https://www.youtube.com/watch?v=mIn2EOqsDYw
-# photo: 
-short_desc: Onboarding on a new project is often a long, hard process, dissuading casual contributors from ever starting. What if you could contribute code to a new software project in a few minutes? How would enabling many transient contributors change software development? We've been exploring these questions through building web-based programming environments which enable microtask programming and conducting studies to understand how they change software development work.
-current_collaborators: [Emad]
-prev_collaborators: [Ankit, Aarushi]
+highlightMediaType: YouTube
+highlightMediaURL: https://www.youtube.com/watch?v=mIn2EOqsDYw
+highlight: Onboarding on a new project is often a long, hard process, dissuading casual contributors from ever starting. What if you could contribute code to a new software project in a few minutes? How would enabling many transient contributors change software development? We've been exploring these questions through building web-based programming environments which enable microtask programming and conducting studies to understand how they change software development work.
+currentMembers: [Emad]
+previousMembers: [Ankit, Aarushi]
 active: true
 ---
 What if you could contribute code to a new software project in a few minutes? How would enabling many transient contributors change software development?

@@ -3,7 +3,8 @@ layout: member
 first_name: Abdulaziz
 last_name: Alaboudi
 key: Abdulaziz
-level: phd
+level: PhD
+status: student
 title: PhD Student
 start_year: 2017
 email: aalaboud@gmu.edu

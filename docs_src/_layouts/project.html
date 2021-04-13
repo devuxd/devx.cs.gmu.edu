@@ -6,7 +6,7 @@ title: Project
 {% for msg in site.pagedata %}
     {% if msg.for == 'projects' %}
         {% assign projectsSeeAll = msg.projectsSeeAll %}
-        {% assign CollaboratorsTitle = msg.CollaboratorsTitle %}
+        {% assign MembersTitle = msg.MembersTitle %}
         {% assign PublicationsTitle = msg.PublicationsTitle %}
     {% endif %}
 {% endfor %}
@@ -17,36 +17,37 @@ title: Project
     <div class="container">
         <article>
             <div>
-                <div class="all-projects-link par mb-2"><a href="{{ site.baseurl }}/projects">{{ projectsSeeAll }}</a></div>
-                <div class="row">
-                    <div class="col-lg-4 col-12 pb-1">
-                        <div class="project-description full-height bg-other p-3">
-                            <p>{{page.short_desc}}</p>
+                <div class="all-projects-link mb-2"><a href="{{ site.baseurl }}/projects">{{ projectsSeeAll }}</a></div>
+
+                <div>
+                    <div class="project-description full-height bg-other p-3">
+                        {% if page.highlightMediaType == "YouTube" %}
+                        <div class="ml-3 col-lg-8 float-right center-contents"> {% youtube page.highlightMediaURL %}</div>
+                        {% elsif page.highlightMediaType == "image" %}
+                        <div class="ml-3 col-lg-9 float-right">
+                            <img class="img-fluid center-contents" style="display:block" src="{{site.baseurl}}{{page.highlightMediaURL}}"
+                                 alt="{{page.title}}">
                         </div>
-                    </div>
-                    <div class="col-lg-8 col-12 pb-1">
-                        {% if page.youtube_video != null %}
-                        {% youtube page.youtube_video %}
-                        {% elsif page.photo != null %}
-                        <img class="img-fluid" src="{{site.baseurl}}{{page.photo}}" alt="{{page.title}}">
                         {% endif %}
+                        <p>{{ page.highlight }} </p>
+
                     </div>
                 </div>
 
                 <div class="project-page-section mt-5">
-                    <div class="text-justify project-content par">
+                    <div class="text-justify project-content">
                         {{page.content}}
                     </div>
                 </div>
 
-                <h3 class="title">{{ CollaboratorsTitle }}</h3>
+                <h3 class="title">{{ MembersTitle }}</h3>
 
                 <div class="p-2">
                     <div class="row">
-                        {% for collab in page.current_collaborators %}
+                        {% for collab in page.currentMembers %}
                         {% for member in site.members %}
                         {% if member.key == collab %}
-                        <div class="p-2 d-flex align-items-stretch collaborator-img">
+                        <div class="p-2 d-flex collaborator-img">
                             <a href="{{ site.baseurl }}{{ member.url }}"><img
                                     alt="{{member.first_name}} {{member.last_name}}"
                                     src="{{ site.baseurl }}{{ member.image }}"></a>
@@ -60,11 +61,11 @@ title: Project
                         {% endfor %}
                         {% endfor %}
 
-                        {% if page.prev_collaborators != null %}
-                        {% for collab in page.prev_collaborators %}
+                        {% if page.previousMembers != null %}
+                        {% for collab in page.previousMembers %}
                         {% for member in site.members %}
                         {% if member.key == collab %}
-                        <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                        <div class="p-2 d-flex collaborator-img prev">
                             <img src="{{ site.baseurl }}{{ member.image }}"
                                  alt="{{member.first_name}} {{member.last_name}}">
                             <div class="overlay-name-div">

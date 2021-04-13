@@ -2,11 +2,10 @@
 layout: member
 first_name: Arushi	
 last_name: Upadhyaya
-key: Somasekhar
-level: intern_alumna
-title: Research Intern, Summer 2020
+key: Arushi
+level: ASSIP
+status: alumni
+title: ASSIP Student
 start_year: 2020
-end_year: 2020
 image: /assets/img/team/placeHolder.png
-<!-- now: BS in Computer Science at ??? -->
 ---

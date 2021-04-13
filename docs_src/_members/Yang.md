@@ -3,7 +3,8 @@ layout: member
 first_name: Yang
 last_name: Kyu Yoo
 key: Yang
-level: phd
+level: PhD
+status: student
 title: PhD Student
 start_year: 2020
 # email: 

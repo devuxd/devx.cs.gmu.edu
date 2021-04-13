@@ -1,11 +1,12 @@
 ---
 layout: project
+key: DebugHypo
 title: Debugging Hypotheses
-# youtube_video: 
-photo: /assets/img/research/debuggingHypotheses.gif 
-short_desc: As developers debug, they use their mental models to formulate hypotheses about the cause of a defect. Unfortunately, when their hypotheses are wrong, developers can waste time and get stuck gathering information that does not lead them any closer to the cause of the defect. We've conducted studies to understand how developers debug and the role of hypotheses in debugging and are exploring new forms of debugging tools which enable developers to find, use, and test relevant hypotheses from similar defects.
-current_collaborators: [Abdulaziz]
-# prev_collaborators: []
+highlightMediaType: image
+highlightMediaURL: /assets/img/research/debuggingHypotheses.gif 
+highlight: As developers debug, they use their mental models to formulate hypotheses about the cause of a defect. Unfortunately, when their hypotheses are wrong, developers can waste time and get stuck gathering information that does not lead them any closer to the cause of the defect. We've conducted studies to understand how developers debug and the role of hypotheses in debugging and are exploring new forms of debugging tools which enable developers to find, use, and test relevant hypotheses from similar defects.
+currentMembers: [Abdulaziz]
+# previousMembers: []
 active: true
 ---
 Software engineering has long studied how software developers work, building a body of work which forms the foundation of many software engineering best practices, tools, and theories. Recently, some developers have begun recording videos of themselves engaged in programming tasks contributing to open source projects, enabling them to share knowledge and socialize with other developers. We believe that these videos offer an important opportunity for both software engineering research and education. In this paper, we discuss the potential use of these videos as well as open questions for how to best enable this envisioned use. We propose creating a central repository of programming videos, enabling analyzing and annotating videos to illustrate specific behaviors of interest such as asking and answering questions, employing strategies, and software engineering theories. Such a repository would offer an important new way in which both software engineering researchers and students can understand how software developers work.

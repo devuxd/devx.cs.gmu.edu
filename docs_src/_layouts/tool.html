@@ -1,0 +1,76 @@
+---
+layout: default
+title: Tools
+---
+
+{% for msg in site.pagedata %}
+    {% if msg.for == 'tools' %}
+        {% assign pageTitle = msg.pageTitle %}
+        {% assign PublicationsTitle = msg.PublicationsTitle %}
+        {% assign  MembersTitle = msg.MembersTitle %}
+    {% endif %}
+{% endfor %}
+
+<div class="gallery container">
+    <h3 class="title">{{page.title}}</h3>
+    <div>
+        <div class="project-page-section">
+            <div class="text-justify project-content">
+                {{page.content}}
+            </div>
+        </div>
+
+
+        {% if page.currentMembers != null %}
+        <h3 class="title">{{ MembersTitle }}</h3>
+        <div class="p-2">
+            <div class="row">
+                {% for collab in page.currentMembers %}
+                {% for member in site.members %}
+                {% if member.key == collab %}
+                <div class="p-2 d-flex align-items-stretch collaborator-img">
+                    <a href="{{ site.baseurl }}{{ member.url }}"><img
+                            alt="{{member.first_name}} {{member.last_name}}"
+                            src="{{ site.baseurl }}{{ member.image }}"></a>
+                    <div class="overlay-name-div">
+                        <a href="{{ site.baseurl }}{{ member.url }}">
+                            <div class="overlay-name-text">{{member.first_name}} {{member.last_name}}</div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+
+                {% if page.previousMembers != null %}
+                {% for collab in page.previousMembers %}
+                {% for member in site.members %}
+                {% if member.key == collab %}
+                <div class="p-2 d-flex align-items-stretch collaborator-img prev">
+                    <img src="{{ site.baseurl }}{{ member.image }}"
+                         alt="{{member.first_name}} {{member.last_name}}">
+                    <div class="overlay-name-div">
+                        <div class="overlay-name-text">{{member.first_name}} {{member.last_name}}</div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if page.papers != null %}
+        <div class="project-page-section">
+            <div class="project-page-section mem-publications">
+                <h3 class="title">{{ PublicationsTitle}}</h3>
+                {% for paper in page.papers %}
+                    {% bibliography --query @*[key={{paper}}] %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+</div>

@@ -3,7 +3,8 @@ layout: member
 first_name: Maryam
 last_name: Arab
 key: Maryam
-level: phd
+level: PhD
+status: student
 title: PhD Student
 start_year: 2017
 email: marab@gmu.edu

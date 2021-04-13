@@ -9,10 +9,13 @@ layout: default
         {% assign groupPhoto = msg.groupPhoto %}
         {% assign newsTitle = msg.newsTitle %}
         {% assign newsSeeMore = msg.newsSeeMore %}
-        {% assign highlightsTitle = msg.highlightsTitle %}
-        {% assign highlightsSeeMore = msg.highlightsSeeMore %}
         {% assign numberOfNews = msg.numberOfNews %}
         {% assign messageThreshold = msg.messageThreshold%}
+        {% assign highlightsTitle = msg.highlightsTitle %}
+        {% assign highlightsFolders = msg.highlightsFolders %}
+        {% assign highlightsKeys = msg.highlightsKeys %}
+        {% assign highlightTruncateLimit = msg.highlightTruncateLimit %}
+        {% assign learnMore = msg.learnMore %}
     {% endif %}
 {% endfor %}
 
@@ -42,11 +45,13 @@ layout: default
         <div class="pb-2 pt-5 container">
             <article>
                 <h1 class="text-color-1 text-title text-center pb-4 text-uppercase">{{highlightsTitle}}</h1>
-                <div class="row">
-                    {% for project in site.projects %}
-                    {% if project.active %}
-                    {% include projectPanel.html project=project %}
-                    {% endif %}
+                <div>
+                    {% for collection in highlightsFolders %}
+                    {% for item in site[collection] %}
+                    {% if highlightsKeys contains item.key %}
+                    {% include projectPanel.html project=item highlightTruncateLimit=highlightTruncateLimit learnMore=learnMore%}
+                    {% endif%}
+                    {% endfor %}
                     {% endfor %}
                 </div>
             </article>
