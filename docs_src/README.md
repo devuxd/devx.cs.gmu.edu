@@ -145,7 +145,7 @@ Required fields are marked by (Req).
 - (Req) `level` must be one of the values used in `people.html` page. Right now there are the following roles: `Faculty`, `PhD`, `Master`, `REU`, and `ASSIP`.
 - (Req for non-Faculty members) `status` is either `student` or `alumni`. It is used to sort members in `people` page.
 - (Req) `title` is used to display the title of the member. It is used in `people` and `member` pages.
-- (* for non-Faculty members) `start_year` is the year the student joined the lab. It is used to sort the members in `people` page.
+- (Req for non-Faculty members) `start_year` is the year the student joined the lab. It is used to sort the members in `people` page.
 - `end_year` is the year the member left the lab. If it is equal to `start_year`, it **should not** be added.
 - `email` is not displayed in the website currently.
 - (Req) `image` property are for locating the images of members. All images **should** be at `/assets/img/team/`.
@@ -160,7 +160,11 @@ If there is no image, then the placeholder image should be added: `/assets/img/t
 
 ## _pagedata   
 
-The directory contains the data files used in differnt pages. These filed are not directly rendered, and they don't need the `layout` property. To be consistent, they should specified in which page they are being used through `for` property.  
+The directory contains the data files used in differnt pages. These filed are not directly rendered, and they don't need the `layout` property. To be consistent, they should specified in which page they are being used through `for` property.
+
+### galleryPageData
+
+To add a new image, add the reasonably resized image to `/assets/img/gallery`, and add the location of the image plus a caption to the **same** index of the `images` and `captions` arrays.   
 
 ## _posts   
 
