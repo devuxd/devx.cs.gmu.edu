@@ -1,11 +1,11 @@
 ---
 layout: member
-first_name: Somasekhar		
-last_name: Patil
-key: Somasekhar
+first_name: Rishin
+last_name: Pandit
+key: Rishin
 level: ASSIP
 status: alumni
 title: ASSIP Student
-start_year: 2020
+start_year: 2018
 image: /assets/img/team/placeHolder.png
 ---

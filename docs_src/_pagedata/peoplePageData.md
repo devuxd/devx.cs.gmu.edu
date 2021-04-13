@@ -2,5 +2,7 @@
 for: people
 facultyTitle: Faculty
 studentsTitle: Students
-AlumniTitle: Alumni
+studentsGroup: [PhD, Master, REU, ASSIP]
+alumniTitle: Alumni
+alumniGroup: [PhD, Master, REU, ASSIP]
 ---

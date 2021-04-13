@@ -3,7 +3,8 @@ layout: member
 first_name: Sahar
 last_name: Mehrpour
 key: Sahar
-level: phd
+level: PhD
+status: student
 title: PhD Student
 start_year: 2017
 email: smehrpou@gmu.edu

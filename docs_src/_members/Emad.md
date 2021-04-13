@@ -3,7 +3,8 @@ layout: member
 first_name: Emad
 last_name: Aghayi
 key: Emad
-level: phd 
+level: PhD
+status: student
 title: PhD Student
 start_year: 2017
 email: eaghayi@gmu.edu

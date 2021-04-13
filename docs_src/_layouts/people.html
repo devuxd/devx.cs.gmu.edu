@@ -6,7 +6,9 @@ layout: default
     {% if msg.for == 'people' %}
         {% assign facultyTitle = msg.facultyTitle %}
         {% assign studentsTitle = msg.studentsTitle %}
-        {% assign AlumniTitle = msg.AlumniTitle %}
+        {% assign studentsGroup = msg.studentsGroup %}
+        {% assign alumniTitle = msg.alumniTitle %}
+        {% assign alumniGroup = msg.alumniGroup %}
     {% endif %}
 {% endfor %}
 
@@ -20,7 +22,7 @@ layout: default
 
     <h1 class="title">{{ facultyTitle }}</h1>
     {% for person in site.members %}
-    {% if person.level == 'faculty' %}
+    {% if person.level == 'Faculty' %}
     <div class="row">
         {% include peoplePanel.html person=person %}
     </div>
@@ -29,84 +31,54 @@ layout: default
 
 
 
-
     <h1 class="title">{{ studentsTitle }}</h1>
     <div class="row">
-        <!-- Phd students -->
+
+        {% for group in studentsGroup %}
+
         {% for person in persons %}
-        {% if person.level == 'phd' %}
+        {% if person.level == group and person.status == "student" %}
         {% include peoplePanel.html person=person %}
         {% endif %}
         {% endfor %}
 
-        <!-- Master students -->
-        {% for person in persons %}
-        {% if person.level == 'master' %}
-        {% include peoplePanel.html person=person %}
-        {% endif %}
         {% endfor %}
 
-        <!-- Undergrad students -->
-        {% for person in persons %}
-        {% if person.level == 'bachelor' %}
-        {% include peoplePanel.html person=person %}
-        {% endif %}
-        {% endfor %}
-
-        <!-- Interns -->
-        {% for person in persons %}
-        {% if person.level == 'intern' %}
-        {% include peoplePanel.html person=person %}
-        {% endif %}
-        {% endfor %}
     </div>
 
 
-    <!-- sort alumni based on their leave year -->
-    {% assign alumni = site.members | sort: 'end_year' | reverse %}
+    {% assign alumni = site.members | sort: 'start_year' | reverse %}
 
-    <h1 class="title">{{ AlumniTitle }}</h1>
+    <h1 class="title">{{ alumniTitle }}</h1>
     <div class="row">
-        <!-- PhDs -->
 
-        {% for person in alumni %}
-        {% if person.level == 'phd_alumna' %}
-        {% include peoplePanel.html person=person %}
-        {% endif %}
-        {% endfor %}
-        <!-- Master's -->
-        {% for person in alumni %}
-        {% if person.level == 'master_alumna' %}
-        {% include peoplePanel.html person=person %}
-        {% endif %}
-        {% endfor %}
-
-        <!-- Bachelor's -->
-        {% for person in alumni %}
-        {% if person.level == 'bachelor_alumna' %}
-        {% include peoplePanel.html person=person %}
-        {% endif %}
-        {% endfor %}
-
-
-        <!-- Interns -->
         <div class="par">
-            {% for person in alumni %}
-            {% if person.level == 'intern_alumna' %}
+
+        {% for group in alumniGroup %}
+        <div class="mb-3">
+        {% for person in alumni %}
+        {% if person.level == group and person.status == "alumni" %}
             <div class="intern-alumna-container p-1 pb-2">
                 {% if person.website != null %}
                 <a class="text-small-title" href="{{ person.website }}"><span>{{person.first_name}} {{person.last_name}}</span></a>,
                 {% else %}
                 <span class="text-small-title">{{person.first_name}} {{person.last_name}}</span>,
                 {% endif %}
-                <span>{{ person.title }}</span>
+                <span>{{ person.title }}</span>,
+                <span>{{ person.start_year }}</span>
+                {% if person.end_year != null %}
+                <span>-{{ person.end_year }}</span>
+                {% endif %}
                 {% if person.now != null %}
-                , <span class="text-small text-italic">Now {{ person.now }}</span>
+                , <span class="text-small text-italic"> {{ person.now }}</span>
                 {% endif %}
             </div>
-            {% endif %}
-            {% endfor %}
+        {% endif %}
+        {% endfor %}
         </div>
+        {% endfor %}
+
+    </div>
 
     </div>
 </div>
